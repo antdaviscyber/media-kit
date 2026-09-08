@@ -16,12 +16,13 @@ Single page, no build step. Push to GitHub, turn on Pages, done.
 | File | What |
 |---|---|
 | `images/cover.jpg` | Smiling portrait, brick wall. Square crop works best. |
-| `images/positioning.jpg` | Same or similar portrait. |
-| `images/about-1.jpg` to `about-4.jpg` | Javvad selfie, on stage, panel, Exchange stage. |
+| `images/about.mp4` | Optional. A short muted loop of you mid-video (5 to 10 seconds, no audio needed, under 3MB). Shows in the Who section. |
+| `images/positioning.jpg` | Portrait. Used as the still if there is no about.mp4. |
+| `images/about-1.jpg` to `about-3.jpg` | Javvad selfie, on stage, panel. |
 | `images/reach.jpg` | Yellow background thinking shot. |
 | `images/podcast.jpg` | The Awareness Angle artwork, square. |
 | `images/sans-card.png` | SANS media partner card. |
-| `images/sans-1.jpg` to `sans-3.jpg` | Interview stills from last year. |
+| `images/sans-1.jpg` and `sans-2.jpg` | Interview stills. |
 | `images/comment-1.png` to `comment-6.png` | Comment screenshots, including the Janice thread and the Cloudflare like. |
 | `images/pricing.jpg` | Mid-video shot with the mic. |
 | `images/cred-1.jpg` to `cred-8.jpg` | Awards, stage, webinar thumbnails, podcast interview. |
