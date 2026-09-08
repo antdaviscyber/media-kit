@@ -1,0 +1,77 @@
+{
+  "updated": "2026-09-08",
+  "period": "June to September 2026",
+  "instagram": {
+    "followers": 55000,
+    "reel_views": 2300000,
+    "shares": 54000,
+    "saves": 41000,
+    "net_new_followers": 41000,
+    "engagement_rate": 10.5,
+    "skip_rate": 35.7,
+    "top_videos": [
+      { "title": "Fake AI Skill", "views": 348000 },
+      { "title": "PewDiePie AI", "views": 180000 },
+      { "title": "Android is always listening", "views": 130000 },
+      { "title": "Windows Server vuln", "views": 82000 },
+      { "title": "Adblock for Chrome", "views": 71000 }
+    ]
+  },
+  "tiktok": {
+    "views": 1600000,
+    "unique_viewers": 589000,
+    "new_viewers": 405000,
+    "shares": 15900,
+    "followers": 12700,
+    "for_you_pct": 95.8,
+    "top_videos": [
+      { "title": "Anthropic / Claude Desktop", "views": 203000 },
+      { "title": "Chrome extension reads your bank account", "views": 146000 },
+      { "title": "Half of all Fortinet firewalls owned", "views": 99000 },
+      { "title": "Fake AI Skill", "views": 84000 },
+      { "title": "Android audio memory", "views": 72000 }
+    ]
+  },
+  "attention": {
+    "top_avg_watch_seconds": 80,
+    "account_avg_watch_seconds": 45,
+    "reels_sampled": 39,
+    "retention": [
+      { "label": "Android is always listening", "length": "2:37", "completion": 19 },
+      { "label": "Fake AI Skill", "length": "2:52", "completion": 19.9 },
+      { "label": "Chrome extension", "length": "2:56", "completion": 15.5 }
+    ]
+  },
+  "audience": {
+    "male_pct": 71.6,
+    "age_35_54_pct": 65,
+    "countries": [
+      { "name": "United Kingdom", "pct": 24.3 },
+      { "name": "United States", "pct": 17.2 },
+      { "name": "Australia", "pct": 9.3 },
+      { "name": "Germany", "pct": 6.5 },
+      { "name": "Canada", "pct": 3.7 }
+    ]
+  },
+  "podcast": {
+    "episodes": 100,
+    "countries_charting": 33,
+    "top10_countries": 11,
+    "highlights": [
+      "Top 2 in Slovakia and Ireland",
+      "Top 5 in Norway and Portugal",
+      "Top 11 in the UK",
+      "Top 15 in Australia"
+    ]
+  },
+  "ticker": [
+    "Fake AI plugin ran Instagram ads and 26,000 people installed it",
+    "Chrome extension can read your bank account",
+    "Half of all Fortinet firewalls on the internet just got owned",
+    "Google is building a feature that listens to everything",
+    "PewDiePie's AI tool had a vulnerability with 77,000 GitHub stars",
+    "Microsoft removed 119 malicious browser extensions today",
+    "Hackers are injecting fake receipts into the Shop app",
+    "Windows Server 2025 has a domain trust bug Microsoft hasn't fixed"
+  ]
+}
