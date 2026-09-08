@@ -9,7 +9,7 @@ Single page, no build step. Push to GitHub, turn on Pages, done.
 - `images/` – drop your photos in here using the filenames below.
 - `scripts/fetch_metricool.py` – pulls Instagram and TikTok numbers from Metricool into `metrics.json`.
 - `.github/workflows/metrics.yml` – runs that script every Monday and commits the result.
-- `Ant_Davis_Media_Kit.pdf` – export this from the page (Print, Save as PDF) and drop it in the root so the download button works.
+- `Ant_Davis_Media_Kit.pdf` – export this from the page (Print, Save as PDF) and drop it in the root so the download button works. 
 
 ## Images to drop in
 
