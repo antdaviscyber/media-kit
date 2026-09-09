@@ -60,7 +60,7 @@ section:first-of-type{border-top:0}
 .btn:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--white);outline-offset:3px}
 .blob{position:relative;aspect-ratio:1;width:112%;max-width:640px;margin-left:auto;margin-right:-6%}
 .blob svg{position:absolute;inset:0;width:100%;height:100%}
-.blob img{position:absolute;inset:6%;width:88%;height:88%;object-fit:cover;object-position:50% 50%;clip-path:url(#blobclip);transform:none}
+.blob img{position:absolute;inset:3.5%;width:93%;height:93%;object-fit:cover;object-position:50% 50%;clip-path:url(#blobclip);transform:none}
 @keyframes morph{0%{d:path("M52,-58C66,-45,75,-24,74,-4C73,16,62,36,47,50C32,64,13,72,-5,70C-23,68,-45,56,-58,40C-71,24,-75,4,-70,-15C-65,-34,-51,-52,-34,-63C-17,-74,3,-78,21,-73C39,-68,38,-71,52,-58Z")}50%{d:path("M45,-62C58,-52,67,-33,70,-13C73,7,70,28,58,44C46,60,26,71,5,70C-16,69,-37,56,-53,40C-69,24,-80,5,-76,-13C-72,-31,-53,-48,-35,-58C-17,-68,0,-71,17,-70C34,-69,32,-72,45,-62Z")}100%{d:path("M52,-58C66,-45,75,-24,74,-4C73,16,62,36,47,50C32,64,13,72,-5,70C-23,68,-45,56,-58,40C-71,24,-75,4,-70,-15C-65,-34,-51,-52,-34,-63C-17,-74,3,-78,21,-73C39,-68,38,-71,52,-58Z")}}
 .blob path{fill:var(--yellow);animation:morph 14s ease-in-out infinite}
 
@@ -167,14 +167,17 @@ h2.rv.in::after{width:72px}
 .grid.comments .ph{color:#666;border-color:#ccc}
 
 /* pricing */
-.price{font-family:var(--display);font-size:clamp(60px,9vw,120px);color:var(--yellow);line-height:.9;margin:20px 0}
 .rule{border:0;border-top:1px solid var(--line);margin:36px 0}
 .excl{max-width:60ch;font-size:17px;color:var(--white)}
 
 /* contact */
-.contact a{display:block;font-family:var(--display);text-transform:uppercase;font-size:clamp(26px,4vw,48px);text-decoration:none;color:var(--white);line-height:1.05;margin:6px 0}
-.contact a:hover{color:var(--yellow)}
-.contact .small{font-size:16px;color:var(--muted);margin-top:26px}
+.contact .links{margin-top:40px;border-top:1px solid var(--line)}
+.contact .links a{display:block;padding:22px 0;border-bottom:1px solid var(--line);font-family:var(--display);text-transform:uppercase;font-size:clamp(26px,3.4vw,44px);text-decoration:none;color:var(--white);line-height:1;transition:.15s;position:relative}
+.contact .links a small{display:block;font-family:var(--body);text-transform:none;font-size:13px;letter-spacing:.02em;color:var(--muted);margin-bottom:8px}
+.contact .links a::after{content:"\2197";position:absolute;right:0;top:50%;transform:translateY(-50%);color:var(--yellow);font-family:var(--body);font-size:22px;opacity:0;transition:.2s}
+.contact .links a:hover{color:var(--yellow);padding-left:10px}
+.contact .links a:hover::after{opacity:1}
+.contact .small{font-size:15px;color:var(--muted);margin-top:30px}
 
 footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgba(255,255,255,.06)}
 .handle{font-family:var(--display);text-transform:uppercase;color:var(--yellow);font-size:18px}
@@ -210,7 +213,7 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
   @page{size:A4 landscape;margin:14mm}
   :root{--black:#fff;--white:#000;--muted:#555;--line:#ddd}
   body{background:#fff;color:#000;font-size:12pt}
-  h1,h2,h3,.stat.hot b,.price,.handle,.callouts b,.toplist li b,.curve figcaption b{color:#000!important}
+  h1,h2,h3,.stat.hot b,.handle,.callouts b,.toplist li b,.curve figcaption b{color:#000!important}
   h2{border-left:8px solid #FFD600;padding-left:14px}
   .ticker,.nav,.actions,.hero .blob svg,footer .noprint,.clip .tag{display:none!important}
   .rv-stagger>*{opacity:1;transform:none}
@@ -437,9 +440,8 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
   <div class="wrap two">
     <div class="rv">
       <h2>Your brand. Two platforms. One audience.</h2>
-      <div class="price" data-count data-target="1500" data-prefix="£">£1,500</div>
-      <p class="lede">One story, told properly, on Instagram and TikTok.</p>
-      <p>Podcast sponsorship available on request. Packages and bundles available. Most partners run three or more placements over a few months, because that's what actually converts.</p>
+      <p class="lede" style="margin-top:28px">One story, told properly, on Instagram and TikTok. Podcast sponsorship on request.</p>
+      <p>Every partnership is different, so rates are on application. Most partners run three or more placements over a few months, across more than one platform, because that's what actually converts. Packages and bundles available.</p>
       <hr class="rule">
       <p class="excl">I hold a non-commercial role at Hoxhunt. That means this channel is closed to human risk and security awareness platforms. One less competitor in the room.</p>
       <div class="actions" style="margin-top:28px"><a class="btn solid" href="#talk">Get in touch</a></div>
@@ -453,12 +455,13 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
   <div class="wrap two">
     <div class="contact rv">
       <h2>Let's talk.</h2>
-      <div style="margin-top:28px">
-        <a href="mailto:ant@antdavis.com">ant@antdavis.com</a>
-        <a href="https://antdavis.com">antdavis.com</a>
-        <a href="https://instagram.com/antdaviscyber">@antdaviscyber</a>
+      <p class="lede" style="margin-top:22px;max-width:30ch">Tell me what you're trying to reach, and I'll tell you honestly whether this audience is it.</p>
+      <div class="links">
+        <a href="mailto:ant@antdavis.com"><small>Email</small>ant@antdavis.com</a>
+        <a href="https://antdavis.com"><small>Web</small>antdavis.com</a>
+        <a href="https://instagram.com/antdaviscyber"><small>Instagram, TikTok and LinkedIn</small>@antdaviscyber</a>
       </div>
-      <p class="small">Instagram, TikTok and LinkedIn.<br>Kindred Cyber Ltd.</p>
+      <p class="small">Kindred Cyber Ltd. UK based, working worldwide.</p>
     </div>
     <div class="photo rv"><img src="images/contact.jpg" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">images/contact.jpg<br>Smiling portrait</div></div>
   </div>
