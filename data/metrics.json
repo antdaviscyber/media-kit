@@ -106,8 +106,8 @@
     "non_follower_views_pct": 65.5,
     "engagement_rate": 8.8,
     "engagement_formula": "likes + comments + shares, divided by unique viewers (TikTok does not report saves or reach)",
-    "posts_in_window": 53,
-    "avg_views_per_post": 28302,
+    "posts_in_window": 57,
+    "avg_views_per_post": 26316,
     "male_pct": 72,
     "net_new_followers": 6200,
     "viewer_male_pct": 72,
@@ -140,8 +140,7 @@
         "name": "South Africa",
         "pct": 3.4
       }
-    ],
-    "posts_in_window_note": "Estimate. Cross-posted from Instagram, same cadence"
+    ]
   },
   "attention": {
     "top_avg_watch_seconds": 80,
