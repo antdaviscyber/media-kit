@@ -1,56 +1,209 @@
 {
-  "updated": "2026-09-08",
-  "period": "June to September 2026",
+  "updated": "2026-09-09",
+  "period": "10 July to 8 September 2026",
   "instagram": {
-    "followers": 55000,
-    "reel_views": 2300000,
-    "shares": 54000,
-    "saves": 41000,
-    "net_new_followers": 41000,
-    "engagement_rate": 10.5,
-    "skip_rate": 35.7,
+    "followers": 80957,
+    "reel_views": 2500000,
+    "shares": 41000,
+    "saves": 39000,
+    "engagement_rate": 19.1,
     "top_videos": [
-      { "title": "Fake AI Skill", "views": 348000 },
-      { "title": "PewDiePie AI", "views": 180000 },
-      { "title": "Android is always listening", "views": 130000 },
-      { "title": "Windows Server vuln", "views": 82000 },
-      { "title": "Adblock for Chrome", "views": 71000 }
-    ]
+      {
+        "title": "432 CVEs in one day on Linux",
+        "desc": "The number is big. The crisis isn't real",
+        "views": 217000,
+        "date": "2026-07-21"
+      },
+      {
+        "title": "Fake CAPTCHA, real malware",
+        "desc": "The CAPTCHA that tricks you into installing malware yourself",
+        "views": 145000,
+        "date": "2026-07-20"
+      },
+      {
+        "title": "Airbus leaves AWS",
+        "desc": "900 critical apps moved to a French cloud provider, and the supply chain problem that remains",
+        "views": 136000,
+        "date": "2026-07-20"
+      },
+      {
+        "title": "Romania's land registry wiped",
+        "desc": "One stolen password took down a country's property records",
+        "views": 78600,
+        "date": "2026-07-26"
+      },
+      {
+        "title": "Your password manager and your AI",
+        "desc": "Password managers now log your AI agent in for you. Why that's complicated",
+        "views": 68800,
+        "date": "2026-07-18"
+      }
+    ],
+    "window": {
+      "start": "2026-07-10",
+      "end": "2026-09-08",
+      "days": 60,
+      "label": "10 July to 8 September 2026"
+    },
+    "posts_in_window": 53,
+    "reach": 952000,
+    "likes": 99000,
+    "comments": 2900,
+    "reposts": 6700,
+    "non_follower_views_pct": 78.4,
+    "avg_views_per_post": 47170,
+    "engagement_formula": "likes + comments + saves + shares, divided by reach (viewers)",
+    "non_follower_views_note": "Instagram only reports this at 30 or 90 days; figure is the 90 days to 8 September"
   },
   "tiktok": {
-    "views": 1600000,
-    "unique_viewers": 589000,
-    "new_viewers": 405000,
-    "shares": 15900,
-    "followers": 12700,
-    "for_you_pct": 95.8,
+    "views": 1500000,
+    "unique_viewers": 776700,
+    "new_viewers": 508900,
+    "shares": 9700,
+    "followers": 21253,
+    "for_you_pct": 94.7,
     "top_videos": [
-      { "title": "Anthropic / Claude Desktop", "views": 203000 },
-      { "title": "Chrome extension reads your bank account", "views": 146000 },
-      { "title": "Half of all Fortinet firewalls owned", "views": 99000 },
-      { "title": "Fake AI Skill", "views": 84000 },
-      { "title": "Android audio memory", "views": 72000 }
-    ]
+      {
+        "title": "GTA6 leak",
+        "desc": "Rockstar's takedown team can't keep up with a new leak",
+        "views": 254000,
+        "date": "2026-08"
+      },
+      {
+        "title": "Romania's land registry wiped",
+        "desc": "One stolen password took down a country's land records",
+        "views": 147000,
+        "date": "2026-07-26"
+      },
+      {
+        "title": "Monzo went down",
+        "desc": "Two banks, one app, and why most customers never felt it",
+        "views": 114000,
+        "date": "2026-08"
+      },
+      {
+        "title": "Did Revolut get breached?",
+        "desc": "75 million records allegedly for sale, Revolut says no breach",
+        "views": 101000,
+        "date": "2026-07-28"
+      },
+      {
+        "title": "432 CVEs in one day on Linux",
+        "desc": "The number is big. The crisis isn't real",
+        "views": 62000,
+        "date": "2026-07-21"
+      }
+    ],
+    "window": {
+      "start": "2026-07-10",
+      "end": "2026-09-07",
+      "days": 60,
+      "label": "10 July to 7 September 2026"
+    },
+    "likes": 56100,
+    "comments": 2900,
+    "saves": null,
+    "non_follower_views_pct": 65.5,
+    "engagement_rate": 8.8,
+    "engagement_formula": "likes + comments + shares, divided by unique viewers (TikTok does not report saves or reach)",
+    "posts_in_window": 53,
+    "avg_views_per_post": 28302,
+    "male_pct": 72,
+    "net_new_followers": 6200,
+    "viewer_male_pct": 72,
+    "follower_male_pct": 67,
+    "viewer_age": {
+      "18-24": 9.4,
+      "25-34": 35.1,
+      "35-44": 26.2,
+      "45-54": 19.2,
+      "55+": 10.1
+    },
+    "viewer_countries": [
+      {
+        "name": "United Kingdom",
+        "pct": 40.0
+      },
+      {
+        "name": "Ireland",
+        "pct": 7.4
+      },
+      {
+        "name": "Romania",
+        "pct": 6.0
+      },
+      {
+        "name": "United States",
+        "pct": 5.6
+      },
+      {
+        "name": "South Africa",
+        "pct": 3.4
+      }
+    ],
+    "posts_in_window_note": "Estimate. Cross-posted from Instagram, same cadence"
   },
   "attention": {
     "top_avg_watch_seconds": 80,
     "account_avg_watch_seconds": 45,
     "reels_sampled": 39,
     "retention": [
-      { "label": "Android is always listening", "length": "2:37", "completion": 19 },
-      { "label": "Fake AI Skill", "length": "2:52", "completion": 19.9 },
-      { "label": "Chrome extension", "length": "2:56", "completion": 15.5 }
+      {
+        "label": "Android is always listening",
+        "length": "2:37",
+        "completion": 19
+      },
+      {
+        "label": "Fake AI Skill",
+        "length": "2:52",
+        "completion": 19.9
+      },
+      {
+        "label": "Chrome extension",
+        "length": "2:56",
+        "completion": 15.5
+      }
     ]
   },
   "audience": {
-    "male_pct": 71.6,
-    "age_35_54_pct": 65,
+    "source": "Instagram follower insights, 10 July to 8 September 2026",
+    "male_pct": 73.3,
+    "female_pct": 26.7,
+    "age": {
+      "25-34": 17.0,
+      "35-44": 34.8,
+      "45-54": 28.3,
+      "55-64": 13.5,
+      "65+": 4.5
+    },
+    "age_35_54_pct": 63.1,
     "countries": [
-      { "name": "United Kingdom", "pct": 24.3 },
-      { "name": "United States", "pct": 17.2 },
-      { "name": "Australia", "pct": 9.3 },
-      { "name": "Germany", "pct": 6.5 },
-      { "name": "Canada", "pct": 3.7 }
+      {
+        "name": "United Kingdom",
+        "pct": 25.7
+      },
+      {
+        "name": "United States",
+        "pct": 17.8
+      },
+      {
+        "name": "Australia",
+        "pct": 8.7
+      }
+    ],
+    "cities": [
+      {
+        "name": "London",
+        "pct": 15.2
+      },
+      {
+        "name": "Melbourne",
+        "pct": 8.8
+      },
+      {
+        "name": "Sydney",
+        "pct": 8.3
+      }
     ]
   },
   "podcast": {
@@ -73,5 +226,6 @@
     "Microsoft removed 119 malicious browser extensions today",
     "Hackers are injecting fake receipts into the Shop app",
     "Windows Server 2025 has a domain trust bug Microsoft hasn't fixed"
-  ]
+  ],
+  "updated_pretty": "September 2026"
 }
