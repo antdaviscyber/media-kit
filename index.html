@@ -26,6 +26,10 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+@media (min-width:821px) and (prefers-reduced-motion:no-preference){
+  html{scroll-snap-type:y proximity;scroll-padding-top:84px}
+  main>section{scroll-snap-align:start}
+}
 body{margin:0;background:var(--black);color:var(--white);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:var(--yellow)}
@@ -110,6 +114,32 @@ h2.rv.in::after{width:72px}
 .sub-h{font-family:var(--display);text-transform:uppercase;color:var(--yellow);font-size:14px;letter-spacing:.1em;margin:56px 0 0}
 .sub-h:first-of-type{margin-top:36px}
 
+
+/* word reveal */
+h2 .w{display:inline-block;opacity:0;transform:translateY(.55em) rotate(2deg);transition:opacity .5s ease,transform .6s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0)*70ms)}
+h2.in .w{opacity:1;transform:none}
+
+/* progress bar */
+.progress{position:fixed;left:0;top:84px;height:3px;width:100%;background:transparent;z-index:22;pointer-events:none}
+.progress i{display:block;height:100%;width:0;background:var(--yellow);transition:width .1s linear}
+
+/* marquee band */
+.band{background:var(--yellow);color:var(--black);overflow:hidden;white-space:nowrap;padding:18px 0;border-top:0;transform:rotate(-1.2deg) scale(1.02);margin:-10px 0}
+.band .run{display:inline-flex;gap:0;animation:bandscroll 28s linear infinite;font-family:var(--display);text-transform:uppercase;font-size:clamp(40px,7vw,96px);line-height:1}
+.band .run span{padding:0 .35em}
+.band .run span::after{content:"\2605";font-size:.45em;vertical-align:.45em;margin-left:.7em;opacity:.7}
+@keyframes bandscroll{to{transform:translateX(-50%)}}
+
+/* magnetic buttons */
+.mag{transition:transform .25s cubic-bezier(.2,.8,.2,1)}
+
+/* spotlight */
+.spot{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0;transition:opacity .6s ease;background:radial-gradient(420px circle at var(--x,50%) var(--y,50%),rgba(255,214,0,.13),rgba(255,214,0,0) 60%)}
+.spot.on{opacity:1}
+main,footer{position:relative;z-index:1}
+.ticker{z-index:21}.nav{z-index:20}
+@media (hover:none){.spot{display:none}}
+
 /* generic layouts */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center}
 .two.tight{align-items:start}
@@ -188,6 +218,9 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
 @media (prefers-reduced-motion:reduce){
   .rv{opacity:1;transform:none;transition:none}
   .rv-stagger>*{opacity:1;transform:none;transition:none}
+  h2 .w{opacity:1;transform:none;transition:none}
+  .band .run{animation:none}
+  .spot,.progress{display:none}
   h2.rv::after{width:72px;transition:none}
   .ticker .track,.blob path,.ticker .live i{animation:none}
   .curve .end{stroke-dashoffset:0;transition:none}
@@ -215,7 +248,8 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
   body{background:#fff;color:#000;font-size:12pt}
   h1,h2,h3,.stat.hot b,.handle,.callouts b,.toplist li b,.curve figcaption b{color:#000!important}
   h2{border-left:8px solid #FFD600;padding-left:14px}
-  .ticker,.nav,.actions,.hero .blob svg,footer .noprint,.clip .tag{display:none!important}
+  .ticker,.nav,.actions,.hero .blob svg,footer .noprint,.clip .tag,.band,.spot,.progress{display:none!important}
+  h2 .w{opacity:1;transform:none}
   .rv-stagger>*{opacity:1;transform:none}
   .wall{grid-template-columns:repeat(4,1fr)}
   h2.rv::after{width:72px}
@@ -244,6 +278,8 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
 </style>
 </head>
 <body>
+<div class="spot" id="spot" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"><i id="prog"></i></div>
 
 <div class="ticker" aria-hidden="true">
   <div class="live"><i></i>Latest</div>
@@ -259,7 +295,7 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
     <a class="item" href="#podcast">Podcast</a>
     <a class="item" href="#proof">Proof</a>
     <a class="item" href="#work">Work with me</a>
-    <a class="cta" href="#talk">Let's talk</a>
+    <a class="cta mag" href="#talk">Let's talk</a>
   </div>
 </nav>
 
@@ -273,7 +309,7 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
       <div class="strap">Making cyber security make sense</div>
       <p class="sub">Sponsorship and partnership media kit.<br>Updated <span data-key="updated_pretty">September 2026</span>.</p>
       <div class="actions">
-        <a class="btn solid" href="#talk">Get in touch</a>
+        <a class="btn solid mag" href="#talk">Get in touch</a>
         <a class="btn" href="Ant_Davis_Media_Kit.pdf" download>Download PDF</a>
         <button class="btn" onclick="window.print()">Print</button>
       </div>
@@ -342,30 +378,32 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
   </div>
 </section>
 
+<div class="band" aria-hidden="true"><div class="run"><span>Making cyber security make sense</span><span>Making cyber security make sense</span><span>Making cyber security make sense</span><span>Making cyber security make sense</span><span>Making cyber security make sense</span><span>Making cyber security make sense</span><span>Making cyber security make sense</span><span>Making cyber security make sense</span></div></div>
+
 <!-- 4 Numbers -->
 <section id="numbers">
   <div class="wrap">
     <h2 class="rv">One voice. Every format.<br>The numbers.</h2>
     <div class="wall rv rv-stagger">
       <div class="stat"><em>Instagram</em><b data-count data-key="instagram.reel_views" data-fmt="m">2.3M</b><small>reel views, 60 days</small></div>
-      <div class="stat"><em>Instagram</em><b data-count data-key="instagram.followers" data-fmt="k">55K</b><small>followers, net +<span data-key="instagram.net_new_followers" data-fmt="k">41K</span> since April</small></div>
+      <div class="stat"><em>Instagram</em><b data-count data-key="instagram.followers" data-fmt="k">80K</b><small>followers</small></div>
       <div class="stat hot"><em>Instagram</em><b data-count data-key="instagram.shares" data-fmt="k">54K</b><small>shares. Sent to someone.</small></div>
-      <div class="stat hot"><em>Instagram</em><b data-count data-key="instagram.saves" data-fmt="k">41K</b><small>saves. Kept for later.</small></div>
-      <div class="stat"><em>TikTok</em><b data-count data-key="tiktok.views" data-fmt="m">1.6M</b><small>views, 60 days</small></div>
-      <div class="stat hot"><em>TikTok</em><b data-count data-key="tiktok.new_viewers" data-fmt="k">405K</b><small>brand new viewers</small></div>
       <div class="stat hot"><em>Instagram</em><b data-count data-key="instagram.engagement_rate" data-suffix="%">10.5%</b><small>engagement rate. Platform average 1 to 3%</small></div>
-      <div class="stat hot"><em>Instagram</em><b data-count data-key="instagram.skip_rate" data-suffix="%">35.7%</b><small>skip rate across 40 reels. Lower is better</small></div>
+      <div class="stat"><em>TikTok</em><b data-count data-key="tiktok.views" data-fmt="m">1.6M</b><small>views, 60 days</small></div>
+      <div class="stat"><em>TikTok</em><b data-count data-key="tiktok.followers" data-fmt="k">21K</b><small>followers</small></div>
+      <div class="stat hot"><em>TikTok</em><b data-count data-key="tiktok.shares" data-fmt="k">15.9K</b><small>shares. Sent to someone.</small></div>
+      <div class="stat hot"><em>TikTok</em><b data-count data-key="tiktok.new_viewers" data-fmt="k">405K</b><small>brand new viewers. <span data-key="tiktok.for_you_pct">95.8</span>% served from the For You page</small></div>
     </div>
     <div class="two tight" style="margin-top:56px">
       <div class="rv">
         <h3>Instagram, recent reels</h3>
         <ul class="toplist" id="ig-top"></ul>
-        <p class="note" style="margin-top:14px">Not one lucky video. Different topics, same audience, week after week.</p>
+        <p class="note" style="margin-top:14px">Not one lucky video. Different topics, same audience, week after week. <span data-key="instagram.saves" data-fmt="k">41K</span> saves across the period, so it's kept as well as watched.</p>
       </div>
       <div class="rv">
         <h3>TikTok, top videos</h3>
         <ul class="toplist" id="tt-top"></ul>
-        <p class="note" style="margin-top:14px"><span data-key="tiktok.for_you_pct">95.8</span>% of TikTok views came from the For You page. The algorithm is doing the introducing.</p>
+        <p class="note" style="margin-top:14px"><span data-key="tiktok.unique_viewers" data-fmt="k">589K</span> unique people in 60 days. Most of them had never seen the content before.</p>
       </div>
     </div>
     <div class="two tight" style="margin-top:64px">
@@ -375,6 +413,7 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
       </div>
       <div class="rv">
         <div class="stats half" style="margin:0">
+          <div class="stat hot"><b data-count data-key="instagram.skip_rate" data-suffix="%">35.7%</b><small>skip rate across 40 reels. Lower is better</small></div>
           <div class="stat"><b data-key="attention.account_avg_watch_seconds" data-fmt="s">45s</b><small>average watch time across <span data-key="attention.reels_sampled">39</span> reels</small></div>
           <div class="stat hot"><b data-key="attention.top_avg_watch_seconds" data-fmt="s">1m 20s</b><small>average watch time, top videos</small></div>
         </div>
@@ -435,6 +474,8 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
   </div>
 </section>
 
+<div class="band" aria-hidden="true"><div class="run"><span>What happened. Why it matters. What to do about it.</span><span>What happened. Why it matters. What to do about it.</span><span>What happened. Why it matters. What to do about it.</span><span>What happened. Why it matters. What to do about it.</span><span>What happened. Why it matters. What to do about it.</span><span>What happened. Why it matters. What to do about it.</span><span>What happened. Why it matters. What to do about it.</span><span>What happened. Why it matters. What to do about it.</span></div></div>
+
 <!-- 7 Work with me -->
 <section id="work">
   <div class="wrap two">
@@ -444,7 +485,7 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
       <p>Every partnership is different, so rates are on application. Most partners run three or more placements over a few months, across more than one platform, because that's what actually converts. Packages and bundles available.</p>
       <hr class="rule">
       <p class="excl">I hold a non-commercial role at Hoxhunt. That means this channel is closed to human risk and security awareness platforms. One less competitor in the room.</p>
-      <div class="actions" style="margin-top:28px"><a class="btn solid" href="#talk">Get in touch</a></div>
+      <div class="actions" style="margin-top:28px"><a class="btn solid mag" href="#talk">Get in touch</a></div>
     </div>
     <div class="photo rv"><img src="images/pricing.jpg" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">images/pricing.jpg<br>Mid-video, mic shot</div></div>
   </div>
@@ -486,7 +527,7 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
   const fmt = (v,f)=>{
     if(v==null) return '';
     if(f==='m') return (v/1e6).toFixed(1).replace(/\.0$/,'')+'M';
-    if(f==='k') return v>=1e6 ? (v/1e6).toFixed(1).replace(/\.0$/,'')+'M' : v>=1000 ? Math.round(v/1000)+'K' : String(v);
+    if(f==='k') return v>=1e6 ? (v/1e6).toFixed(1).replace(/\.0$/,'')+'M' : v>=1000 ? (v<100000 ? (v/1000).toFixed(1).replace(/\.0$/,'') : Math.round(v/1000))+'K' : String(v);
     if(f==='s'){ const m=Math.floor(v/60), s=v%60; return m? m+'m '+s+'s' : s+'s'; }
     return typeof v==='number' ? (Number.isInteger(v)? v.toLocaleString() : v.toFixed(1)) : String(v);
   };
@@ -536,6 +577,41 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
     el.querySelectorAll('.curve').forEach((cv,i)=>setTimeout(()=>cv.classList.add('in'),i*250));
   }),{threshold:.05,rootMargin:'0px 0px -5% 0px'});
   document.querySelectorAll('.rv,.rv-stagger').forEach(el=>io.observe(el));
+
+
+  // word-by-word headline reveal (after the JSON has filled any numbers in)
+  document.querySelectorAll('h2').forEach(h=>{
+    let i=0;
+    const walk=node=>{[...node.childNodes].forEach(n=>{
+      if(n.nodeType===3){ const frag=document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach(t=>{ if(!t) return; if(/^\s+$/.test(t)) frag.appendChild(document.createTextNode(t)); else { const w=document.createElement('span'); w.className='w'; w.style.setProperty('--i',i++); w.textContent=t; frag.appendChild(w);} });
+        n.replaceWith(frag);
+      } else if(n.nodeType===1 && n.tagName!=='BR'){ if(n.childNodes.length===1 && n.firstChild.nodeType===3){ n.classList.add('w'); n.style.setProperty('--i',i++);} else walk(n); }
+    });};
+    walk(h);
+    if(!h.classList.contains('rv')) io.observe(h);
+  });
+
+  // progress bar
+  const prog=document.getElementById('prog');
+  const onScroll=()=>{const h=document.documentElement; prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';};
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  // spotlight and magnetic buttons (pointer devices only)
+  if(matchMedia('(hover:hover)').matches && !reduce){
+    const spot=document.getElementById('spot'); let sx=innerWidth/2, sy=innerHeight/2, tx=sx, ty=sy;
+    addEventListener('mousemove',e=>{tx=e.clientX; ty=e.clientY; spot.classList.add('on');},{passive:true});
+    document.addEventListener('mouseleave',()=>spot.classList.remove('on'));
+    (function loop(){ sx+=(tx-sx)*.12; sy+=(ty-sy)*.12; spot.style.setProperty('--x',sx+'px'); spot.style.setProperty('--y',sy+'px'); requestAnimationFrame(loop); })();
+
+    document.querySelectorAll('.mag').forEach(b=>{
+      const R=90;
+      addEventListener('mousemove',e=>{
+        const r=b.getBoundingClientRect(), cx=r.left+r.width/2, cy=r.top+r.height/2, dx=e.clientX-cx, dy=e.clientY-cy, d=Math.hypot(dx,dy);
+        if(d<R+Math.max(r.width,r.height)/2){ const k=.28; b.style.transform=`translate(${dx*k}px,${dy*k}px)`; } else if(b.style.transform){ b.style.transform=''; }
+      },{passive:true});
+    });
+  }
 
   // video slot: if the clip can't load, show the poster image instead
   const clip=document.querySelector('.clip'); if(clip){
