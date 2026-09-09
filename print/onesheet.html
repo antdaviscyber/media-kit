@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><title>Ant Davis media kit</title>
+<style>
+@font-face{font-family:"Barber Chop";src:url(fonts/BarberChop.otf) format("opentype")}
+@font-face{font-family:Inter;src:url(fonts/Inter-Regular.ttf);font-weight:400}
+@font-face{font-family:Inter;src:url(fonts/Inter-SemiBold.ttf);font-weight:600}
+@font-face{font-family:Inter;src:url(fonts/Inter-Bold.ttf);font-weight:700}
+:root{--y:#FFD600;--k:#000;--w:#fff;--g:#cfcfcf;--line:rgba(255,255,255,.14)}
+@page{size:A4;margin:0}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--k);color:var(--w);font-family:Inter,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;height:297mm;padding:12mm 14mm 10mm;display:flex;flex-direction:column;gap:5mm;overflow:hidden}
+.d{font-family:"Barber Chop",Impact,sans-serif;text-transform:uppercase;line-height:.92}
+.head{display:grid;grid-template-columns:1fr 40mm;gap:8mm;align-items:center}
+.head h1{font-size:54pt;margin:0;color:var(--y)}
+.head h1 span{color:var(--w);display:block}
+.head .strap{font-size:15pt;color:var(--y);margin-top:3mm}
+.head .sub{font-size:9.5pt;color:var(--g);margin-top:2mm;line-height:1.4}
+.photo{width:40mm;height:40mm;border-radius:50%;overflow:hidden;border:2.5mm solid var(--y)}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.rule{height:.6mm;background:var(--y);width:26mm}
+.sec h2{font-size:16pt;color:var(--y);margin:0 0 2.5mm}
+.grid{display:grid;grid-template-columns:36mm 1fr 1fr;border-top:.3mm solid var(--line)}
+.grid>div{padding:2.1mm 0;border-bottom:.3mm solid var(--line)}
+.grid .lab{font-size:9pt;color:var(--g);padding-right:3mm;line-height:1.3}
+.grid .lab b{display:block;color:var(--w);font-weight:600;font-size:10pt;margin-bottom:.6mm}
+.grid .v{font-size:20pt;color:var(--y);line-height:1}
+.grid .v small{display:block;font-family:Inter;font-size:8.5pt;color:var(--g);margin-top:1.4mm;line-height:1.3;text-transform:none}
+.grid .v.dim{color:var(--w)}
+.grid .hd{padding:1.5mm 0 1.5mm;border-bottom:.3mm solid var(--line)}
+.grid .hd span{display:inline-block;font-family:"Barber Chop",Impact;text-transform:uppercase;font-size:10pt;letter-spacing:.06em;padding:1mm 2.5mm;background:var(--y);color:var(--k)}
+.grid .hd span.tt{background:var(--w)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:8mm}
+.two p{margin:0;font-size:9.5pt;line-height:1.45;color:var(--w)}
+.aud{font-size:9.5pt;line-height:1.5;color:var(--w)}
+.aud b{color:var(--y);font-weight:700}
+.foot{margin-top:auto;display:grid;grid-template-columns:1fr auto;align-items:end;gap:6mm;border-top:.3mm solid var(--line);padding-top:4mm}
+.foot .c{font-size:9.5pt;line-height:1.55}
+.foot .c b{color:var(--y);font-weight:700}
+.foot .talk{font-size:22pt;color:var(--y);text-align:right}
+.foot .talk small{display:block;font-family:Inter;text-transform:none;font-size:8.5pt;color:var(--g);margin-top:1.5mm}
+</style></head><body>
+<div class="page">
+  <div class="head">
+    <div>
+      <h1 class="d">Ant <span>Davis</span></h1>
+      <div class="strap d">Making cyber security make sense</div>
+      <div class="sub">Sponsorship and partnership media kit. Numbers cover {{period}}. Refreshed monthly at mediakit.antdavis.com.</div>
+    </div>
+    <div class="photo"><img src="../images/cover.jpg" alt=""></div>
+  </div>
+
+  <div class="sec">
+    <h2 class="d">The numbers</h2>
+    <div class="grid">
+      <div class="hd"></div><div class="hd"><span>Instagram</span></div><div class="hd"><span class="tt">TikTok</span></div>
+
+      <div class="lab"><b>Average views per post</b>What a typical video does</div>
+      <div class="v d">{{ig_avg}}<small>{{ig_views}} views across {{ig_posts}} reels</small></div>
+      <div class="v d">{{tt_avg}}<small>{{tt_views}} views across {{tt_posts}} posts</small></div>
+
+      <div class="lab"><b>Engagement rate</b>Likes, comments, saves and shares, over people reached</div>
+      <div class="v d">{{ig_eng}}<small>of {{ig_reach}} people reached</small></div>
+      <div class="v d">{{tt_eng}}<small>of {{tt_uv}} unique viewers. No saves on TikTok</small></div>
+
+      <div class="lab"><b>Shares</b>Sent to a mate or a colleague</div>
+      <div class="v d">{{ig_shares}}</div>
+      <div class="v d">{{tt_shares}}</div>
+
+      <div class="lab"><b>Saves</b>Kept to come back to</div>
+      <div class="v d">{{ig_saves}}</div>
+      <div class="v d dim">n/a<small>Not reported by TikTok</small></div>
+
+      <div class="lab"><b>New audience</b>Viewers who had never seen me before</div>
+      <div class="v d">{{ig_nf}}<small>of views from non-followers (90-day figure)</small></div>
+      <div class="v d">{{tt_nf}}<small>of viewers were new. {{tt_fy}} from the For You page</small></div>
+
+      <div class="lab"><b>Followers</b>For the full picture</div>
+      <div class="v d dim">{{ig_fol}}</div>
+      <div class="v d dim">{{tt_fol}}</div>
+    </div>
+  </div>
+
+  <div class="two">
+    <div class="sec">
+      <h2 class="d">Who's watching</h2>
+      <div class="aud"><b>Instagram:</b> {{ig_male}} men, {{ig_age}} aged 35 to 54. {{ig_countries}}.<br><b>TikTok:</b> {{tt_male}} men, 61% aged 25 to 44. {{tt_countries}}.<br>The people who run security teams, worry about their staff clicking on things, and decide which tools to buy.</div>
+    </div>
+    <div class="sec">
+      <h2 class="d">Why me</h2>
+      <p>Fifteen years doing security awareness inside big companies before doing it on camera. Media Partner and Panel Moderator at the SANS Security Awareness and Culture Summit 2026. Contributor of the Year and Best Back to Basics, European Cybersecurity Blogger Awards 2025. Host of The Awareness Angle, 100 episodes, charted in 33 countries, relaunching Q4 2026 as Click Happens and Right Click.</p>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="c">I don't really do one-off posts. What works is a sponsor the audience sees again and again, over a few months, in content they already trust. Tell me who you're trying to reach and I'll put a proper proposal together.<br><b>ant@antdavis.com</b> &nbsp; antdavis.com &nbsp; @antdaviscyber on Instagram, TikTok and LinkedIn</div>
+    <div class="talk d">Let's talk<small>Kindred Cyber Ltd</small></div>
+  </div>
+</div>
+</body></html>
