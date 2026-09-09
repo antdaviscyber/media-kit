@@ -124,8 +124,8 @@ h2.in .w{opacity:1;transform:none}
 .progress i{display:block;height:100%;width:0;background:var(--yellow);transition:width .1s linear}
 
 /* marquee band */
-.band{background:var(--yellow);color:var(--black);overflow:hidden;white-space:nowrap;padding:18px 0;border-top:0;transform:rotate(-1.2deg) scale(1.02);margin:-10px 0}
-.band .run{display:inline-flex;gap:0;animation:bandscroll 28s linear infinite;font-family:var(--display);text-transform:uppercase;font-size:clamp(40px,7vw,96px);line-height:1}
+.band{background:var(--yellow);color:var(--black);overflow:hidden;white-space:nowrap;padding:12px 0;border-top:0;transform:rotate(-.8deg) scale(1.02);margin:-6px 0}
+.band .run{display:inline-flex;gap:0;animation:bandscroll 28s linear infinite;font-family:var(--display);text-transform:uppercase;font-size:clamp(22px,3.2vw,40px);line-height:1;animation-duration:40s}
 .band .run span{padding:0 .35em}
 .band .run span::after{content:"\2605";font-size:.45em;vertical-align:.45em;margin-left:.7em;opacity:.7}
 @keyframes bandscroll{to{transform:translateX(-50%)}}
@@ -134,7 +134,7 @@ h2.in .w{opacity:1;transform:none}
 .mag{transition:transform .25s cubic-bezier(.2,.8,.2,1)}
 
 /* spotlight */
-.spot{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0;transition:opacity .6s ease;background:radial-gradient(420px circle at var(--x,50%) var(--y,50%),rgba(255,214,0,.13),rgba(255,214,0,0) 60%)}
+.spot{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0;transition:opacity .6s ease;background:radial-gradient(560px circle at var(--x,50%) var(--y,50%),rgba(255,214,0,.055),rgba(255,214,0,0) 60%)}
 .spot.on{opacity:1}
 main,footer{position:relative;z-index:1}
 .ticker{z-index:21}.nav{z-index:20}
@@ -169,6 +169,7 @@ main,footer{position:relative;z-index:1}
 .toplist{list-style:none;margin:0;padding:0}
 .toplist li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:16px}
 .toplist li b{color:var(--yellow);font-weight:600;white-space:nowrap}
+.toplist li span small{display:block;color:var(--muted);font-size:13px;margin-top:4px;line-height:1.4}
 .bars{list-style:none;margin:28px 0 0;padding:0;max-width:520px}
 .bars li{display:grid;grid-template-columns:150px 1fr 56px;align-items:center;gap:14px;margin:12px 0;font-size:15px}
 .bars i{display:block;height:10px;background:var(--yellow);width:0;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
@@ -359,20 +360,26 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
 <!-- 3 Audience -->
 <section id="audience">
   <div class="wrap">
-    <h2 class="rv">Who's in the room.</h2>
-    <div class="two tight" style="margin-top:20px">
+    <h2 class="rv">Who's watching.</h2>
+    <p class="lede rv" style="margin-top:22px;max-width:52ch">Three quarters men, two thirds aged 35 to 54, the UK first and the US second. Put plainly: the age and seniority of people who run security programmes, manage human risk, and sign off the tools that support both.</p>
+    <div class="two tight" style="margin-top:36px">
       <div class="rv">
-        <div class="stats half">
-          <div class="stat hot"><b data-count data-key="audience.male_pct" data-suffix="%">71.6%</b><small>male</small></div>
-          <div class="stat hot"><b data-count data-key="audience.age_35_54_pct" data-suffix="%">65%</b><small>aged 35 to 54</small></div>
-          <div class="stat hot"><b data-count data-key="audience.countries.0.pct" data-suffix="%">24.3%</b><small>UK based</small></div>
+        <h3>Instagram</h3>
+        <div class="stats half" style="margin-top:16px">
+          <div class="stat hot"><b data-count data-key="audience.male_pct" data-suffix="%">73%</b><small>men</small></div>
+          <div class="stat hot"><b data-count data-key="audience.age_35_54_pct" data-suffix="%">63%</b><small>aged 35 to 54</small></div>
         </div>
-        <p>The people who run security programmes, manage human risk, and sign off the tools that support both.</p>
-        <p class="note">Source: Instagram follower insights, <span data-key="period">June to September 2026</span>.</p>
+        <ul class="bars" id="countries"></ul>
+        <p class="note">Follower insights, <span data-key="instagram.window.label">10 July to 8 September 2026</span>.</p>
       </div>
       <div class="rv">
-        <h3>Top countries</h3>
-        <ul class="bars" id="countries"></ul>
+        <h3>TikTok</h3>
+        <div class="stats half" style="margin-top:16px">
+          <div class="stat hot"><b data-count data-key="tiktok.viewer_male_pct" data-suffix="%">72%</b><small>men</small></div>
+          <div class="stat hot"><b>61%</b><small>aged 25 to 44</small></div>
+        </div>
+        <ul class="bars" id="tt-countries"></ul>
+        <p class="note">Viewer insights, <span data-key="tiktok.window.label">10 July to 7 September 2026</span>. A younger, more British audience than Instagram.</p>
       </div>
     </div>
   </div>
@@ -383,43 +390,49 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
 <!-- 4 Numbers -->
 <section id="numbers">
   <div class="wrap">
-    <h2 class="rv">One voice. Every format.<br>The numbers.</h2>
-    <div class="wall rv rv-stagger">
-      <div class="stat"><em>Instagram</em><b data-count data-key="instagram.reel_views" data-fmt="m">2.3M</b><small>reel views, 60 days</small></div>
-      <div class="stat"><em>Instagram</em><b data-count data-key="instagram.followers" data-fmt="k">80K</b><small>followers</small></div>
-      <div class="stat hot"><em>Instagram</em><b data-count data-key="instagram.shares" data-fmt="k">54K</b><small>shares. Sent to someone.</small></div>
-      <div class="stat hot"><em>Instagram</em><b data-count data-key="instagram.engagement_rate" data-suffix="%">10.5%</b><small>engagement rate. Platform average 1 to 3%</small></div>
-      <div class="stat"><em>TikTok</em><b data-count data-key="tiktok.views" data-fmt="m">1.6M</b><small>views, 60 days</small></div>
-      <div class="stat"><em>TikTok</em><b data-count data-key="tiktok.followers" data-fmt="k">21K</b><small>followers</small></div>
-      <div class="stat hot"><em>TikTok</em><b data-count data-key="tiktok.shares" data-fmt="k">15.9K</b><small>shares. Sent to someone.</small></div>
-      <div class="stat hot"><em>TikTok</em><b data-count data-key="tiktok.new_viewers" data-fmt="k">405K</b><small>brand new viewers. <span data-key="tiktok.for_you_pct">95.8</span>% served from the For You page</small></div>
+    <h2 class="rv">The numbers.</h2>
+    <p class="lede rv" style="margin-top:22px;max-width:52ch">Sixty days, <span data-key="instagram.posts_in_window">53</span> reels, one audience. Every figure below is from <span data-key="period">10 July to 8 September 2026</span> and updates monthly.</p>
+
+    <p class="sub-h rv">Average views per post</p>
+    <p class="rv" style="margin-top:10px;max-width:52ch">Not the best one. The average one.</p>
+    <div class="stats half rv">
+      <div class="stat hot"><b data-count data-key="instagram.avg_views_per_post" data-fmt="k">47K</b><small>per reel on Instagram. <span data-key="instagram.reel_views" data-fmt="m">2.5M</span> views across <span data-key="instagram.posts_in_window">53</span> reels</small></div>
+      <div class="stat hot"><b data-count data-key="tiktok.avg_views_per_post" data-fmt="k">28K</b><small>per post on TikTok. <span data-key="tiktok.views" data-fmt="m">1.5M</span> views across <span data-key="tiktok.posts_in_window">53</span> posts</small></div>
     </div>
+
+    <p class="sub-h rv">Engagement rate</p>
+    <div class="stats half rv">
+      <div class="stat hot"><b data-count data-key="instagram.engagement_rate" data-suffix="%">19.1%</b><small>Instagram. Likes, comments, saves and shares, divided by people reached (<span data-key="instagram.reach" data-fmt="k">952K</span>)</small></div>
+      <div class="stat hot"><b data-count data-key="tiktok.engagement_rate" data-suffix="%">8.8%</b><small>TikTok. Likes, comments and shares, divided by unique viewers (<span data-key="tiktok.unique_viewers" data-fmt="k">777K</span>). TikTok doesn't report saves</small></div>
+    </div>
+    <p class="note rv" style="margin-top:12px">Most creator benchmarks call 3 to 6% a good rate.</p>
+
+    <p class="sub-h rv">Saves and shares</p>
+    <p class="rv" style="margin-top:10px;max-width:52ch">A share is someone sending it to a colleague. A save is someone keeping it for later. Neither is a passive like.</p>
+    <div class="wall rv rv-stagger" style="grid-template-columns:repeat(3,1fr)">
+      <div class="stat hot"><em>Instagram</em><b data-count data-key="instagram.shares" data-fmt="k">41K</b><small>shares</small></div>
+      <div class="stat hot"><em>Instagram</em><b data-count data-key="instagram.saves" data-fmt="k">39K</b><small>saves</small></div>
+      <div class="stat hot"><em>TikTok</em><b data-count data-key="tiktok.shares" data-fmt="k">9.7K</b><small>shares</small></div>
+    </div>
+
+    <p class="sub-h rv">Beyond the followers</p>
+    <div class="stats half rv">
+      <div class="stat hot"><b data-count data-key="instagram.non_follower_views_pct" data-suffix="%">78%</b><small>of Instagram views come from people who don't follow the account. Instagram reports this at 90 days only</small></div>
+      <div class="stat hot"><b data-count data-key="tiktok.non_follower_views_pct" data-suffix="%">66%</b><small>of TikTok viewers were seeing the account for the first time. <span data-key="tiktok.for_you_pct">94.7</span>% of views came from the For You page</small></div>
+    </div>
+
     <div class="two tight" style="margin-top:56px">
       <div class="rv">
-        <h3>Instagram, recent reels</h3>
+        <h3>Instagram, top five in the window</h3>
         <ul class="toplist" id="ig-top"></ul>
-        <p class="note" style="margin-top:14px">Not one lucky video. Different topics, same audience, week after week. <span data-key="instagram.saves" data-fmt="k">41K</span> saves across the period, so it's kept as well as watched.</p>
       </div>
       <div class="rv">
-        <h3>TikTok, top videos</h3>
+        <h3>TikTok, top five in the window</h3>
         <ul class="toplist" id="tt-top"></ul>
-        <p class="note" style="margin-top:14px"><span data-key="tiktok.unique_viewers" data-fmt="k">589K</span> unique people in 60 days. Most of them had never seen the content before.</p>
       </div>
     </div>
-    <div class="two tight" style="margin-top:64px">
-      <div class="rv">
-        <h3>Content that holds attention</h3>
-        <p style="margin-top:14px">These are videos nearly three minutes long. Roughly one in five people watch to the end. When people stop, they actually watch.</p>
-      </div>
-      <div class="rv">
-        <div class="stats half" style="margin:0">
-          <div class="stat hot"><b data-count data-key="instagram.skip_rate" data-suffix="%">35.7%</b><small>skip rate across 40 reels. Lower is better</small></div>
-          <div class="stat"><b data-key="attention.account_avg_watch_seconds" data-fmt="s">45s</b><small>average watch time across <span data-key="attention.reels_sampled">39</span> reels</small></div>
-          <div class="stat hot"><b data-key="attention.top_avg_watch_seconds" data-fmt="s">1m 20s</b><small>average watch time, top videos</small></div>
-        </div>
-      </div>
-    </div>
-    <div class="rv"><div class="curves" id="curves" style="margin-top:28px;grid-template-columns:repeat(3,1fr)"></div></div>
+
+    <p class="note rv" style="margin-top:40px">Followers, for context: <span data-key="instagram.followers">80,957</span> on Instagram, <span data-key="tiktok.followers">21,253</span> on TikTok. Views and engagement are the figures that matter.</p>
   </div>
 </section>
 
@@ -543,8 +556,9 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
       else el.textContent = fmt(v,f)+(el.dataset.suffix||'');
     });
     const fill=(id,items,render)=>{const u=document.getElementById(id); if(!u) return; u.innerHTML=items.map(render).join('');};
-    fill('ig-top', d.instagram.top_videos, x=>`<li><span>${x.title}</span><b>${fmt(x.views,'k')} views</b></li>`);
-    fill('tt-top', d.tiktok.top_videos, x=>`<li><span>${x.title}</span><b>${fmt(x.views,'k')} views</b></li>`);
+    fill('ig-top', d.instagram.top_videos, x=>`<li><span>${x.title}<small>${x.desc||''}</small></span><b>${fmt(x.views,'k')} views</b></li>`);
+    fill('tt-top', d.tiktok.top_videos, x=>`<li><span>${x.title}<small>${x.desc||''}</small></span><b>${fmt(x.views,'k')} views</b></li>`);
+    fill('tt-countries', d.tiktok.viewer_countries.slice(0,3), x=>`<li><span>${x.name}</span><i style="--w:${(x.pct/d.tiktok.viewer_countries[0].pct*100).toFixed(1)}%"></i><span>${x.pct}%</span></li>`);
     fill('pod-high', d.podcast.highlights, x=>`<li><span>${x}</span></li>`);
     fill('countries', d.audience.countries, x=>`<li><span>${x.name}</span><i style="--w:${(x.pct/d.audience.countries[0].pct*100).toFixed(1)}%"></i><span>${x.pct}%</span></li>`);
     const tick = [
@@ -552,7 +566,7 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
       ...d.tiktok.top_videos.map(x=>({t:x.title,v:x.views,p:'TikTok'}))
     ].sort((a,b)=>b.v-a.v).map(x=>`<span>${x.t}<b>${fmt(x.v,'k')} views on ${x.p}</b></span>`);
     document.getElementById('ticker').innerHTML = [...tick,...tick].join('');
-    const c=document.getElementById('curves');
+    const c=document.getElementById('curves'); if(c)
     c.innerHTML = d.attention.retention.map(r=>{
       const end = r.completion;
       const p = `M0,4 C12,40 24,55 40,60 S110,70 160,${90-end*0.9}`;
