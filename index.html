@@ -140,6 +140,30 @@ main,footer{position:relative;z-index:1}
 .ticker{z-index:21}.nav{z-index:20}
 @media (hover:none){.spot{display:none}}
 
+
+/* platform grid */
+.plat{display:inline-block;font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;font-size:15px;padding:6px 12px;border:1.5px solid var(--yellow);color:var(--yellow)}
+.plat.ig{background:var(--yellow);color:var(--black)}
+.plat.tt{background:var(--white);border-color:var(--white);color:var(--black)}
+.pgrid{margin-top:44px;border-top:1px solid var(--line)}
+.ph-row{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:28px;padding:30px 0;border-bottom:1px solid var(--line);align-items:start}
+.ph-row.head{padding:18px 0}
+.ph-row .lab b{display:block;font-family:var(--display);text-transform:uppercase;font-size:22px;letter-spacing:.02em;color:var(--white);line-height:1.05}
+.ph-row .lab>span{display:block;margin-top:8px;font-size:16px;color:#d9d9d9;line-height:1.5;max-width:34ch}
+.ph-row .cell b{display:block;font-family:var(--display);font-size:clamp(44px,5vw,72px);line-height:.95;color:var(--yellow)}
+.ph-row .cell>span{display:block;margin-top:8px;font-size:16px;color:#e6e6e6;line-height:1.45}
+.ph-row .cell>span span{display:inline}
+.ph-row .cell.dim b{color:var(--white)}
+@media (max-width:820px){
+  .ph-row{grid-template-columns:1fr;gap:14px;padding:22px 0}
+  .ph-row.head{display:none}
+  .ph-row .cell{position:relative;padding-left:0}
+  .ph-row .cell:nth-child(2)::before{content:"Instagram";}
+  .ph-row .cell:nth-child(3)::before{content:"TikTok";}
+  .ph-row .cell::before{display:inline-block;font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;font-size:12px;color:var(--black);background:var(--yellow);padding:3px 8px;margin-bottom:8px}
+  .ph-row .cell:nth-child(3)::before{background:var(--white)}
+}
+
 /* generic layouts */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center}
 .two.tight{align-items:start}
@@ -169,7 +193,7 @@ main,footer{position:relative;z-index:1}
 .toplist{list-style:none;margin:0;padding:0}
 .toplist li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:16px}
 .toplist li b{color:var(--yellow);font-weight:600;white-space:nowrap}
-.toplist li span small{display:block;color:var(--muted);font-size:13px;margin-top:4px;line-height:1.4}
+.toplist li span small{display:block;color:#d0d0d0;font-size:15px;margin-top:4px;line-height:1.45}
 .bars{list-style:none;margin:28px 0 0;padding:0;max-width:520px}
 .bars li{display:grid;grid-template-columns:150px 1fr 56px;align-items:center;gap:14px;margin:12px 0;font-size:15px}
 .bars i{display:block;height:10px;background:var(--yellow);width:0;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
@@ -204,11 +228,11 @@ main,footer{position:relative;z-index:1}
 /* contact */
 .contact .links{margin-top:40px;border-top:1px solid var(--line)}
 .contact .links a{display:block;padding:22px 0;border-bottom:1px solid var(--line);font-family:var(--display);text-transform:uppercase;font-size:clamp(26px,3.4vw,44px);text-decoration:none;color:var(--white);line-height:1;transition:.15s;position:relative}
-.contact .links a small{display:block;font-family:var(--body);text-transform:none;font-size:13px;letter-spacing:.02em;color:var(--muted);margin-bottom:8px}
+.contact .links a small{display:block;font-family:var(--body);text-transform:none;font-size:15px;letter-spacing:.02em;color:#d9d9d9;margin-bottom:8px}
 .contact .links a::after{content:"\2197";position:absolute;right:0;top:50%;transform:translateY(-50%);color:var(--yellow);font-family:var(--body);font-size:22px;opacity:0;transition:.2s}
 .contact .links a:hover{color:var(--yellow);padding-left:10px}
 .contact .links a:hover::after{opacity:1}
-.contact .small{font-size:15px;color:var(--muted);margin-top:30px}
+.contact .small{font-size:16px;color:#d9d9d9;margin-top:30px}
 
 footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgba(255,255,255,.06)}
 .handle{font-family:var(--display);text-transform:uppercase;color:var(--yellow);font-size:18px}
@@ -290,11 +314,11 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
 <nav class="nav" id="nav">
   <div class="wrap">
     <a class="brand" href="#top">Ant Davis</a>
-    <a class="item" href="#who">Who</a>
-    <a class="item" href="#audience">Audience</a>
     <a class="item" href="#numbers">Numbers</a>
-    <a class="item" href="#podcast">Podcast</a>
+    <a class="item" href="#audience">Audience</a>
+    <a class="item" href="#who">Who</a>
     <a class="item" href="#proof">Proof</a>
+    <a class="item" href="#podcast">Podcast</a>
     <a class="item" href="#work">Work with me</a>
     <a class="cta mag" href="#talk">Let's talk</a>
   </div>
@@ -325,6 +349,97 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
   </div>
 </section>
 
+<!-- 4 Numbers -->
+<section id="numbers">
+  <div class="wrap">
+    <h2 class="rv">The numbers.</h2>
+    <p class="lede rv" style="margin-top:22px;max-width:56ch">Sixty days, two platforms, one audience. Every figure on this page is from <span data-key="period">10 July to 8 September 2026</span> and is updated monthly.</p>
+
+    <div class="pgrid rv">
+      <div class="ph-row head"><div></div><div class="plat ig">Instagram</div><div class="plat tt">TikTok</div></div>
+
+      <div class="ph-row rv-stagger">
+        <div class="lab"><b>Average views per post</b><span>Not the best one. The average one.</span></div>
+        <div class="cell"><b data-count data-key="instagram.avg_views_per_post" data-fmt="k">47.2K</b><span><span data-key="instagram.reel_views" data-fmt="m">2.5M</span> views across <span data-key="instagram.posts_in_window">53</span> reels</span></div>
+        <div class="cell"><b data-count data-key="tiktok.avg_views_per_post" data-fmt="k">26.3K</b><span><span data-key="tiktok.views" data-fmt="m">1.5M</span> views across <span data-key="tiktok.posts_in_window">57</span> posts</span></div>
+      </div>
+
+      <div class="ph-row rv-stagger">
+        <div class="lab"><b>Engagement rate</b><span>Likes, comments, saves and shares, divided by the people reached. Most benchmarks call 3 to 6% good.</span></div>
+        <div class="cell"><b data-count data-key="instagram.engagement_rate" data-suffix="%">19.1%</b><span>of <span data-key="instagram.reach" data-fmt="k">952K</span> people reached</span></div>
+        <div class="cell"><b data-count data-key="tiktok.engagement_rate" data-suffix="%">8.8%</b><span>of <span data-key="tiktok.unique_viewers" data-fmt="k">776.7K</span> unique viewers. TikTok doesn't count saves</span></div>
+      </div>
+
+      <div class="ph-row rv-stagger">
+        <div class="lab"><b>Shares</b><span>Someone sent it to a colleague.</span></div>
+        <div class="cell"><b data-count data-key="instagram.shares" data-fmt="k">41K</b><span>shares in 60 days</span></div>
+        <div class="cell"><b data-count data-key="tiktok.shares" data-fmt="k">9.7K</b><span>shares in 60 days</span></div>
+      </div>
+
+      <div class="ph-row rv-stagger">
+        <div class="lab"><b>Saves</b><span>Someone kept it for later.</span></div>
+        <div class="cell"><b data-count data-key="instagram.saves" data-fmt="k">39K</b><span>saves in 60 days</span></div>
+        <div class="cell dim"><b>n/a</b><span>TikTok doesn't report saves</span></div>
+      </div>
+
+      <div class="ph-row rv-stagger">
+        <div class="lab"><b>New audience</b><span>How much of the viewing comes from outside the existing following.</span></div>
+        <div class="cell"><b data-count data-key="instagram.non_follower_views_pct" data-suffix="%">78.4%</b><span>of views from non-followers. Instagram reports this at 90 days</span></div>
+        <div class="cell"><b data-count data-key="tiktok.non_follower_views_pct" data-suffix="%">65.5%</b><span>of viewers were new to the account. <span data-key="tiktok.for_you_pct">94.7</span>% of views came from For You</span></div>
+      </div>
+
+      <div class="ph-row rv-stagger">
+        <div class="lab"><b>Followers</b><span>For context. Views and engagement are the figures that matter.</span></div>
+        <div class="cell dim"><b data-key="instagram.followers">80,957</b><span>followers</span></div>
+        <div class="cell dim"><b data-key="tiktok.followers">21,253</b><span>followers</span></div>
+      </div>
+    </div>
+
+    <div class="two tight" style="margin-top:64px">
+      <div class="rv">
+        <div class="plat ig" style="margin-bottom:14px">Instagram</div>
+        <h3>Most watched, last 60 days</h3>
+        <ul class="toplist" id="ig-top"></ul>
+      </div>
+      <div class="rv">
+        <div class="plat tt" style="margin-bottom:14px">TikTok</div>
+        <h3>Most watched, last 60 days</h3>
+        <ul class="toplist" id="tt-top"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 Audience -->
+<section id="audience">
+  <div class="wrap">
+    <h2 class="rv">Who's watching.</h2>
+    <p class="lede rv" style="margin-top:22px;max-width:52ch">Three quarters men, two thirds aged 35 to 54, the UK first and the US second. Put plainly: the age and seniority of people who run security programmes, manage human risk, and sign off the tools that support both.</p>
+    <div class="two tight" style="margin-top:36px">
+      <div class="rv">
+        <div class="plat ig">Instagram</div>
+        <div class="stats half" style="margin-top:16px">
+          <div class="stat hot"><b data-count data-key="audience.male_pct" data-suffix="%">73%</b><small>men</small></div>
+          <div class="stat hot"><b data-count data-key="audience.age_35_54_pct" data-suffix="%">63%</b><small>aged 35 to 54</small></div>
+        </div>
+        <ul class="bars" id="countries"></ul>
+        <p class="note">Follower insights, <span data-key="instagram.window.label">10 July to 8 September 2026</span>.</p>
+      </div>
+      <div class="rv">
+        <div class="plat tt">TikTok</div>
+        <div class="stats half" style="margin-top:16px">
+          <div class="stat hot"><b data-count data-key="tiktok.viewer_male_pct" data-suffix="%">72%</b><small>men</small></div>
+          <div class="stat hot"><b>61%</b><small>aged 25 to 44</small></div>
+        </div>
+        <ul class="bars" id="tt-countries"></ul>
+        <p class="note">Viewer insights, <span data-key="tiktok.window.label">10 July to 7 September 2026</span>. A younger, more British audience than Instagram.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="band" aria-hidden="true"><div class="run"><span>Making cyber security make sense</span><span>Making cyber security make sense</span><span>Making cyber security make sense</span><span>Making cyber security make sense</span><span>Making cyber security make sense</span><span>Making cyber security make sense</span><span>Making cyber security make sense</span><span>Making cyber security make sense</span></div></div>
+
 <!-- 2 Who I am -->
 <section id="who">
   <div class="wrap two">
@@ -337,7 +452,7 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
       </div>
       <ul class="toplist rv" style="margin-top:28px;max-width:520px">
         <li><span>Built The Awareness Angle from nothing. 100 episodes, charting in <span data-key="podcast.countries_charting">33</span> countries.</span></li>
-        <li><span>Run the Secure Culture Hub at Hoxhunt, a community for security awareness practitioners.</span></li>
+        <li><span>Founded the Secure Culture Hub, a community for security awareness practitioners.</span></li>
         <li><span>Official Media Partner and Panel Moderator, SANS Security Awareness and Culture Summit, Las Vegas 2026.</span></li>
       </ul>
     </div>
@@ -354,100 +469,6 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
         <div class="photo"><img src="images/about-3.jpg" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">about-3<br>Panel</div></div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- 3 Audience -->
-<section id="audience">
-  <div class="wrap">
-    <h2 class="rv">Who's watching.</h2>
-    <p class="lede rv" style="margin-top:22px;max-width:52ch">Three quarters men, two thirds aged 35 to 54, the UK first and the US second. Put plainly: the age and seniority of people who run security programmes, manage human risk, and sign off the tools that support both.</p>
-    <div class="two tight" style="margin-top:36px">
-      <div class="rv">
-        <h3>Instagram</h3>
-        <div class="stats half" style="margin-top:16px">
-          <div class="stat hot"><b data-count data-key="audience.male_pct" data-suffix="%">73%</b><small>men</small></div>
-          <div class="stat hot"><b data-count data-key="audience.age_35_54_pct" data-suffix="%">63%</b><small>aged 35 to 54</small></div>
-        </div>
-        <ul class="bars" id="countries"></ul>
-        <p class="note">Follower insights, <span data-key="instagram.window.label">10 July to 8 September 2026</span>.</p>
-      </div>
-      <div class="rv">
-        <h3>TikTok</h3>
-        <div class="stats half" style="margin-top:16px">
-          <div class="stat hot"><b data-count data-key="tiktok.viewer_male_pct" data-suffix="%">72%</b><small>men</small></div>
-          <div class="stat hot"><b>61%</b><small>aged 25 to 44</small></div>
-        </div>
-        <ul class="bars" id="tt-countries"></ul>
-        <p class="note">Viewer insights, <span data-key="tiktok.window.label">10 July to 7 September 2026</span>. A younger, more British audience than Instagram.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="band" aria-hidden="true"><div class="run"><span>Making cyber security make sense</span><span>Making cyber security make sense</span><span>Making cyber security make sense</span><span>Making cyber security make sense</span><span>Making cyber security make sense</span><span>Making cyber security make sense</span><span>Making cyber security make sense</span><span>Making cyber security make sense</span></div></div>
-
-<!-- 4 Numbers -->
-<section id="numbers">
-  <div class="wrap">
-    <h2 class="rv">The numbers.</h2>
-    <p class="lede rv" style="margin-top:22px;max-width:52ch">Sixty days, <span data-key="instagram.posts_in_window">53</span> reels, one audience. Every figure below is from <span data-key="period">10 July to 8 September 2026</span> and updates monthly.</p>
-
-    <p class="sub-h rv">Average views per post</p>
-    <p class="rv" style="margin-top:10px;max-width:52ch">Not the best one. The average one.</p>
-    <div class="stats half rv">
-      <div class="stat hot"><b data-count data-key="instagram.avg_views_per_post" data-fmt="k">47K</b><small>per reel on Instagram. <span data-key="instagram.reel_views" data-fmt="m">2.5M</span> views across <span data-key="instagram.posts_in_window">53</span> reels</small></div>
-      <div class="stat hot"><b data-count data-key="tiktok.avg_views_per_post" data-fmt="k">26K</b><small>per post on TikTok. <span data-key="tiktok.views" data-fmt="m">1.5M</span> views across <span data-key="tiktok.posts_in_window">57</span> posts</small></div>
-    </div>
-
-    <p class="sub-h rv">Engagement rate</p>
-    <div class="stats half rv">
-      <div class="stat hot"><b data-count data-key="instagram.engagement_rate" data-suffix="%">19.1%</b><small>Instagram. Likes, comments, saves and shares, divided by people reached (<span data-key="instagram.reach" data-fmt="k">952K</span>)</small></div>
-      <div class="stat hot"><b data-count data-key="tiktok.engagement_rate" data-suffix="%">8.8%</b><small>TikTok. Likes, comments and shares, divided by unique viewers (<span data-key="tiktok.unique_viewers" data-fmt="k">777K</span>). TikTok doesn't report saves</small></div>
-    </div>
-    <p class="note rv" style="margin-top:12px">Most creator benchmarks call 3 to 6% a good rate.</p>
-
-    <p class="sub-h rv">Saves and shares</p>
-    <p class="rv" style="margin-top:10px;max-width:52ch">A share is someone sending it to a colleague. A save is someone keeping it for later. Neither is a passive like.</p>
-    <div class="wall rv rv-stagger" style="grid-template-columns:repeat(3,1fr)">
-      <div class="stat hot"><em>Instagram</em><b data-count data-key="instagram.shares" data-fmt="k">41K</b><small>shares</small></div>
-      <div class="stat hot"><em>Instagram</em><b data-count data-key="instagram.saves" data-fmt="k">39K</b><small>saves</small></div>
-      <div class="stat hot"><em>TikTok</em><b data-count data-key="tiktok.shares" data-fmt="k">9.7K</b><small>shares</small></div>
-    </div>
-
-    <p class="sub-h rv">Beyond the followers</p>
-    <div class="stats half rv">
-      <div class="stat hot"><b data-count data-key="instagram.non_follower_views_pct" data-suffix="%">78%</b><small>of Instagram views come from people who don't follow the account. Instagram reports this at 90 days only</small></div>
-      <div class="stat hot"><b data-count data-key="tiktok.non_follower_views_pct" data-suffix="%">66%</b><small>of TikTok viewers were seeing the account for the first time. <span data-key="tiktok.for_you_pct">94.7</span>% of views came from the For You page</small></div>
-    </div>
-
-    <div class="two tight" style="margin-top:56px">
-      <div class="rv">
-        <h3>Instagram, top five in the window</h3>
-        <ul class="toplist" id="ig-top"></ul>
-      </div>
-      <div class="rv">
-        <h3>TikTok, top five in the window</h3>
-        <ul class="toplist" id="tt-top"></ul>
-      </div>
-    </div>
-
-    <p class="note rv" style="margin-top:40px">Followers, for context: <span data-key="instagram.followers">80,957</span> on Instagram, <span data-key="tiktok.followers">21,253</span> on TikTok. Views and engagement are the figures that matter.</p>
-  </div>
-</section>
-
-<!-- 5 Podcast -->
-<section id="podcast">
-  <div class="wrap two">
-    <div class="rv">
-      <h2><span data-key="podcast.episodes">100</span> episodes.<br><span data-key="podcast.countries_charting">33</span> countries.</h2>
-      <div class="lines" style="margin-top:28px">
-        <p>The Awareness Angle. Weekly cyber news for anyone who wants to understand it, not just the people who work in it.</p>
-        <p>Charting in the Apple Podcasts Tech News charts in <span data-key="podcast.countries_charting">33</span> countries. Top 10 in <span data-key="podcast.top10_countries">11</span> of them over the last 30 days.</p>
-      </div>
-      <ul class="toplist" id="pod-high" style="max-width:420px"></ul>
-    </div>
-    <div class="photo square rv"><img src="images/podcast.jpg" alt="The Awareness Angle artwork" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">images/podcast.jpg<br>Podcast artwork</div></div>
   </div>
 </section>
 
@@ -487,6 +508,23 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
   </div>
 </section>
 
+<!-- 5 Podcast -->
+<section id="podcast">
+  <div class="wrap two">
+    <div class="rv">
+      <h2><span data-key="podcast.episodes">100</span> episodes.<br><span data-key="podcast.countries_charting">33</span> countries.<br>Relaunching Q4.</h2>
+      <div class="lines" style="margin-top:28px">
+        <p>The Awareness Angle ran for 100 episodes and charted in the Apple Podcasts Tech News charts in <span data-key="podcast.countries_charting">33</span> countries, top 10 in <span data-key="podcast.top10_countries">11</span> of them.</p>
+        <p><strong>Click Happens: Human Cyber News</strong> is the relaunch. A rotating guest reacts to the week's cyber news alongside me. Sometimes a security professional, sometimes someone with no cyber background at all. Different perspectives, same news, always human.</p>
+        <p><strong>Right Click: Human Cyber Stories</strong> is a new interview series on its own feed. Longer conversations about the human side of cyber: why people should care, why they're a target, and what it looks like when it happens to you.</p>
+        <p>Both launch in Q4 2026. Sponsorship on both is open now.</p>
+      </div>
+      <ul class="toplist" id="pod-high" style="max-width:420px;margin-top:28px"></ul>
+    </div>
+    <div class="photo square rv"><img src="images/podcast.jpg" alt="Podcast artwork" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">images/podcast.jpg<br>Podcast artwork</div></div>
+  </div>
+</section>
+
 <div class="band" aria-hidden="true"><div class="run"><span>What happened. Why it matters. What to do about it.</span><span>What happened. Why it matters. What to do about it.</span><span>What happened. Why it matters. What to do about it.</span><span>What happened. Why it matters. What to do about it.</span><span>What happened. Why it matters. What to do about it.</span><span>What happened. Why it matters. What to do about it.</span><span>What happened. Why it matters. What to do about it.</span><span>What happened. Why it matters. What to do about it.</span></div></div>
 
 <!-- 7 Work with me -->
@@ -494,10 +532,11 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
   <div class="wrap two">
     <div class="rv">
       <h2>Your brand. Two platforms. One audience.</h2>
-      <p class="lede" style="margin-top:28px">One story, told properly, on Instagram and TikTok. Podcast sponsorship on request.</p>
-      <p>Every partnership is different, so rates are on application. Most partners run three or more placements over a few months, across more than one platform, because that's what actually converts. Packages and bundles available.</p>
-      <hr class="rule">
-      <p class="excl">I hold a non-commercial role at Hoxhunt. That means this channel is closed to human risk and security awareness platforms. One less competitor in the room.</p>
+      <div class="lines" style="margin-top:28px">
+        <p>I don't do one-offs. A single post reaches people once and is forgotten by the weekend. What works is a sponsor the audience sees again and again, in content they already trust, over months.</p>
+        <p>So this is built for relationships: a run of placements across Instagram, TikTok and the podcast, shaped around what you're trying to do. Rates on application.</p>
+        <p>Guests are never paid placements and never will be. Sponsorship is ads, clearly labelled, nothing else.</p>
+      </div>
       <div class="actions" style="margin-top:28px"><a class="btn solid mag" href="#talk">Get in touch</a></div>
     </div>
     <div class="photo rv"><img src="images/pricing.jpg" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">images/pricing.jpg<br>Mid-video, mic shot</div></div>
