@@ -107,9 +107,11 @@ h2.rv.in::after{width:72px}
 
 /* proof strips */
 .strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:28px}
-.strip .photo{aspect-ratio:1;border-radius:14px}
+.strip .photo{aspect-ratio:1;border-radius:14px;cursor:zoom-in}
+#creds .photo{aspect-ratio:4/3}
 .strip.wide .photo{aspect-ratio:16/9;border-radius:14px}
-.strip.comments .photo{aspect-ratio:auto;min-height:120px;background:var(--white);border-radius:12px}
+.strip.comments .photo{aspect-ratio:auto;min-height:0;background:var(--white);border-radius:12px;padding:10px}
+.strip.comments .photo img{position:static;height:auto;object-fit:contain}
 .strip.comments .ph{color:#666;border-color:#ccc}
 .sub-h{font-family:var(--display);text-transform:uppercase;color:var(--yellow);font-size:14px;letter-spacing:.1em;margin:56px 0 0}
 .sub-h:first-of-type{margin-top:36px}
@@ -163,6 +165,23 @@ main,footer{position:relative;z-index:1}
   .ph-row .cell::before{display:inline-block;font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;font-size:12px;color:var(--black);background:var(--yellow);padding:3px 8px;margin-bottom:8px}
   .ph-row .cell:nth-child(3)::before{background:var(--white)}
 }
+
+/* lightbox */
+.lightbox{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.94);display:none;align-items:center;justify-content:center;padding:32px;cursor:zoom-out}
+.lightbox.on{display:flex}
+.lightbox img{max-width:min(96vw,1400px);max-height:92vh;object-fit:contain;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lightbox button{position:absolute;top:18px;right:22px;background:var(--yellow);color:var(--black);border:0;width:44px;height:44px;font-size:28px;line-height:1;cursor:pointer;font-family:var(--body)}
+.photo.ok img{cursor:zoom-in}
+@media print{.lightbox{display:none!important}}
+
+/* stat tables */
+.statbl{width:100%;border-collapse:collapse;font-size:16px}
+.statbl tr{border-bottom:1px solid var(--line)}
+.statbl th,.statbl td{padding:12px 0;text-align:left;vertical-align:top}
+.statbl th{font-weight:400;color:#d9d9d9;width:52%}
+.statbl td{font-family:var(--display);font-size:20px;color:var(--white);letter-spacing:.02em}
+.statbl tr.hd th{font-family:var(--display);text-transform:uppercase;letter-spacing:.08em;font-size:13px;color:var(--yellow);padding-top:22px}
+.statbl td small{display:block;font-family:var(--body);font-size:14px;color:#bdbdbd;letter-spacing:0;margin-top:2px}
 
 /* generic layouts */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center}
@@ -319,6 +338,7 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
     <a class="item" href="#who">Who</a>
     <a class="item" href="#proof">Proof</a>
     <a class="item" href="#podcast">Podcast</a>
+    <a class="item" href="#stats">All stats</a>
     <a class="item" href="#work">Work with me</a>
     <a class="cta mag" href="#talk">Let's talk</a>
   </div>
@@ -332,7 +352,7 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
     <div>
       <h1>Ant <span>Davis</span></h1>
       <div class="strap">Making cyber security make sense</div>
-      <p class="sub">Sponsorship and partnership media kit.<br>Updated <span data-key="updated_pretty">September 2026</span>.</p>
+      <p class="sub">Everything you need to know before we work together.<br>Updated <span data-key="updated_pretty">September 2026</span>.</p>
       <div class="actions">
         <a class="btn solid mag" href="#talk">Get in touch</a>
         <a class="btn" href="Ant_Davis_Media_Kit.pdf" download>Download PDF</a>
@@ -352,44 +372,44 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
 <!-- 4 Numbers -->
 <section id="numbers">
   <div class="wrap">
-    <h2 class="rv">The numbers.</h2>
-    <p class="lede rv" style="margin-top:22px;max-width:56ch">Sixty days, two platforms, one audience. Every figure on this page is from <span data-key="period">10 July to 8 September 2026</span> and is updated monthly.</p>
+    <h2 class="rv">The numbers, without the spin.</h2>
+    <p class="lede rv" style="margin-top:22px;max-width:56ch">All of this comes from the last 60 days, <span data-key="period">10 July to 8 September 2026</span>. I refresh it every month, so what you see is what you get.</p>
 
     <div class="pgrid rv">
       <div class="ph-row head"><div></div><div class="plat ig">Instagram</div><div class="plat tt">TikTok</div></div>
 
       <div class="ph-row rv-stagger">
-        <div class="lab"><b>Average views per post</b><span>Not the best one. The average one.</span></div>
+        <div class="lab"><b>Average views per post</b><span>This is what a typical video does, rather than my best week ever.</span></div>
         <div class="cell"><b data-count data-key="instagram.avg_views_per_post" data-fmt="k">47.2K</b><span><span data-key="instagram.reel_views" data-fmt="m">2.5M</span> views across <span data-key="instagram.posts_in_window">53</span> reels</span></div>
         <div class="cell"><b data-count data-key="tiktok.avg_views_per_post" data-fmt="k">26.3K</b><span><span data-key="tiktok.views" data-fmt="m">1.5M</span> views across <span data-key="tiktok.posts_in_window">57</span> posts</span></div>
       </div>
 
       <div class="ph-row rv-stagger">
-        <div class="lab"><b>Engagement rate</b><span>Likes, comments, saves and shares, divided by the people reached. Most benchmarks call 3 to 6% good.</span></div>
-        <div class="cell"><b data-count data-key="instagram.engagement_rate" data-suffix="%">19.1%</b><span>of <span data-key="instagram.reach" data-fmt="k">952K</span> people reached</span></div>
-        <div class="cell"><b data-count data-key="tiktok.engagement_rate" data-suffix="%">8.8%</b><span>of <span data-key="tiktok.unique_viewers" data-fmt="k">776.7K</span> unique viewers. TikTok doesn't count saves</span></div>
+        <div class="lab"><b>Engagement rate</b><span>Likes, comments, saves and shares, divided by the number of people who saw it. Anything over 3 to 6% is usually considered good.</span></div>
+        <div class="cell"><b data-count data-key="instagram.engagement_rate" data-suffix="%">19.1%</b><span>of the <span data-key="instagram.reach" data-fmt="k">952K</span> people who saw it did something with it</span></div>
+        <div class="cell"><b data-count data-key="tiktok.engagement_rate" data-suffix="%">8.8%</b><span>of <span data-key="tiktok.unique_viewers" data-fmt="k">776.7K</span> people. TikTok doesn't count saves, so this one is likes, comments and shares</span></div>
       </div>
 
       <div class="ph-row rv-stagger">
-        <div class="lab"><b>Shares</b><span>Someone sent it to a colleague.</span></div>
+        <div class="lab"><b>Shares</b><span>Someone liked it enough to send it to a mate or a colleague.</span></div>
         <div class="cell"><b data-count data-key="instagram.shares" data-fmt="k">41K</b><span>shares in 60 days</span></div>
         <div class="cell"><b data-count data-key="tiktok.shares" data-fmt="k">9.7K</b><span>shares in 60 days</span></div>
       </div>
 
       <div class="ph-row rv-stagger">
-        <div class="lab"><b>Saves</b><span>Someone kept it for later.</span></div>
+        <div class="lab"><b>Saves</b><span>Someone wanted to come back to it later.</span></div>
         <div class="cell"><b data-count data-key="instagram.saves" data-fmt="k">39K</b><span>saves in 60 days</span></div>
         <div class="cell dim"><b>n/a</b><span>TikTok doesn't report saves</span></div>
       </div>
 
       <div class="ph-row rv-stagger">
-        <div class="lab"><b>New audience</b><span>How much of the viewing comes from outside the existing following.</span></div>
-        <div class="cell"><b data-count data-key="instagram.non_follower_views_pct" data-suffix="%">78.4%</b><span>of views from non-followers. Instagram reports this at 90 days</span></div>
-        <div class="cell"><b data-count data-key="tiktok.non_follower_views_pct" data-suffix="%">65.5%</b><span>of viewers were new to the account. <span data-key="tiktok.for_you_pct">94.7</span>% of views came from For You</span></div>
+        <div class="lab"><b>New audience</b><span>How many of the people watching had never seen me before.</span></div>
+        <div class="cell"><b data-count data-key="instagram.non_follower_views_pct" data-suffix="%">78.4%</b><span>of views came from people who don't follow me. Instagram only shows this over 90 days</span></div>
+        <div class="cell"><b data-count data-key="tiktok.non_follower_views_pct" data-suffix="%">65.5%</b><span>of viewers were brand new. <span data-key="tiktok.for_you_pct">94.7</span>% of views came from the For You page</span></div>
       </div>
 
       <div class="ph-row rv-stagger">
-        <div class="lab"><b>Followers</b><span>For context. Views and engagement are the figures that matter.</span></div>
+        <div class="lab"><b>Followers</b><span>Included so you have the full picture. The numbers above tell you a lot more.</span></div>
         <div class="cell dim"><b data-key="instagram.followers">80,957</b><span>followers</span></div>
         <div class="cell dim"><b data-key="tiktok.followers">21,253</b><span>followers</span></div>
       </div>
@@ -398,12 +418,12 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
     <div class="two tight" style="margin-top:64px">
       <div class="rv">
         <div class="plat ig" style="margin-bottom:14px">Instagram</div>
-        <h3>Most watched, last 60 days</h3>
+        <h3>Most watched in the last 60 days</h3>
         <ul class="toplist" id="ig-top"></ul>
       </div>
       <div class="rv">
         <div class="plat tt" style="margin-bottom:14px">TikTok</div>
-        <h3>Most watched, last 60 days</h3>
+        <h3>Most watched in the last 60 days</h3>
         <ul class="toplist" id="tt-top"></ul>
       </div>
     </div>
@@ -413,8 +433,8 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
 <!-- 3 Audience -->
 <section id="audience">
   <div class="wrap">
-    <h2 class="rv">Who's watching.</h2>
-    <p class="lede rv" style="margin-top:22px;max-width:52ch">Three quarters men, two thirds aged 35 to 54, the UK first and the US second. Put plainly: the age and seniority of people who run security programmes, manage human risk, and sign off the tools that support both.</p>
+    <h2 class="rv">Who's actually watching.</h2>
+    <p class="lede rv" style="margin-top:22px;max-width:52ch">Mostly men, mostly 35 to 54, mostly in the UK and the US. In other words, the people who run security teams, worry about their staff clicking on things, and decide which tools to buy.</p>
     <div class="two tight" style="margin-top:36px">
       <div class="rv">
         <div class="plat ig">Instagram</div>
@@ -432,7 +452,7 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
           <div class="stat hot"><b>61%</b><small>aged 25 to 44</small></div>
         </div>
         <ul class="bars" id="tt-countries"></ul>
-        <p class="note">Viewer insights, <span data-key="tiktok.window.label">10 July to 7 September 2026</span>. A younger, more British audience than Instagram.</p>
+        <p class="note">Viewer insights, <span data-key="tiktok.window.label">10 July to 7 September 2026</span>. TikTok skews a bit younger and a lot more British.</p>
       </div>
     </div>
   </div>
@@ -446,14 +466,14 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
     <div>
       <h2 class="rv">I make cyber security make sense.</h2>
       <div class="lines rv" style="margin-top:32px">
-        <p>Most cyber content on social media is either technical or chasing trends. I take the latest cyber news and make it relatable for everyone.</p>
+        <p>Most cyber content online is either written for other security people or it's chasing whatever is trending. I take the news that actually matters and explain it in a way your mum would understand.</p>
         <p><strong>What happened. Why it matters. What to do about it.</strong></p>
-        <p>Fifteen years on the human side of cyber. A practitioner first, a creator second.</p>
+        <p>I spent fifteen years doing this job inside big companies before I started doing it on camera, so I know what it looks like from both sides.</p>
       </div>
       <ul class="toplist rv" style="margin-top:28px;max-width:520px">
-        <li><span>Built The Awareness Angle from nothing. 100 episodes, charting in <span data-key="podcast.countries_charting">33</span> countries.</span></li>
-        <li><span>Founded the Secure Culture Hub, a community for security awareness practitioners.</span></li>
-        <li><span>Official Media Partner and Panel Moderator, SANS Security Awareness and Culture Summit, Las Vegas 2026.</span></li>
+        <li><span>Started The Awareness Angle podcast from scratch. 100 episodes later it has charted in <span data-key="podcast.countries_charting">33</span> countries.</span></li>
+        <li><span>Founded the Secure Culture Hub, a community for people who do security awareness for a living.</span></li>
+        <li><span>Media Partner and Panel Moderator at the SANS Security Awareness and Culture Summit in Las Vegas, 2026.</span></li>
       </ul>
     </div>
     <div class="rv">
@@ -463,47 +483,36 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
         <div class="ph" style="border-radius:0">images/about.mp4 or images/positioning.jpg<br>Short muted loop of you mid-video, or the portrait</div>
         <div class="tag">Mid-video</div>
       </div>
-      <div class="strip rv-stagger" style="grid-template-columns:repeat(3,1fr);margin-top:14px">
-        <div class="photo"><img src="images/about-1.jpg" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">about-1<br>With Javvad</div></div>
-        <div class="photo"><img src="images/about-2.jpg" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">about-2<br>On stage</div></div>
-        <div class="photo"><img src="images/about-3.jpg" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">about-3<br>Panel</div></div>
-      </div>
-    </div>
+          </div>
   </div>
 </section>
 
 <!-- 6 Proof -->
 <section id="proof">
   <div class="wrap">
-    <h2 class="rv">Trusted by industry.<br>Recognised by the community.</h2>
-    <p class="lede rv" style="margin-top:22px;max-width:44ch">Official Media Partner and Panel Moderator, SANS Security Awareness and Culture Summit 2026. Interviews on the floor, in front of the most concentrated room of security awareness people in the calendar.</p>
-    <div class="strip wide rv rv-stagger">
-      <div class="photo"><img src="images/sans-card.png" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">sans-card<br>SANS media partner card</div></div>
-      <div class="photo"><img src="images/sans-1.jpg" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">sans-1</div></div>
-      <div class="photo"><img src="images/sans-2.jpg" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">sans-2</div></div>
+    <h2 class="rv">Don't just take my word for it.</h2>
+    <p class="lede rv" style="margin-top:22px;max-width:44ch">SANS asked me to be their Media Partner and Panel Moderator for the 2026 Security Awareness and Culture Summit. That's the biggest room of security awareness people you'll find anywhere, and I was the one holding the microphone.</p>
+    <div class="strip rv" style="grid-template-columns:1fr 2fr;align-items:center">
+      <div class="photo" style="aspect-ratio:auto;background:transparent;border:0"><img src="images/sans-card.png" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph" style="aspect-ratio:1">sans-card<br>SANS media partner card</div></div>
+      <div></div>
     </div>
 
-    <p class="sub-h rv">The audience speaks for itself</p>
-    <div class="strip comments rv rv-stagger">
+    <p class="sub-h rv">What people say in the comments</p>
+    <div class="strip comments rv rv-stagger" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));align-items:start">
       <div class="photo"><img src="images/comment-1.png" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">comment-1</div></div>
       <div class="photo"><img src="images/comment-2.png" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">comment-2</div></div>
       <div class="photo"><img src="images/comment-3.png" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">comment-3</div></div>
       <div class="photo"><img src="images/comment-4.png" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">comment-4</div></div>
-      <div class="photo"><img src="images/comment-5.png" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">comment-5<br>Janice thread</div></div>
-      <div class="photo"><img src="images/comment-6.png" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">comment-6<br>Cloudflare liked the reel</div></div>
+      <div class="photo"><img src="images/comment-5.png" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">comment-5</div></div>
     </div>
 
-    <p class="sub-h rv">Awards, stages and a lot of microphones</p>
-    <p class="rv" style="margin-top:12px">Contributor of the Year and Best Back to Basics, European Cybersecurity Blogger Awards 2025. Finalist, CyberVoice, The Real Cyber Awards 2026.</p>
-    <div class="strip rv rv-stagger" id="creds">
-      <div class="photo"><img src="images/cred-1.jpg" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">cred-1<br>Awards</div></div>
-      <div class="photo"><img src="images/cred-2.jpg" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">cred-2</div></div>
-      <div class="photo"><img src="images/cred-3.jpg" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">cred-3</div></div>
-      <div class="photo"><img src="images/cred-4.jpg" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">cred-4</div></div>
-      <div class="photo"><img src="images/cred-5.jpg" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">cred-5</div></div>
-      <div class="photo"><img src="images/cred-6.jpg" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">cred-6</div></div>
-      <div class="photo"><img src="images/cred-7.jpg" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">cred-7</div></div>
-      <div class="photo"><img src="images/cred-8.jpg" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">cred-8</div></div>
+    <p class="sub-h rv">Awards and stages</p>
+    <p class="rv" style="margin-top:12px">I won Contributor of the Year and Best Back to Basics at the European Cybersecurity Blogger Awards in 2025, and I'm a finalist for CyberVoice at The Real Cyber Awards 2026.</p>
+    <div class="strip rv rv-stagger" id="creds" style="grid-template-columns:repeat(2,1fr);gap:18px">
+      <div class="photo"><img src="images/cred-2.jpg" alt="Winning at the European Cybersecurity Blogger Awards" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">cred-2</div></div>
+      <div class="photo"><img src="images/cred-1.jpg" alt="Human Risk talk, The Future of Cyber Security London" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">cred-1</div></div>
+      <div class="photo"><img src="images/cred-5.jpg" alt="Interview on location" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">cred-5</div></div>
+      <div class="photo"><img src="images/cred-6.jpg" alt="Mid-video in the studio" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">cred-6</div></div>
     </div>
   </div>
 </section>
@@ -514,14 +523,32 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
     <div class="rv">
       <h2><span data-key="podcast.episodes">100</span> episodes.<br><span data-key="podcast.countries_charting">33</span> countries.<br>Relaunching Q4.</h2>
       <div class="lines" style="margin-top:28px">
-        <p>The Awareness Angle ran for 100 episodes and charted in the Apple Podcasts Tech News charts in <span data-key="podcast.countries_charting">33</span> countries, top 10 in <span data-key="podcast.top10_countries">11</span> of them.</p>
-        <p><strong>Click Happens: Human Cyber News</strong> is the relaunch. A rotating guest reacts to the week's cyber news alongside me. Sometimes a security professional, sometimes someone with no cyber background at all. Different perspectives, same news, always human.</p>
-        <p><strong>Right Click: Human Cyber Stories</strong> is a new interview series on its own feed. Longer conversations about the human side of cyber: why people should care, why they're a target, and what it looks like when it happens to you.</p>
-        <p>Both launch in Q4 2026. Sponsorship on both is open now.</p>
+        <p>The Awareness Angle ran for 100 episodes and made it into the Apple Podcasts Tech News charts in <span data-key="podcast.countries_charting">33</span> countries, with a top 10 spot in <span data-key="podcast.top10_countries">11</span> of them. Now it's getting a fresh start.</p>
+        <p><strong>Click Happens: Human Cyber News</strong> is the new weekly show. Each week I go through the cyber news with a different guest. Sometimes that's someone who works in security, sometimes it's someone who has never thought about it in their life. Either way it's a real person reacting to real news.</p>
+        <p><strong>Right Click: Human Cyber Stories</strong> is a new interview series on its own feed. Longer chats about the human side of all this. Why any of it matters, why ordinary people are the target, and what it feels like when it happens to you.</p>
+        <p>Both launch in Q4 2026 and I'm talking to sponsors for both right now.</p>
       </div>
       <ul class="toplist" id="pod-high" style="max-width:420px;margin-top:28px"></ul>
     </div>
     <div class="photo square rv"><img src="images/podcast.jpg" alt="Podcast artwork" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">images/podcast.jpg<br>Podcast artwork</div></div>
+  </div>
+</section>
+
+<!-- 6b All stats -->
+<section id="stats">
+  <div class="wrap">
+    <h2 class="rv">Every number in one place.</h2>
+    <p class="lede rv" style="margin-top:22px;max-width:52ch">The same figures as above, laid out platform by platform so you can compare them properly.</p>
+    <div class="two tight rv" style="margin-top:36px;align-items:start">
+      <div>
+        <div class="plat ig" style="margin-bottom:14px">Instagram</div>
+        <table class="statbl" id="tbl-ig"></table>
+      </div>
+      <div>
+        <div class="plat tt" style="margin-bottom:14px">TikTok</div>
+        <table class="statbl" id="tbl-tt"></table>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -531,11 +558,11 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
 <section id="work">
   <div class="wrap two">
     <div class="rv">
-      <h2>Your brand. Two platforms. One audience.</h2>
+      <h2>How working with me works.</h2>
       <div class="lines" style="margin-top:28px">
-        <p>I don't do one-offs. A single post reaches people once and is forgotten by the weekend. What works is a sponsor the audience sees again and again, in content they already trust, over months.</p>
-        <p>So this is built for relationships: a run of placements across Instagram, TikTok and the podcast, shaped around what you're trying to do. Rates on application.</p>
-        <p>Guests are never paid placements and never will be. Sponsorship is ads, clearly labelled, nothing else.</p>
+        <p>I don't really do one-off posts. A single video gets seen once and forgotten by the weekend, and that's not good value for you or me. What actually works is when the audience sees a sponsor turn up again and again, in content they already trust, over a few months.</p>
+        <p>So I'd rather build something with you. A run of placements across Instagram, TikTok and the podcast, shaped around whatever it is you're trying to do. Tell me what that is and I'll put a proper proposal together with pricing.</p>
+        <p>One thing I won't do is sell guest spots. Nobody pays to appear on the podcast and nobody ever will. Sponsorship is an ad, it's clearly labelled, and that's the end of it.</p>
       </div>
       <div class="actions" style="margin-top:28px"><a class="btn solid mag" href="#talk">Get in touch</a></div>
     </div>
@@ -548,19 +575,21 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
   <div class="wrap two">
     <div class="contact rv">
       <h2>Let's talk.</h2>
-      <p class="lede" style="margin-top:22px;max-width:30ch">Tell me what you're trying to reach, and I'll tell you honestly whether this audience is it.</p>
+      <p class="lede" style="margin-top:22px;max-width:30ch">Tell me who you're trying to reach and I'll give you an honest answer on whether this audience is right for you.</p>
       <div class="links">
         <a href="mailto:ant@antdavis.com"><small>Email</small>ant@antdavis.com</a>
         <a href="https://antdavis.com"><small>Web</small>antdavis.com</a>
         <a href="https://instagram.com/antdaviscyber"><small>Instagram, TikTok and LinkedIn</small>@antdaviscyber</a>
       </div>
-      <p class="small">Kindred Cyber Ltd. UK based, working worldwide.</p>
+      <p class="small">Kindred Cyber Ltd. Based in the UK, happy to work with anyone anywhere.</p>
     </div>
     <div class="photo rv"><img src="images/contact.jpg" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">images/contact.jpg<br>Smiling portrait</div></div>
   </div>
 </section>
 
 </main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Enlarged image"><img alt=""><button aria-label="Close">&times;</button></div>
 
 <footer>
   <div class="wrap" style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center">
@@ -599,6 +628,24 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
     fill('tt-top', d.tiktok.top_videos, x=>`<li><span>${x.title}<small>${x.desc||''}</small></span><b>${fmt(x.views,'k')} views</b></li>`);
     fill('tt-countries', d.tiktok.viewer_countries.slice(0,3), x=>`<li><span>${x.name}</span><i style="--w:${(x.pct/d.tiktok.viewer_countries[0].pct*100).toFixed(1)}%"></i><span>${x.pct}%</span></li>`);
     fill('pod-high', d.podcast.highlights, x=>`<li><span>${x}</span></li>`);
+
+  // full stat tables
+  const rows=(t)=>t.map(r=>r.hd?`<tr class="hd"><th colspan="2">${r.hd}</th></tr>`:`<tr><th>${r[0]}</th><td>${r[1]}${r[2]?`<small>${r[2]}</small>`:''}</td></tr>`).join('');
+  const ig=d.instagram, tk=d.tiktok, au=d.audience;
+  const pct=v=>v==null?'n/a':v+'%';
+  document.getElementById('tbl-ig').innerHTML=rows([
+    {hd:'Window'},['Dates',ig.window.label],['Reels published',ig.posts_in_window],
+    {hd:'Reach'},['Views',fmt(ig.reel_views,'m')],['Average views per reel',fmt(ig.avg_views_per_post,'k')],['People reached',fmt(ig.reach,'k')],['Views from non-followers',pct(ig.non_follower_views_pct),'90-day figure'],
+    {hd:'Engagement'},['Engagement rate',pct(ig.engagement_rate),'likes + comments + saves + shares, over reach'],['Likes',fmt(ig.likes,'k')],['Comments',fmt(ig.comments,'k')],['Shares',fmt(ig.shares,'k')],['Saves',fmt(ig.saves,'k')],
+    {hd:'Audience'},['Followers',ig.followers.toLocaleString()],['Men / women',au.male_pct+'% / '+au.female_pct+'%'],['Aged 35 to 54',pct(au.age_35_54_pct)],['Top countries',au.countries.map(c=>c.name+' '+c.pct+'%').join('<br>')]
+  ]);
+  document.getElementById('tbl-tt').innerHTML=rows([
+    {hd:'Window'},['Dates',tk.window.label],['Posts published',tk.posts_in_window],
+    {hd:'Reach'},['Views',fmt(tk.views,'m')],['Average views per post',fmt(tk.avg_views_per_post,'k')],['Unique viewers',fmt(tk.unique_viewers,'k')],['New viewers',fmt(tk.new_viewers,'k')+' ('+pct(tk.non_follower_views_pct)+')'],['Views from For You',pct(tk.for_you_pct)],
+    {hd:'Engagement'},['Engagement rate',pct(tk.engagement_rate),'likes + comments + shares, over unique viewers'],['Likes',fmt(tk.likes,'k')],['Comments',fmt(tk.comments,'k')],['Shares',fmt(tk.shares,'k')],['Saves','n/a','TikTok doesn\'t report saves'],
+    {hd:'Audience'},['Followers',tk.followers.toLocaleString()],['Net new followers, 60 days','+'+fmt(tk.net_new_followers,'k')],['Men',pct(tk.viewer_male_pct)],['Aged 25 to 44','61%'],['Top countries',tk.viewer_countries.slice(0,3).map(c=>c.name+' '+c.pct+'%').join('<br>')]
+  ]);
+
     fill('countries', d.audience.countries, x=>`<li><span>${x.name}</span><i style="--w:${(x.pct/d.audience.countries[0].pct*100).toFixed(1)}%"></i><span>${x.pct}%</span></li>`);
     const tick = [
       ...d.instagram.top_videos.map(x=>({t:x.title,v:x.views,p:'Instagram'})),
@@ -673,6 +720,14 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
     if(v){ v.addEventListener('error',usePoster,true); v.addEventListener('loadeddata',()=>ph.remove()); v.querySelector('source').addEventListener('error',usePoster); }
     else usePoster();
   }
+
+  // lightbox: click any loaded photo to enlarge
+  const lb=document.getElementById('lightbox'), lbi=lb.querySelector('img');
+  document.addEventListener('click',e=>{
+    const img=e.target.closest('.photo.ok img, .strip .photo.ok img, .clip img'); if(img&&!e.target.closest('.hero')){ lbi.src=img.src; lb.classList.add('on'); return; }
+    if(e.target.closest('#lightbox')) lb.classList.remove('on');
+  });
+  addEventListener('keydown',e=>{ if(e.key==='Escape') lb.classList.remove('on'); });
 
   // nav highlight
   const links=[...document.querySelectorAll('.nav a.item')];
