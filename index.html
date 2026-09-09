@@ -36,7 +36,7 @@ a{color:var(--yellow)}
 h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.01em;line-height:.95;margin:0;text-transform:uppercase;color:var(--yellow)}
 h2{font-size:clamp(38px,6vw,72px)}
 h3{font-size:clamp(22px,2.6vw,30px);color:var(--white)}
-p{margin:0 0 1em;max-width:62ch}
+p{margin:0 0 1em;max-width:72ch}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
 section{padding:clamp(64px,9vw,120px) 0;border-top:1px solid rgba(255,255,255,.06);scroll-margin-top:84px}
 section:first-of-type{border-top:0}
@@ -80,7 +80,9 @@ section:first-of-type{border-top:0}
 
 /* video slot */
 .clip{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:44% 56% 52% 48% / 50% 44% 56% 50%;background:#111}
-.clip video,.clip img{width:100%;height:100%;object-fit:cover;display:block}
+.clip video,.clip img{width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:1}
+.clip .ph{z-index:0}
+.clip .tag{z-index:2}
 .clip .tag{position:absolute;left:16px;bottom:16px;background:var(--yellow);color:var(--black);font-family:var(--display);text-transform:uppercase;font-size:13px;letter-spacing:.05em;padding:6px 10px}
 
 /* stat wall */
@@ -178,16 +180,26 @@ main,footer{position:relative;z-index:1}
 .statbl{width:100%;border-collapse:collapse;font-size:16px}
 .statbl tr{border-bottom:1px solid var(--line)}
 .statbl th,.statbl td{padding:12px 0;text-align:left;vertical-align:top}
-.statbl th{font-weight:400;color:#d9d9d9;width:52%}
-.statbl td{font-family:var(--display);font-size:20px;color:var(--white);letter-spacing:.02em}
-.statbl tr.hd th{font-family:var(--display);text-transform:uppercase;letter-spacing:.08em;font-size:13px;color:var(--yellow);padding-top:22px}
+.statbl th{font-weight:400;color:#d9d9d9;width:50%;font-size:16px}
+.statbl td{font-family:var(--body);font-weight:700;font-size:18px;color:var(--white)}
+.statbl tr.hd th{font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;font-size:24px;color:var(--yellow);padding-top:34px;padding-bottom:10px}
 .statbl td small{display:block;font-family:var(--body);font-size:14px;color:#bdbdbd;letter-spacing:0;margin-top:2px}
+
+/* comment carousel */
+.crail{overflow:hidden;margin:24px calc(-1*var(--pad)) 0;padding:6px 0;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.ctrack{display:flex;align-items:flex-start;gap:20px;width:max-content;animation:crail 55s linear infinite;padding:0 var(--pad)}
+.crail:hover .ctrack{animation-play-state:paused}
+.ccard{flex:0 0 auto;width:min(480px,82vw);background:var(--white);border-radius:16px;padding:18px;box-shadow:0 10px 30px rgba(0,0,0,.35);cursor:zoom-in}
+.ccard img{width:100%;height:auto;display:block}
+@keyframes crail{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ctrack{animation:none;flex-wrap:wrap;width:auto}}
+@media print{.crail{overflow:visible;mask:none;-webkit-mask:none}.ctrack{animation:none;flex-wrap:wrap;width:auto}.ctrack .ccard:nth-child(n+6){display:none}}
 
 /* generic layouts */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center}
 .two.tight{align-items:start}
-.lede{font-size:clamp(20px,2.2vw,26px);line-height:1.35;max-width:32ch}
-.lines p{font-size:19px;max-width:48ch}
+.lede{font-size:clamp(20px,2.2vw,26px);line-height:1.35;max-width:64ch}
+.lines p{font-size:19px;max-width:60ch}
 .photo{background:#111;aspect-ratio:4/5;position:relative;overflow:hidden;border-radius:44% 56% 52% 48% / 50% 44% 56% 50%}
 .photo img{width:100%;height:100%;object-fit:cover}
 .photo.wide{aspect-ratio:16/10;border-radius:18px}
@@ -246,7 +258,7 @@ main,footer{position:relative;z-index:1}
 
 /* contact */
 .contact .links{margin-top:40px;border-top:1px solid var(--line)}
-.contact .links a{display:block;padding:22px 0;border-bottom:1px solid var(--line);font-family:var(--display);text-transform:uppercase;font-size:clamp(26px,3.4vw,44px);text-decoration:none;color:var(--white);line-height:1;transition:.15s;position:relative}
+.contact .links a{display:block;padding:16px 0;border-bottom:1px solid var(--line);font-family:var(--display);text-transform:uppercase;font-size:clamp(26px,3.4vw,44px);text-decoration:none;color:var(--white);line-height:1;transition:.15s;position:relative}
 .contact .links a small{display:block;font-family:var(--body);text-transform:none;font-size:15px;letter-spacing:.02em;color:#d9d9d9;margin-bottom:8px}
 .contact .links a::after{content:"\2197";position:absolute;right:0;top:50%;transform:translateY(-50%);color:var(--yellow);font-family:var(--body);font-size:22px;opacity:0;transition:.2s}
 .contact .links a:hover{color:var(--yellow);padding-left:10px}
@@ -373,7 +385,7 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
 <section id="numbers">
   <div class="wrap">
     <h2 class="rv">The numbers, without the spin.</h2>
-    <p class="lede rv" style="margin-top:22px;max-width:56ch">All of this comes from the last 60 days, <span data-key="period">10 July to 8 September 2026</span>. I refresh it every month, so what you see is what you get.</p>
+    <p class="lede rv" style="margin-top:22px;max-width:64ch">All of this comes from the last 60 days, <span data-key="period">10 July to 8 September 2026</span>. I refresh it every month, so what you see is what you get.</p>
 
     <div class="pgrid rv">
       <div class="ph-row head"><div></div><div class="plat ig">Instagram</div><div class="plat tt">TikTok</div></div>
@@ -434,7 +446,7 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
 <section id="audience">
   <div class="wrap">
     <h2 class="rv">Who's actually watching.</h2>
-    <p class="lede rv" style="margin-top:22px;max-width:52ch">Mostly men, mostly 35 to 54, mostly in the UK and the US. In other words, the people who run security teams, worry about their staff clicking on things, and decide which tools to buy.</p>
+    <p class="lede rv" style="margin-top:22px;max-width:64ch">Mostly men, mostly 35 to 54, mostly in the UK and the US. In other words, the people who run security teams, worry about their staff clicking on things, and decide which tools to buy.</p>
     <div class="two tight" style="margin-top:36px">
       <div class="rv">
         <div class="plat ig">Instagram</div>
@@ -491,23 +503,17 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
 <section id="proof">
   <div class="wrap">
     <h2 class="rv">Don't just take my word for it.</h2>
-    <p class="lede rv" style="margin-top:22px;max-width:44ch">SANS asked me to be their Media Partner and Panel Moderator for the 2026 Security Awareness and Culture Summit. That's the biggest room of security awareness people you'll find anywhere, and I was the one holding the microphone.</p>
-    <div class="strip rv" style="grid-template-columns:1fr 2fr;align-items:center">
+    <p class="lede rv" style="margin-top:22px;max-width:64ch">SANS asked me to be their Media Partner and Panel Moderator for the 2026 Security Awareness and Culture Summit. That's the biggest room of security awareness people you'll find anywhere, and I was the one holding the microphone.</p>
+    <div class="strip rv" style="grid-template-columns:1.4fr 1fr;align-items:center">
       <div class="photo" style="aspect-ratio:auto;background:transparent;border:0"><img src="images/sans-card.png" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph" style="aspect-ratio:1">sans-card<br>SANS media partner card</div></div>
       <div></div>
     </div>
 
-    <p class="sub-h rv">What people say in the comments</p>
-    <div class="strip comments rv rv-stagger" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));align-items:start">
-      <div class="photo"><img src="images/comment-1.png" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">comment-1</div></div>
-      <div class="photo"><img src="images/comment-2.png" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">comment-2</div></div>
-      <div class="photo"><img src="images/comment-3.png" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">comment-3</div></div>
-      <div class="photo"><img src="images/comment-4.png" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">comment-4</div></div>
-      <div class="photo"><img src="images/comment-5.png" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">comment-5</div></div>
-    </div>
-
-    <p class="sub-h rv">Awards and stages</p>
-    <p class="rv" style="margin-top:12px">I won Contributor of the Year and Best Back to Basics at the European Cybersecurity Blogger Awards in 2025, and I'm a finalist for CyberVoice at The Real Cyber Awards 2026.</p>
+    <h3 class="rv" style="margin-top:64px">What people say in the comments</h3>
+    <div class="crail rv" aria-label="Comments from viewers"><div class="ctrack"><div class="ccard"><img src="images/comment-1.png" alt="" onerror="this.parentNode.remove()"></div><div class="ccard"><img src="images/comment-2.png" alt="" onerror="this.parentNode.remove()"></div><div class="ccard"><img src="images/comment-3.png" alt="" onerror="this.parentNode.remove()"></div><div class="ccard"><img src="images/comment-4.png" alt="" onerror="this.parentNode.remove()"></div><div class="ccard"><img src="images/comment-5.png" alt="" onerror="this.parentNode.remove()"></div><div class="ccard"><img src="images/comment-1.png" alt="" onerror="this.parentNode.remove()"></div><div class="ccard"><img src="images/comment-2.png" alt="" onerror="this.parentNode.remove()"></div><div class="ccard"><img src="images/comment-3.png" alt="" onerror="this.parentNode.remove()"></div><div class="ccard"><img src="images/comment-4.png" alt="" onerror="this.parentNode.remove()"></div><div class="ccard"><img src="images/comment-5.png" alt="" onerror="this.parentNode.remove()"></div></div></div>
+    
+    <h3 class="rv" style="margin-top:64px">Awards and stages</h3>
+    <p class="rv" style="margin-top:14px;font-size:18px">I won Contributor of the Year and Best Back to Basics at the European Cybersecurity Blogger Awards in 2025, and I'm a finalist for CyberVoice at The Real Cyber Awards 2026.</p>
     <div class="strip rv rv-stagger" id="creds" style="grid-template-columns:repeat(2,1fr);gap:18px">
       <div class="photo"><img src="images/cred-2.jpg" alt="Winning at the European Cybersecurity Blogger Awards" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">cred-2</div></div>
       <div class="photo"><img src="images/cred-1.jpg" alt="Human Risk talk, The Future of Cyber Security London" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">cred-1</div></div>
@@ -521,15 +527,14 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
 <section id="podcast">
   <div class="wrap two">
     <div class="rv">
-      <h2><span data-key="podcast.episodes">100</span> episodes.<br><span data-key="podcast.countries_charting">33</span> countries.<br>Relaunching Q4.</h2>
+      <h2>The podcast is coming back.</h2>
       <div class="lines" style="margin-top:28px">
         <p>The Awareness Angle ran for 100 episodes and made it into the Apple Podcasts Tech News charts in <span data-key="podcast.countries_charting">33</span> countries, with a top 10 spot in <span data-key="podcast.top10_countries">11</span> of them. Now it's getting a fresh start.</p>
         <p><strong>Click Happens: Human Cyber News</strong> is the new weekly show. Each week I go through the cyber news with a different guest. Sometimes that's someone who works in security, sometimes it's someone who has never thought about it in their life. Either way it's a real person reacting to real news.</p>
         <p><strong>Right Click: Human Cyber Stories</strong> is a new interview series on its own feed. Longer chats about the human side of all this. Why any of it matters, why ordinary people are the target, and what it feels like when it happens to you.</p>
         <p>Both launch in Q4 2026 and I'm talking to sponsors for both right now.</p>
       </div>
-      <ul class="toplist" id="pod-high" style="max-width:420px;margin-top:28px"></ul>
-    </div>
+          </div>
     <div class="photo square rv"><img src="images/podcast.jpg" alt="Podcast artwork" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">images/podcast.jpg<br>Podcast artwork</div></div>
   </div>
 </section>
@@ -538,7 +543,7 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
 <section id="stats">
   <div class="wrap">
     <h2 class="rv">Every number in one place.</h2>
-    <p class="lede rv" style="margin-top:22px;max-width:52ch">The same figures as above, laid out platform by platform so you can compare them properly.</p>
+    <p class="lede rv" style="margin-top:22px;max-width:64ch">The same figures as above, laid out platform by platform so you can compare them properly.</p>
     <div class="two tight rv" style="margin-top:36px;align-items:start">
       <div>
         <div class="plat ig" style="margin-bottom:14px">Instagram</div>
@@ -562,7 +567,7 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
       <div class="lines" style="margin-top:28px">
         <p>I don't really do one-off posts. A single video gets seen once and forgotten by the weekend, and that's not good value for you or me. What actually works is when the audience sees a sponsor turn up again and again, in content they already trust, over a few months.</p>
         <p>So I'd rather build something with you. A run of placements across Instagram, TikTok and the podcast, shaped around whatever it is you're trying to do. Tell me what that is and I'll put a proper proposal together with pricing.</p>
-        <p>One thing I won't do is sell guest spots. Nobody pays to appear on the podcast and nobody ever will. Sponsorship is an ad, it's clearly labelled, and that's the end of it.</p>
+        <p>One thing I won't do is sell guest spots. Nobody pays to appear on the podcast and nobody ever will. Sponsorship is an ad, and it's clearly labelled as one.</p>
       </div>
       <div class="actions" style="margin-top:28px"><a class="btn solid mag" href="#talk">Get in touch</a></div>
     </div>
@@ -578,8 +583,10 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
       <p class="lede" style="margin-top:22px;max-width:30ch">Tell me who you're trying to reach and I'll give you an honest answer on whether this audience is right for you.</p>
       <div class="links">
         <a href="mailto:ant@antdavis.com"><small>Email</small>ant@antdavis.com</a>
-        <a href="https://antdavis.com"><small>Web</small>antdavis.com</a>
-        <a href="https://instagram.com/antdaviscyber"><small>Instagram, TikTok and LinkedIn</small>@antdaviscyber</a>
+        <a href="https://antdavis.com" target="_blank" rel="noopener"><small>Website</small>antdavis.com</a>
+        <a href="https://instagram.com/antdaviscyber" target="_blank" rel="noopener"><small>Instagram</small>@antdaviscyber</a>
+        <a href="https://tiktok.com/@antdaviscyber" target="_blank" rel="noopener"><small>TikTok</small>@antdaviscyber</a>
+        <a href="https://linkedin.com/in/antdaviscyber" target="_blank" rel="noopener"><small>LinkedIn</small>@antdaviscyber</a>
       </div>
       <p class="small">Kindred Cyber Ltd. Based in the UK, happy to work with anyone anywhere.</p>
     </div>
@@ -627,7 +634,6 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
     fill('ig-top', d.instagram.top_videos, x=>`<li><span>${x.title}<small>${x.desc||''}</small></span><b>${fmt(x.views,'k')} views</b></li>`);
     fill('tt-top', d.tiktok.top_videos, x=>`<li><span>${x.title}<small>${x.desc||''}</small></span><b>${fmt(x.views,'k')} views</b></li>`);
     fill('tt-countries', d.tiktok.viewer_countries.slice(0,3), x=>`<li><span>${x.name}</span><i style="--w:${(x.pct/d.tiktok.viewer_countries[0].pct*100).toFixed(1)}%"></i><span>${x.pct}%</span></li>`);
-    fill('pod-high', d.podcast.highlights, x=>`<li><span>${x}</span></li>`);
 
   // full stat tables
   const rows=(t)=>t.map(r=>r.hd?`<tr class="hd"><th colspan="2">${r.hd}</th></tr>`:`<tr><th>${r[0]}</th><td>${r[1]}${r[2]?`<small>${r[2]}</small>`:''}</td></tr>`).join('');
@@ -717,14 +723,14 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
   const clip=document.querySelector('.clip'); if(clip){
     const v=clip.querySelector('video'), im=clip.querySelector('img'), ph=clip.querySelector('.ph');
     const usePoster=()=>{ if(v) v.remove(); im.style.display='block'; im.onload=()=>ph.remove(); im.onerror=()=>im.remove(); im.src=im.src; };
-    if(v){ v.addEventListener('error',usePoster,true); v.addEventListener('loadeddata',()=>ph.remove()); v.querySelector('source').addEventListener('error',usePoster); }
+    if(v){ const gone=()=>ph&&ph.remove(); v.addEventListener('error',usePoster,true); ['loadeddata','canplay','playing'].forEach(ev=>v.addEventListener(ev,gone)); v.querySelector('source').addEventListener('error',usePoster); if(v.readyState>=2) gone(); v.play&&v.play().catch(()=>{}); }
     else usePoster();
   }
 
   // lightbox: click any loaded photo to enlarge
   const lb=document.getElementById('lightbox'), lbi=lb.querySelector('img');
   document.addEventListener('click',e=>{
-    const img=e.target.closest('.photo.ok img, .strip .photo.ok img, .clip img'); if(img&&!e.target.closest('.hero')){ lbi.src=img.src; lb.classList.add('on'); return; }
+    const img=e.target.closest('.photo.ok img, .strip .photo.ok img, .clip img, .ccard img'); if(img&&!e.target.closest('.hero')){ lbi.src=img.src; lb.classList.add('on'); return; }
     if(e.target.closest('#lightbox')) lb.classList.remove('on');
   });
   addEventListener('keydown',e=>{ if(e.key==='Escape') lb.classList.remove('on'); });
