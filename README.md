@@ -51,3 +51,8 @@ Print from the page (or use the Print button). Sections break onto separate land
 ## Hiding it
 
 `index.html` already has `noindex, nofollow`. If you want it further out of the way, put the repo at a path like `antdavis.com/kit` or `antdavis.com/partners` and only share the link.
+
+
+## The one-sheet PDF
+
+`Ant_Davis_Media_Kit.pdf` is a single A4 page built from `data/metrics.json` by `scripts/build_pdf.py`, using the template in `print/onesheet.html`. A GitHub Action rebuilds it automatically whenever the JSON or the template changes, so it can never drift from the web page. The Download PDF button on the site points at it.
