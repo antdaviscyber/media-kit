@@ -1,0 +1,256 @@
+{
+  "updated": "2026-10-05",
+  "period": "August to October 2026",
+  "instagram": {
+    "followers": 89210,
+    "reel_views": 2500000,
+    "shares": 41000,
+    "saves": 39000,
+    "engagement_rate": 19.1,
+    "top_videos": [
+      {
+        "title": "432 CVEs in one day on Linux",
+        "desc": "The number is big. The crisis isn't real",
+        "views": 217000,
+        "date": "2026-07-21"
+      },
+      {
+        "title": "Fake CAPTCHA, real malware",
+        "desc": "The CAPTCHA that tricks you into installing malware yourself",
+        "views": 145000,
+        "date": "2026-07-20"
+      },
+      {
+        "title": "Airbus leaves AWS",
+        "desc": "900 critical apps moved to a French cloud provider, and the supply chain problem that remains",
+        "views": 136000,
+        "date": "2026-07-20"
+      },
+      {
+        "title": "Romania's land registry wiped",
+        "desc": "One stolen password took down a country's property records",
+        "views": 78600,
+        "date": "2026-07-26"
+      },
+      {
+        "title": "Your password manager and your AI",
+        "desc": "Password managers now log your AI agent in for you. Why that's complicated",
+        "views": 68800,
+        "date": "2026-07-18"
+      }
+    ],
+    "window": {
+      "start": "2026-07-10",
+      "end": "2026-09-08",
+      "days": 60,
+      "label": "10 July to 8 September 2026"
+    },
+    "posts_in_window": 53,
+    "reach": 952000,
+    "likes": 99000,
+    "comments": 2900,
+    "reposts": 6700,
+    "non_follower_views_pct": 78.4,
+    "avg_views_per_post": 47170,
+    "engagement_formula": "likes + comments + saves + shares, divided by reach (viewers)",
+    "non_follower_views_note": "Instagram only reports this at 30 or 90 days; figure is the 90 days to 8 September"
+  },
+  "tiktok": {
+    "views": 1500000,
+    "unique_viewers": 776700,
+    "new_viewers": 508900,
+    "shares": 9700,
+    "followers": 21253,
+    "for_you_pct": 94.7,
+    "top_videos": [
+      {
+        "title": "GTA6 leak",
+        "desc": "Rockstar's takedown team can't keep up with a new leak",
+        "views": 254000,
+        "date": "2026-08"
+      },
+      {
+        "title": "Romania's land registry wiped",
+        "desc": "One stolen password took down a country's land records",
+        "views": 147000,
+        "date": "2026-07-26"
+      },
+      {
+        "title": "Monzo went down",
+        "desc": "Two banks, one app, and why most customers never felt it",
+        "views": 114000,
+        "date": "2026-08"
+      },
+      {
+        "title": "Did Revolut get breached?",
+        "desc": "75 million records allegedly for sale, Revolut says no breach",
+        "views": 101000,
+        "date": "2026-07-28"
+      },
+      {
+        "title": "432 CVEs in one day on Linux",
+        "desc": "The number is big. The crisis isn't real",
+        "views": 62000,
+        "date": "2026-07-21"
+      }
+    ],
+    "window": {
+      "start": "2026-07-10",
+      "end": "2026-09-07",
+      "days": 60,
+      "label": "10 July to 7 September 2026"
+    },
+    "likes": 56100,
+    "comments": 2900,
+    "saves": null,
+    "non_follower_views_pct": 65.5,
+    "engagement_rate": 8.8,
+    "engagement_formula": "likes + comments + shares, divided by unique viewers (TikTok does not report saves or reach)",
+    "posts_in_window": 57,
+    "avg_views_per_post": 26316,
+    "male_pct": 72,
+    "net_new_followers": 6200,
+    "viewer_male_pct": 72,
+    "follower_male_pct": 67,
+    "viewer_age": {
+      "18-24": 9.4,
+      "25-34": 35.1,
+      "35-44": 26.2,
+      "45-54": 19.2,
+      "55+": 10.1
+    },
+    "viewer_countries": [
+      {
+        "name": "United Kingdom",
+        "pct": 40.0
+      },
+      {
+        "name": "Ireland",
+        "pct": 7.4
+      },
+      {
+        "name": "Romania",
+        "pct": 6.0
+      },
+      {
+        "name": "United States",
+        "pct": 5.6
+      },
+      {
+        "name": "South Africa",
+        "pct": 3.4
+      }
+    ]
+  },
+  "attention": {
+    "top_avg_watch_seconds": 80,
+    "account_avg_watch_seconds": 45,
+    "reels_sampled": 39,
+    "retention": [
+      {
+        "label": "Android is always listening",
+        "length": "2:37",
+        "completion": 19
+      },
+      {
+        "label": "Fake AI Skill",
+        "length": "2:52",
+        "completion": 19.9
+      },
+      {
+        "label": "Chrome extension",
+        "length": "2:56",
+        "completion": 15.5
+      }
+    ]
+  },
+  "audience": {
+    "source": "Instagram follower insights, 10 July to 8 September 2026",
+    "male_pct": 73.3,
+    "female_pct": 26.7,
+    "age": {
+      "25-34": 17.0,
+      "35-44": 34.8,
+      "45-54": 28.3,
+      "55-64": 13.5,
+      "65+": 4.5
+    },
+    "age_35_54_pct": 63.1,
+    "countries": [
+      {
+        "name": "United Kingdom",
+        "pct": 25.7
+      },
+      {
+        "name": "United States",
+        "pct": 17.8
+      },
+      {
+        "name": "Australia",
+        "pct": 8.7
+      }
+    ],
+    "cities": [
+      {
+        "name": "London",
+        "pct": 15.2
+      },
+      {
+        "name": "Melbourne",
+        "pct": 8.8
+      },
+      {
+        "name": "Sydney",
+        "pct": 8.3
+      }
+    ]
+  },
+  "podcast": {
+    "episodes": 100,
+    "countries_charting": 33,
+    "top10_countries": 11,
+    "highlights": [
+      "Top 2 in Slovakia and Ireland",
+      "Top 5 in Norway and Portugal",
+      "Top 11 in the UK",
+      "Top 15 in Australia"
+    ],
+    "countries_featured": 100
+  },
+  "ticker": [
+    "Fake AI plugin ran Instagram ads and 26,000 people installed it",
+    "Chrome extension can read your bank account",
+    "Half of all Fortinet firewalls on the internet just got owned",
+    "Google is building a feature that listens to everything",
+    "PewDiePie's AI tool had a vulnerability with 77,000 GitHub stars",
+    "Microsoft removed 119 malicious browser extensions today",
+    "Hackers are injecting fake receipts into the Shop app",
+    "Windows Server 2025 has a domain trust bug Microsoft hasn't fixed"
+  ],
+  "updated_pretty": "September 2026",
+  "growth": {
+    "platform": "Instagram",
+    "gained": 36000,
+    "window": "July to October 2026",
+    "summary": "followers on Instagram in three months. From 53K in July to 89K in October 2026.",
+    "note": "Start and end are exact; the two middle points are read off the monthly curve.",
+    "points": [
+      {
+        "label": "Jul",
+        "followers": 53000
+      },
+      {
+        "label": "Aug",
+        "followers": 66000
+      },
+      {
+        "label": "Sep",
+        "followers": 78000
+      },
+      {
+        "label": "Oct",
+        "followers": 89210
+      }
+    ]
+  }
+}
