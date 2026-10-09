@@ -401,7 +401,7 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
     <h2 class="rv">Growing fast.</h2>
     <div class="growth-grid growth rv">
       <div>
-        <div class="growth-big"><b data-count data-key="growth.gained" data-fmt="k" data-prefix="+">+36K</b></div>
+        <div class="growth-big"><b data-key="growth.gained" data-fmt="k" data-prefix="+">+36K</b></div>
         <p class="lede" style="margin-top:8px;color:#e6e6e6"><span data-key="growth.summary">followers on Instagram in three months. From 53K in July to 89K in October 2026.</span></p>
         <p style="margin-top:18px;color:#e6e6e6;max-width:30ch">The audience is growing fast and the space is still open. Get in early and you grow with it.</p>
       </div>
@@ -640,7 +640,7 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
       const f = el.dataset.fmt;
       if(el.hasAttribute('data-count')){ el.dataset.target = v; el.textContent = fmt(v,f)+(el.dataset.suffix||''); }
       else if(el.closest('.platform')) el.textContent = f==='m'||f==='k' ? long(v) : fmt(v,f);
-      else el.textContent = fmt(v,f)+(el.dataset.suffix||'');
+      else el.textContent = (el.dataset.prefix||'')+fmt(v,f)+(el.dataset.suffix||'');
     });
     const fill=(id,items,render)=>{const u=document.getElementById(id); if(!u) return; u.innerHTML=items.map(render).join('');};
     fill('ig-top', d.instagram.top_videos, x=>`<li><span>${x.title}<small>${x.desc||''}</small></span><b>${fmt(x.views,'k')} views</b></li>`);
