@@ -193,6 +193,22 @@ main,footer{position:relative;z-index:1}
 @media (prefers-reduced-motion:reduce){.ctrack{animation:none;flex-wrap:wrap;width:auto}}
 @media print{.crail{overflow:visible;mask:none;-webkit-mask:none}.ctrack{animation:none;flex-wrap:wrap;width:auto}.ctrack .ccard:nth-child(n+6){display:none}}
 
+/* growth */
+.growth-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center;margin-top:40px}
+.growth-big b{display:block;font-family:var(--display);color:var(--yellow);font-size:clamp(80px,12vw,140px);line-height:.85}
+.growth-grid .lede{max-width:26ch}
+#growthchart{width:100%}
+#growthchart svg{width:100%;height:auto;display:block;overflow:visible}
+.gc-val{fill:#fff;font-size:17px;font-weight:700;font-family:var(--body);text-anchor:middle}
+.gc-mon{fill:#9a9a9a;font-size:14px;font-family:var(--body);text-anchor:middle}
+.gc-line{fill:none;stroke:var(--yellow);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2200;stroke-dashoffset:2200;transition:stroke-dashoffset 2s ease-out .15s}
+.growth.in .gc-line{stroke-dashoffset:0}
+.gc-area{fill:rgba(255,214,0,.12)}
+.gc-dot{fill:var(--yellow)}
+@media (max-width:820px){.growth-grid{grid-template-columns:1fr;gap:24px}}
+@media (prefers-reduced-motion:reduce){.gc-line{stroke-dashoffset:0;transition:none}}
+@media print{.gc-line{stroke-dashoffset:0;stroke:#000}.gc-area{fill:#f4f4f4}.gc-dot{fill:#000}.gc-val{fill:#000}}
+
 /* generic layouts */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center}
 .two.tight{align-items:start}
@@ -343,6 +359,7 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
 <nav class="nav" id="nav">
   <div class="wrap">
     <a class="brand" href="#top">Ant Davis</a>
+    <a class="item" href="#growth">Growth</a>
     <a class="item" href="#who">Who</a>
     <a class="item" href="#numbers">Numbers</a>
     <a class="item" href="#audience">Audience</a>
@@ -374,6 +391,21 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
         <path d="M52,-58C66,-45,75,-24,74,-4C73,16,62,36,47,50C32,64,13,72,-5,70C-23,68,-45,56,-58,40C-71,24,-75,4,-70,-15C-65,-34,-51,-52,-34,-63C-17,-74,3,-78,21,-73C39,-68,38,-71,52,-58Z"/>
       </svg>
       <img src="images/cover.jpg" alt="Ant Davis" onload="this.parentNode.classList.add('ok')" onerror="this.remove()">
+    </div>
+  </div>
+</section>
+
+<!-- Growth -->
+<section id="growth">
+  <div class="wrap">
+    <h2 class="rv">Growing fast.</h2>
+    <div class="growth-grid growth rv">
+      <div>
+        <div class="growth-big"><b data-count data-key="growth.gained" data-fmt="k" data-prefix="+">+36K</b></div>
+        <p class="lede" style="margin-top:8px;color:#e6e6e6"><span data-key="growth.summary">followers on Instagram in three months. From 53K in July to 89K in October 2026.</span></p>
+        <p style="margin-top:18px;color:#e6e6e6;max-width:30ch">The audience is growing fast and the space is still open. Get in early and you grow with it.</p>
+      </div>
+      <div id="growthchart" role="img" aria-label="Instagram follower growth from 53K in July to 89K in October 2026"></div>
     </div>
   </div>
 </section>
@@ -544,6 +576,7 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
     <div class="rv">
       <h2>How working with me works.</h2>
       <div class="lines" style="margin-top:28px">
+        <p>This audience is growing fast, and right now the space is open. Whoever comes in early becomes the brand they see week after week and come to trust, while the numbers keep climbing. The relationship builds, the audience grows, and you grow with it.</p>
         <p>I don't really do one-off posts. A single video gets seen once and forgotten by the weekend, and that's not good value for you or me. What actually works is when the audience sees a sponsor turn up again and again, in content they already trust, over a few months.</p>
         <p>So I'd rather build something with you. A run of placements across Instagram, TikTok and the podcast, shaped around whatever it is you're trying to do. Tell me what that is and I'll put a proper proposal together with pricing.</p>
         <p>One thing I won't do is sell guest spots. Nobody pays to appear on the podcast and nobody ever will. Sponsorship is an ad, and it's clearly labelled as one.</p>
@@ -637,6 +670,26 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
       ...d.tiktok.top_videos.map(x=>({t:x.title,v:x.views,p:'TikTok'}))
     ].sort((a,b)=>b.v-a.v).map(x=>`<span>${x.t}<b>${fmt(x.v,'k')} views on ${x.p}</b></span>`);
     document.getElementById('ticker').innerHTML = [...tick,...tick].join('');
+
+    // growth chart, built from d.growth.points so it extends each month
+    (function(){
+      const g=d.growth, gc=document.getElementById('growthchart');
+      if(!g||!gc||!g.points||!g.points.length) return;
+      const pts=g.points, n=pts.length, W=620, H=300, padL=12, padR=34, padT=42, padB=40;
+      const xs=i=>padL+(W-padL-padR)*(n>1?i/(n-1):0);
+      const vals=pts.map(p=>p.followers), mn=Math.min(...vals), mx=Math.max(...vals), sp=Math.max(mx-mn,1);
+      const lo=mn-sp*0.28, hi=mx+sp*0.18;
+      const ys=v=>padT+(H-padT-padB)*(1-(v-lo)/(hi-lo));
+      const line=pts.map((p,i)=>(i?'L':'M')+xs(i).toFixed(1)+','+ys(p.followers).toFixed(1)).join(' ');
+      const area=line+' L'+xs(n-1).toFixed(1)+','+(H-padB)+' L'+xs(0).toFixed(1)+','+(H-padB)+' Z';
+      const kf=v=>v>=1000?Math.round(v/1000)+'K':String(v);
+      let dots='',labs='',mon='';
+      pts.forEach((p,i)=>{const x=xs(i),y=ys(p.followers),last=i===n-1;
+        dots+='<circle class="gc-dot" cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="'+(last?8:6)+'"/>';
+        labs+='<text class="gc-val" x="'+x.toFixed(1)+'" y="'+(y-16).toFixed(1)+'">'+kf(p.followers)+'</text>';
+        mon+='<text class="gc-mon" x="'+x.toFixed(1)+'" y="'+(H-12)+'">'+p.label+'</text>';});
+      gc.innerHTML='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMid meet"><line x1="0" y1="'+(H-padB)+'" x2="'+W+'" y2="'+(H-padB)+'" stroke="rgba(255,255,255,.15)"/><path class="gc-area" d="'+area+'"/><path class="gc-line" d="'+line+'"/>'+dots+labs+mon+'</svg>';
+    })();
     const c=document.getElementById('curves'); if(c)
     c.innerHTML = d.attention.retention.map(r=>{
       const end = r.completion;
