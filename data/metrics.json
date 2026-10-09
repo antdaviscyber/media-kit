@@ -2,7 +2,7 @@
   "updated": "2026-10-05",
   "period": "August to October 2026",
   "instagram": {
-    "followers": 80957,
+    "followers": 89210,
     "reel_views": 2500000,
     "shares": 41000,
     "saves": 39000,
@@ -227,5 +227,30 @@
     "Hackers are injecting fake receipts into the Shop app",
     "Windows Server 2025 has a domain trust bug Microsoft hasn't fixed"
   ],
-  "updated_pretty": "September 2026"
+  "updated_pretty": "September 2026",
+  "growth": {
+    "platform": "Instagram",
+    "gained": 36000,
+    "window": "July to October 2026",
+    "summary": "followers on Instagram in three months. From 53K in July to 89K in October 2026.",
+    "note": "Start and end are exact; the two middle points are read off the monthly curve.",
+    "points": [
+      {
+        "label": "Jul",
+        "followers": 53000
+      },
+      {
+        "label": "Aug",
+        "followers": 66000
+      },
+      {
+        "label": "Sep",
+        "followers": 78000
+      },
+      {
+        "label": "Oct",
+        "followers": 89210
+      }
+    ]
+  }
 }
