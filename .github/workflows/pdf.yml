@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: pdf-build
@@ -24,6 +25,8 @@ jobs:
       - run: pip install playwright && playwright install --with-deps chromium
       - run: python scripts/build_pdf.py
       - name: Commit the PDF
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name "pdf-bot"
           git config user.email "pdf-bot@users.noreply.github.com"
@@ -32,3 +35,5 @@ jobs:
           git commit -m "Rebuild one-sheet PDF $(date -u +%F)"
           git pull --rebase origin main
           git push
+          # the push above does not start the site deploy by itself, so the new PDF needs one
+          gh workflow run static.yml

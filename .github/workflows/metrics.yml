@@ -2,11 +2,16 @@ name: Refresh metrics from Metricool
 
 on:
   schedule:
-    - cron: "0 6 * * 1"   # every Monday 06:00 UTC
-  workflow_dispatch:
+    - cron: "15 */6 * * *"   # every 6 hours
+  workflow_dispatch:          # lets you run it by hand from the Actions tab
 
 permissions:
   contents: write
+  actions: write
+
+concurrency:
+  group: metrics-refresh
+  cancel-in-progress: false
 
 jobs:
   refresh:
@@ -16,16 +21,33 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Pull numbers
+
+      - name: Pull numbers from Metricool
         env:
-          METRICOOL_USER_TOKEN: ${{ secrets.METRICOOL_USER_TOKEN }}
-          METRICOOL_USER_ID: ${{ secrets.METRICOOL_USER_ID }}
-          METRICOOL_BLOG_ID: ${{ secrets.METRICOOL_BLOG_ID }}
+          METRICOOL_TOKEN: ${{ secrets.METRICOOL_TOKEN }}
         run: python scripts/fetch_metricool.py
+
       - name: Commit if changed
+        id: commit
         run: |
           git config user.name "metrics-bot"
           git config user.email "metrics-bot@users.noreply.github.com"
           git add data/metrics.json
-          git diff --cached --quiet || git commit -m "Refresh metrics $(date -u +%F)"
-          git push
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "Refresh metrics $(date -u +%F)"
+            git pull --rebase origin main
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # Pushes made with the built-in token do not start other workflows,
+      # so ask for the site deploy and the PDF rebuild explicitly.
+      - name: Redeploy site and rebuild PDF
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run static.yml
+          gh workflow run pdf.yml
