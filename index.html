@@ -441,7 +441,7 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
 <section id="numbers">
   <div class="wrap">
     <h2 class="rv">The numbers, without the spin.</h2>
-    <p class="lede rv" style="margin-top:22px;max-width:64ch">All of this comes from the last 60 days, <span data-key="period">10 July to 8 September 2026</span>. I refresh it every month, so what you see is what you get.</p>
+    <p class="lede rv" style="margin-top:22px;max-width:64ch">All of this comes from the last 60 days, <span data-key="period">10 July to 8 September 2026</span>. It updates itself, so what you see is what you get. Every figure counts the reels and videos I published in that window.</p>
 
     <div class="pgrid rv">
       <div class="ph-row head"><div></div><div class="plat ig">Instagram</div><div class="plat tt">TikTok</div></div>
@@ -453,9 +453,9 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
       </div>
 
       <div class="ph-row rv-stagger">
-        <div class="lab"><b>Engagement rate</b><span>Likes, comments, saves and shares, divided by the number of people who saw it.</span></div>
-        <div class="cell"><b data-count data-key="instagram.engagement_rate" data-suffix="%">19.1%</b><span>of the <span data-key="instagram.reach" data-fmt="k">952K</span> people who saw it did something with it</span></div>
-        <div class="cell"><b data-count data-key="tiktok.engagement_rate" data-suffix="%">8.8%</b><span>of <span data-key="tiktok.unique_viewers" data-fmt="k">776.7K</span> people. TikTok doesn't count saves, so this one is likes, comments and shares</span></div>
+        <div class="lab"><b>Engagement rate</b><span>Likes, comments, saves and shares, divided by the number of people each reel reached.</span></div>
+        <div class="cell"><b data-count data-key="instagram.engagement_rate" data-suffix="%">9.4%</b><span>of the people a reel reaches do something with it. A typical reel reaches <span data-key="instagram.avg_reach_per_post" data-fmt="k">24.8K</span> people</span></div>
+        <div class="cell"><b data-count data-key="tiktok.engagement_rate" data-suffix="%">4.2%</b><span>of views end in a like, comment or share. TikTok doesn't count saves</span></div>
       </div>
 
                         <div class="ph-row rv-stagger">
@@ -485,7 +485,7 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
   <div class="wrap">
     <h2 class="rv">Who's actually watching.</h2>
     <p class="lede rv" style="margin-top:22px;max-width:64ch">Mostly men, mostly 35 to 54, mostly in the UK and the US.</p>
-    <div class="two tight" style="margin-top:36px">
+    <div class="two tight" style="margin-top:36px;grid-template-columns:minmax(0,1fr)">
       <div class="rv">
         <div class="plat ig">Instagram</div>
         <div class="stats half" style="margin-top:16px">
@@ -494,15 +494,6 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
         </div>
         <ul class="bars" id="countries"></ul>
         <p class="note">Follower insights, <span data-key="instagram.window.label">10 July to 8 September 2026</span>.</p>
-      </div>
-      <div class="rv">
-        <div class="plat tt">TikTok</div>
-        <div class="stats half" style="margin-top:16px">
-          <div class="stat hot"><b data-count data-key="tiktok.viewer_male_pct" data-suffix="%">72%</b><small>men</small></div>
-          <div class="stat hot"><b>61%</b><small>aged 25 to 44</small></div>
-        </div>
-        <ul class="bars" id="tt-countries"></ul>
-        <p class="note">Viewer insights, <span data-key="tiktok.window.label">10 July to 7 September 2026</span>. TikTok skews a bit younger and a lot more British.</p>
       </div>
     </div>
   </div>
@@ -645,7 +636,6 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
     const fill=(id,items,render)=>{const u=document.getElementById(id); if(!u) return; u.innerHTML=items.map(render).join('');};
     fill('ig-top', d.instagram.top_videos, x=>`<li><span>${x.title}<small>${x.desc||''}</small></span><b>${fmt(x.views,'k')} views</b></li>`);
     fill('tt-top', d.tiktok.top_videos, x=>`<li><span>${x.title}<small>${x.desc||''}</small></span><b>${fmt(x.views,'k')} views</b></li>`);
-    fill('tt-countries', d.tiktok.viewer_countries.slice(0,3), x=>`<li><span>${x.name}</span><i style="--w:${(x.pct/d.tiktok.viewer_countries[0].pct*100).toFixed(1)}%"></i><span>${x.pct}%</span></li>`);
 
   // full stat tables
   const rows=(t)=>t.map(r=>r.hd?`<tr class="hd"><th colspan="2">${r.hd}</th></tr>`:`<tr><th>${r[0]}</th><td>${r[1]}${r[2]?`<small>${r[2]}</small>`:''}</td></tr>`).join('');
@@ -653,15 +643,15 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
   const pct=v=>v==null?'n/a':v+'%';
   document.getElementById('tbl-ig').innerHTML=rows([
     {hd:'Window'},['Dates',ig.window.label],['Reels published',ig.posts_in_window],
-    {hd:'Reach'},['Views',fmt(ig.reel_views,'m')],['Average views per reel',fmt(ig.avg_views_per_post,'k')],['People reached',fmt(ig.reach,'k')],['Views from non-followers',pct(ig.non_follower_views_pct),'90-day figure'],
-    {hd:'Engagement'},['Engagement rate',pct(ig.engagement_rate),'likes + comments + saves + shares, over reach'],['Likes',fmt(ig.likes,'k')],['Comments',fmt(ig.comments,'k')],['Shares',fmt(ig.shares,'k')],['Saves',fmt(ig.saves,'k')],
+    {hd:'Reach'},['Views',fmt(ig.reel_views,'m')],['Average views per reel',fmt(ig.avg_views_per_post,'k')],['Average reach per reel',fmt(ig.avg_reach_per_post,'k')],
+    {hd:'Engagement'},['Engagement rate',pct(ig.engagement_rate),'likes + comments + saves + shares, over the reach of each reel'],['Likes',fmt(ig.likes,'k')],['Comments',fmt(ig.comments,'k')],['Shares',fmt(ig.shares,'k')],['Saves',fmt(ig.saves,'k')],
     {hd:'Audience'},['Followers',ig.followers.toLocaleString()],['Men / women',au.male_pct+'% / '+au.female_pct+'%'],['Aged 35 to 54',pct(au.age_35_54_pct)],['Top countries',au.countries.map(c=>c.name+' '+c.pct+'%').join('<br>')]
   ]);
   document.getElementById('tbl-tt').innerHTML=rows([
     {hd:'Window'},['Dates',tk.window.label],['Posts published',tk.posts_in_window],
-    {hd:'Reach'},['Views',fmt(tk.views,'m')],['Average views per post',fmt(tk.avg_views_per_post,'k')],['Unique viewers',fmt(tk.unique_viewers,'k')],['New viewers',fmt(tk.new_viewers,'k')+' ('+pct(tk.non_follower_views_pct)+')'],['Views from For You',pct(tk.for_you_pct)],
-    {hd:'Engagement'},['Engagement rate',pct(tk.engagement_rate),'likes + comments + shares, over unique viewers'],['Likes',fmt(tk.likes,'k')],['Comments',fmt(tk.comments,'k')],['Shares',fmt(tk.shares,'k')],['Saves','n/a','TikTok doesn\'t report saves'],
-    {hd:'Audience'},['Followers',tk.followers.toLocaleString()],['Net new followers, 60 days','+'+fmt(tk.net_new_followers,'k')],['Men',pct(tk.viewer_male_pct)],['Aged 25 to 44','61%'],['Top countries',tk.viewer_countries.slice(0,3).map(c=>c.name+' '+c.pct+'%').join('<br>')]
+    {hd:'Reach'},['Views',fmt(tk.views,'m')],['Average views per post',fmt(tk.avg_views_per_post,'k')],
+    {hd:'Engagement'},['Engagement rate',pct(tk.engagement_rate),'likes + comments + shares, over views'],['Likes',fmt(tk.likes,'k')],['Comments',fmt(tk.comments,'k')],['Shares',fmt(tk.shares,'k')],['Saves','n/a','TikTok doesn\'t report saves'],
+    {hd:'Audience'},['Followers',tk.followers.toLocaleString()],['Net new followers, 60 days','+'+fmt(tk.net_new_followers,'k')]
   ]);
 
     fill('countries', d.audience.countries, x=>`<li><span>${x.name}</span><i style="--w:${(x.pct/d.audience.countries[0].pct*100).toFixed(1)}%"></i><span>${x.pct}%</span></li>`);
@@ -690,7 +680,7 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
         mon+='<text class="gc-mon" x="'+x.toFixed(1)+'" y="'+(H-12)+'">'+p.label+'</text>';});
       gc.innerHTML='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMid meet"><line x1="0" y1="'+(H-padB)+'" x2="'+W+'" y2="'+(H-padB)+'" stroke="rgba(255,255,255,.15)"/><path class="gc-area" d="'+area+'"/><path class="gc-line" d="'+line+'"/>'+dots+labs+mon+'</svg>';
     })();
-    const c=document.getElementById('curves'); if(c)
+    const c=document.getElementById('curves'); if(c && d.attention)
     c.innerHTML = d.attention.retention.map(r=>{
       const end = r.completion;
       const p = `M0,4 C12,40 24,55 40,60 S110,70 160,${90-end*0.9}`;
