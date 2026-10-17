@@ -30,8 +30,8 @@ jobs:
       - name: Commit if changed
         id: commit
         run: |
-          git config user.name "metrics-bot"
-          git config user.email "metrics-bot@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/metrics.json
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
