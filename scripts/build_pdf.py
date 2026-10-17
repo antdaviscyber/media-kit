@@ -19,16 +19,13 @@ vals = {
  "period": d.get("period",""),
  "ig_avg": k(ig.get("avg_views_per_post")), "ig_views": k(ig.get("reel_views")), "ig_posts": ig.get("posts_in_window","n/a"),
  "tt_avg": k(tt.get("avg_views_per_post")), "tt_views": k(tt.get("views")), "tt_posts": tt.get("posts_in_window","n/a"),
- "ig_eng": pc(ig.get("engagement_rate")), "ig_reach": k(ig.get("reach")),
- "tt_eng": pc(tt.get("engagement_rate")), "tt_uv": k(tt.get("unique_viewers")),
+ "ig_eng": pc(ig.get("engagement_rate")), "ig_reach": k(ig.get("avg_reach_per_post")),
+ "tt_eng": pc(tt.get("engagement_rate")),
  "ig_shares": k(ig.get("shares")), "tt_shares": k(tt.get("shares")), "ig_saves": k(ig.get("saves")),
- "ig_nf": pc(ig.get("non_follower_views_pct")), "tt_nf": pc(tt.get("non_follower_views_pct")), "tt_fy": pc(tt.get("for_you_pct")),
  "ig_fol": num(ig.get("followers")), "tt_fol": num(tt.get("followers")),
  "ig_male": pc(round(au["male_pct"]) if au.get("male_pct") is not None else None),
  "ig_age": pc(round(au["age_35_54_pct"]) if au.get("age_35_54_pct") is not None else None),
  "ig_countries": countries(au.get("countries")),
- "tt_male": pc(tt.get("viewer_male_pct")),
- "tt_countries": countries(tt.get("viewer_countries")),
 }
 fonts = root / "print/fonts"
 if not fonts.exists() or not any(fonts.iterdir()):
