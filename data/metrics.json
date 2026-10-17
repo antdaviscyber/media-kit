@@ -1,206 +1,130 @@
 {
-  "updated": "2026-10-12",
-  "period": "August to October 2026",
+  "updated": "2026-10-17",
+  "period": "18 August to 16 October 2026",
   "instagram": {
-    "followers": 89210,
-    "reel_views": 2500000,
-    "shares": 41000,
-    "saves": 39000,
-    "engagement_rate": 19.1,
+    "followers": 90262,
+    "reel_views": 1909536,
+    "shares": 46812,
+    "saves": 24232,
+    "engagement_rate": 9.6,
     "top_videos": [
       {
-        "title": "432 CVEs in one day on Linux",
-        "desc": "The number is big. The crisis isn't real",
-        "views": 217000,
-        "date": "2026-07-21"
+        "title": "Revolut just exposed passports, ID scans and full transaction...",
+        "desc": "Would this fool your bank?",
+        "views": 618455,
+        "date": "2026-09-14"
       },
       {
-        "title": "Fake CAPTCHA, real malware",
-        "desc": "The CAPTCHA that tricks you into installing malware yourself",
-        "views": 145000,
-        "date": "2026-07-20"
+        "title": "Office 2016 and 2019 users just got hit with random deactivation...",
+        "desc": "If you’re still on old Office, this is what “end of support” actually looks like in practice",
+        "views": 117888,
+        "date": "2026-09-26"
       },
       {
-        "title": "Airbus leaves AWS",
-        "desc": "900 critical apps moved to a French cloud provider, and the supply chain problem that remains",
-        "views": 136000,
-        "date": "2026-07-20"
+        "title": "The software protecting millions of work laptops just became the way...",
+        "desc": "A researcher has released a working CrowdStrike Falcon exploit that hands attackers full SYSTEM control on fully...",
+        "views": 86857,
+        "date": "2026-09-07"
       },
       {
-        "title": "Romania's land registry wiped",
-        "desc": "One stolen password took down a country's property records",
-        "views": 78600,
-        "date": "2026-07-26"
+        "title": "Monzo went down today",
+        "desc": "Most customers didn’t feel it, because there’s a second bank running quietly behind the first one",
+        "views": 67815,
+        "date": "2026-08-20"
       },
       {
-        "title": "Your password manager and your AI",
-        "desc": "Password managers now log your AI agent in for you. Why that's complicated",
-        "views": 68800,
-        "date": "2026-07-18"
+        "title": "ABC News says the OpenAl government breach in Australia wasn’t four...",
+        "desc": "What else is on that list we don’t know yet?",
+        "views": 62049,
+        "date": "2026-09-26"
       }
     ],
     "window": {
-      "start": "2026-07-10",
-      "end": "2026-09-08",
+      "start": "2026-08-18",
+      "end": "2026-10-16",
       "days": 60,
-      "label": "10 July to 8 September 2026"
+      "label": "18 August to 16 October 2026"
     },
-    "posts_in_window": 53,
-    "reach": 952000,
-    "likes": 99000,
-    "comments": 2900,
-    "reposts": 6700,
-    "non_follower_views_pct": 78.4,
-    "avg_views_per_post": 47170,
-    "engagement_formula": "likes + comments + saves + shares, divided by reach (viewers)",
-    "non_follower_views_note": "Instagram only reports this at 30 or 90 days; figure is the 90 days to 8 September"
+    "posts_in_window": 51,
+    "likes": 65364,
+    "comments": 3026,
+    "avg_views_per_post": 37442,
+    "engagement_formula": "likes + comments + saves + shares, divided by the reach of each reel",
+    "avg_reach_per_post": 28378
   },
   "tiktok": {
-    "views": 1500000,
-    "unique_viewers": 776700,
-    "new_viewers": 508900,
-    "shares": 9700,
-    "followers": 21253,
-    "for_you_pct": 94.7,
+    "views": 2126422,
+    "shares": 20618,
+    "followers": 24144,
     "top_videos": [
       {
-        "title": "GTA6 leak",
-        "desc": "Rockstar's takedown team can't keep up with a new leak",
-        "views": 254000,
-        "date": "2026-08"
+        "title": "Note - Impacted customers have been contacted!",
+        "desc": "If you haven’t heard, you’re probably okay!",
+        "views": 918816,
+        "date": "2026-09-14"
       },
       {
-        "title": "Romania's land registry wiped",
-        "desc": "One stolen password took down a country's land records",
-        "views": 147000,
-        "date": "2026-07-26"
+        "title": "Rockstar's takedown team can't keep up",
+        "desc": "A new leak suggests someone has a playable build of GTA 6, seven days before the official reveal",
+        "views": 255098,
+        "date": "2026-08-20"
       },
       {
-        "title": "Monzo went down",
-        "desc": "Two banks, one app, and why most customers never felt it",
-        "views": 114000,
-        "date": "2026-08"
+        "title": "Office 2016 and 2019 users just got hit with random deactivation...",
+        "desc": "If you're still on old Office, this is what \"end of support\" actually looks like in practice",
+        "views": 124923,
+        "date": "2026-09-26"
       },
       {
-        "title": "Did Revolut get breached?",
-        "desc": "75 million records allegedly for sale, Revolut says no breach",
-        "views": 101000,
-        "date": "2026-07-28"
+        "title": "Monzo went down today",
+        "desc": "Most customers didn't feel it, because there's a second bank running quietly behind the first one",
+        "views": 118867,
+        "date": "2026-08-20"
       },
       {
-        "title": "432 CVEs in one day on Linux",
-        "desc": "The number is big. The crisis isn't real",
-        "views": 62000,
-        "date": "2026-07-21"
+        "title": "Google's September update just fixed a Pixel bug already being used...",
+        "desc": "If you own a Pixel 6 through 11, the Tablet or the Fold, go update now",
+        "views": 108672,
+        "date": "2026-09-16"
       }
     ],
     "window": {
-      "start": "2026-07-10",
-      "end": "2026-09-07",
+      "start": "2026-08-18",
+      "end": "2026-10-16",
       "days": 60,
-      "label": "10 July to 7 September 2026"
+      "label": "18 August to 16 October 2026"
     },
-    "likes": 56100,
-    "comments": 2900,
-    "saves": null,
-    "non_follower_views_pct": 65.5,
-    "engagement_rate": 8.8,
-    "engagement_formula": "likes + comments + shares, divided by unique viewers (TikTok does not report saves or reach)",
-    "posts_in_window": 57,
-    "avg_views_per_post": 26316,
-    "male_pct": 72,
-    "net_new_followers": 6200,
-    "viewer_male_pct": 72,
-    "follower_male_pct": 67,
-    "viewer_age": {
-      "18-24": 9.4,
-      "25-34": 35.1,
-      "35-44": 26.2,
-      "45-54": 19.2,
-      "55+": 10.1
-    },
-    "viewer_countries": [
-      {
-        "name": "United Kingdom",
-        "pct": 40.0
-      },
-      {
-        "name": "Ireland",
-        "pct": 7.4
-      },
-      {
-        "name": "Romania",
-        "pct": 6.0
-      },
-      {
-        "name": "United States",
-        "pct": 5.6
-      },
-      {
-        "name": "South Africa",
-        "pct": 3.4
-      }
-    ]
-  },
-  "attention": {
-    "top_avg_watch_seconds": 80,
-    "account_avg_watch_seconds": 45,
-    "reels_sampled": 39,
-    "retention": [
-      {
-        "label": "Android is always listening",
-        "length": "2:37",
-        "completion": 19
-      },
-      {
-        "label": "Fake AI Skill",
-        "length": "2:52",
-        "completion": 19.9
-      },
-      {
-        "label": "Chrome extension",
-        "length": "2:56",
-        "completion": 15.5
-      }
-    ]
+    "likes": 75282,
+    "comments": 3568,
+    "engagement_rate": 4.7,
+    "engagement_formula": "likes + comments + shares, divided by views (TikTok does not report saves)",
+    "posts_in_window": 51,
+    "avg_views_per_post": 41695,
+    "net_new_followers": 4457
   },
   "audience": {
-    "source": "Instagram follower insights, 10 July to 8 September 2026",
+    "source": "Instagram follower insights via Metricool, 18 August to 16 October 2026",
     "male_pct": 73.3,
     "female_pct": 26.7,
     "age": {
-      "25-34": 17.0,
-      "35-44": 34.8,
-      "45-54": 28.3,
-      "55-64": 13.5,
-      "65+": 4.5
+      "25-34": 17.4,
+      "35-44": 34.9,
+      "45-54": 28.2,
+      "55-64": 13.4,
+      "65+": 4.4
     },
-    "age_35_54_pct": 63.1,
+    "age_35_54_pct": 63.0,
     "countries": [
       {
         "name": "United Kingdom",
-        "pct": 25.7
+        "pct": 26.9
       },
       {
         "name": "United States",
-        "pct": 17.8
+        "pct": 17.4
       },
       {
         "name": "Australia",
-        "pct": 8.7
-      }
-    ],
-    "cities": [
-      {
-        "name": "London",
-        "pct": 15.2
-      },
-      {
-        "name": "Melbourne",
-        "pct": 8.8
-      },
-      {
-        "name": "Sydney",
         "pct": 8.3
       }
     ]
@@ -217,22 +141,12 @@
     ],
     "countries_featured": 100
   },
-  "ticker": [
-    "Fake AI plugin ran Instagram ads and 26,000 people installed it",
-    "Chrome extension can read your bank account",
-    "Half of all Fortinet firewalls on the internet just got owned",
-    "Google is building a feature that listens to everything",
-    "PewDiePie's AI tool had a vulnerability with 77,000 GitHub stars",
-    "Microsoft removed 119 malicious browser extensions today",
-    "Hackers are injecting fake receipts into the Shop app",
-    "Windows Server 2025 has a domain trust bug Microsoft hasn't fixed"
-  ],
-  "updated_pretty": "September 2026",
+  "updated_pretty": "October 2026",
   "growth": {
     "platform": "Instagram",
-    "gained": 36000,
+    "gained": 37262,
     "window": "July to October 2026",
-    "summary": "followers on Instagram in three months. From 53K in July to 89K in October 2026.",
+    "summary": "followers on Instagram in three months. From 53K in July to 90K in October 2026.",
     "note": "Start and end are exact; the two middle points are read off the monthly curve.",
     "points": [
       {
@@ -249,8 +163,10 @@
       },
       {
         "label": "Oct",
-        "followers": 89210
+        "followers": 90262
       }
-    ]
-  }
+    ],
+    "start_month": "2026-07"
+  },
+  "updated_label": "17 October 2026, 17:14 UK time"
 }
