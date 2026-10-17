@@ -17,6 +17,7 @@ def num(v): return "n/a" if v is None else f"{v:,}"
 def countries(lst): return ", ".join(f'{c["name"]} {c["pct"]}%' for c in (lst or [])[:3]) or "n/a"
 vals = {
  "period": d.get("period",""),
+ "updated": d.get("updated_label") or d.get("updated",""),
  "ig_avg": k(ig.get("avg_views_per_post")), "ig_views": k(ig.get("reel_views")), "ig_posts": ig.get("posts_in_window","n/a"),
  "tt_avg": k(tt.get("avg_views_per_post")), "tt_views": k(tt.get("views")), "tt_posts": tt.get("posts_in_window","n/a"),
  "ig_eng": pc(ig.get("engagement_rate")), "ig_reach": k(ig.get("avg_reach_per_post")),
