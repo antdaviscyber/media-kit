@@ -18,7 +18,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # always build from the newest main, not the commit that triggered this run,
+      # so a queued build can never overwrite a newer PDF with an older one
       - uses: actions/checkout@v5
+        with:
+          ref: main
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
@@ -33,7 +37,8 @@ jobs:
           git add Ant_Davis_Media_Kit.pdf
           git diff --cached --quiet && exit 0
           git commit -m "Rebuild one-sheet PDF $(date -u +%F)"
-          git pull --rebase origin main
+          # the PDF is a build output, so if another build saved one first, keep this newer one
+          git pull --rebase -X theirs origin main
           git push
           # the push above does not start the site deploy by itself, so the new PDF needs one
           gh workflow run static.yml

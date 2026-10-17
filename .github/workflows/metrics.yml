@@ -50,4 +50,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh workflow run static.yml
-          gh workflow run pdf.yml
+          # rebuild the PDF once a day (the midnight run) and on any manual run,
+          # so the repo does not collect a new PDF every 6 hours
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$(date -u +%H)" = "00" ]; then
+            gh workflow run pdf.yml
+          fi
