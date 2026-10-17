@@ -1,0 +1,35 @@
+name: Update Metricool stats
+
+on:
+  schedule:
+    - cron: "15 */6 * * *"   # every 6 hours
+  workflow_dispatch:          # lets you run it manually
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch profile data from Metricool
+        env:
+          METRICOOL_TOKEN: ${{ secrets.METRICOOL_TOKEN }}
+          USER_ID: "5018589"
+          BLOG_ID: "6516035"
+        run: |
+          mkdir -p data
+          curl -sS --fail \
+            -H "X-Mc-Auth: $METRICOOL_TOKEN" \
+            "https://app.metricool.com/api/admin/simpleProfiles?userId=$USER_ID&blogId=$BLOG_ID" \
+            -o data/raw-profile.json
+
+      - name: Commit if changed
+        run: |
+          git config user.name "stats-bot"
+          git config user.email "stats-bot@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "Update stats"
+          git push
