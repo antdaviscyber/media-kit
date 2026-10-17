@@ -27,6 +27,9 @@ vals = {
  "ig_male": pc(round(au["male_pct"]) if au.get("male_pct") is not None else None),
  "ig_age": pc(round(au["age_35_54_pct"]) if au.get("age_35_54_pct") is not None else None),
  "ig_countries": countries(au.get("countries")),
+ "pod_eps": d.get("podcast", {}).get("episodes", "n/a"),
+ "pod_countries": d.get("podcast", {}).get("countries_featured", "n/a"),
+ "pod_charting": d.get("podcast", {}).get("countries_charting", "n/a"),
 }
 fonts = root / "print/fonts"
 if not fonts.exists() or not any(fonts.iterdir()):
