@@ -1,109 +1,109 @@
 {
-  "updated": "2026-10-17",
-  "period": "18 August to 16 October 2026",
+  "updated": "2026-10-18",
+  "period": "19 August to 17 October 2026",
   "instagram": {
-    "followers": 90262,
-    "reel_views": 1909536,
-    "shares": 46812,
-    "saves": 24232,
+    "followers": 90324,
+    "reel_views": 1923446,
+    "shares": 47010,
+    "saves": 24409,
     "engagement_rate": 9.6,
     "top_videos": [
       {
         "title": "Revolut just exposed passports, ID scans and full transaction...",
         "desc": "Would this fool your bank?",
-        "views": 618455,
+        "views": 619400,
         "date": "2026-09-14"
       },
       {
         "title": "Office 2016 and 2019 users just got hit with random deactivation...",
         "desc": "If you’re still on old Office, this is what “end of support” actually looks like in practice",
-        "views": 117888,
+        "views": 118302,
         "date": "2026-09-26"
       },
       {
         "title": "The software protecting millions of work laptops just became the way...",
         "desc": "A researcher has released a working CrowdStrike Falcon exploit that hands attackers full SYSTEM control on fully...",
-        "views": 86857,
+        "views": 86892,
         "date": "2026-09-07"
       },
       {
         "title": "Monzo went down today",
         "desc": "Most customers didn’t feel it, because there’s a second bank running quietly behind the first one",
-        "views": 67815,
+        "views": 67820,
         "date": "2026-08-20"
       },
       {
         "title": "ABC News says the OpenAl government breach in Australia wasn’t four...",
         "desc": "What else is on that list we don’t know yet?",
-        "views": 62049,
+        "views": 62071,
         "date": "2026-09-26"
       }
     ],
     "window": {
-      "start": "2026-08-18",
-      "end": "2026-10-16",
+      "start": "2026-08-19",
+      "end": "2026-10-17",
       "days": 60,
-      "label": "18 August to 16 October 2026"
+      "label": "19 August to 17 October 2026"
     },
     "posts_in_window": 51,
-    "likes": 65364,
-    "comments": 3026,
-    "avg_views_per_post": 37442,
+    "likes": 66024,
+    "comments": 3061,
+    "avg_views_per_post": 37715,
     "engagement_formula": "likes + comments + saves + shares, divided by the reach of each reel",
-    "avg_reach_per_post": 28378
+    "avg_reach_per_post": 28559
   },
   "tiktok": {
-    "views": 2126422,
-    "shares": 20618,
-    "followers": 24144,
+    "views": 2134300,
+    "shares": 20651,
+    "followers": 24164,
     "top_videos": [
       {
         "title": "Note - Impacted customers have been contacted!",
         "desc": "If you haven’t heard, you’re probably okay!",
-        "views": 918816,
+        "views": 919028,
         "date": "2026-09-14"
       },
       {
         "title": "Rockstar's takedown team can't keep up",
         "desc": "A new leak suggests someone has a playable build of GTA 6, seven days before the official reveal",
-        "views": 255098,
+        "views": 255108,
         "date": "2026-08-20"
       },
       {
         "title": "Office 2016 and 2019 users just got hit with random deactivation...",
         "desc": "If you're still on old Office, this is what \"end of support\" actually looks like in practice",
-        "views": 124923,
+        "views": 125223,
         "date": "2026-09-26"
       },
       {
         "title": "Monzo went down today",
         "desc": "Most customers didn't feel it, because there's a second bank running quietly behind the first one",
-        "views": 118867,
+        "views": 118887,
         "date": "2026-08-20"
       },
       {
         "title": "Google's September update just fixed a Pixel bug already being used...",
         "desc": "If you own a Pixel 6 through 11, the Tablet or the Fold, go update now",
-        "views": 108672,
+        "views": 108905,
         "date": "2026-09-16"
       }
     ],
     "window": {
-      "start": "2026-08-18",
-      "end": "2026-10-16",
+      "start": "2026-08-19",
+      "end": "2026-10-17",
       "days": 60,
-      "label": "18 August to 16 October 2026"
+      "label": "19 August to 17 October 2026"
     },
-    "likes": 75282,
-    "comments": 3568,
+    "likes": 75639,
+    "comments": 3595,
     "engagement_rate": 4.7,
     "engagement_formula": "likes + comments + shares, divided by views (TikTok does not report saves)",
     "posts_in_window": 51,
-    "avg_views_per_post": 41695,
-    "net_new_followers": 4457
+    "avg_views_per_post": 41849,
+    "net_new_followers": 4448
   },
   "audience": {
-    "source": "Instagram follower insights via Metricool, 18 August to 16 October 2026",
+    "source": "Instagram follower insights via Metricool, 19 August to 17 October 2026",
     "male_pct": 73.3,
     "female_pct": 26.7,
     "age": {
@@ -144,7 +144,7 @@
   "updated_pretty": "October 2026",
   "growth": {
     "platform": "Instagram",
-    "gained": 37262,
+    "gained": 37324,
     "window": "July to October 2026",
     "summary": "followers on Instagram in three months. From 53K in July to 90K in October 2026.",
     "note": "Start and end are exact; the two middle points are read off the monthly curve.",
@@ -163,10 +163,10 @@
       },
       {
         "label": "Oct",
-        "followers": 90262
+        "followers": 90324
       }
     ],
     "start_month": "2026-07"
   },
-  "updated_label": "17 October 2026, 21:37 UK time"
+  "updated_label": "18 October 2026, 05:35 UK time"
 }
