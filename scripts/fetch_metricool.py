@@ -132,6 +132,8 @@ def top_videos(items, date_of, text_of, views_of, n=5):
 
 
 def kfmt(v):
+    if v < 100000:
+        return f"{v / 1000:.1f}".rstrip("0").rstrip(".") + "K"
     return f"{round(v / 1000)}K"
 
 
@@ -247,13 +249,16 @@ def main(path=PATH):
     this_label = today.strftime("%b")
     if pts[-1]["label"] == this_label:
         pts[-1]["followers"] = int(ig_followers)
+        pts[-1]["date"] = today.isoformat()
     else:
-        pts.append({"label": this_label, "followers": int(ig_followers)})
+        pts.append({"label": this_label, "date": today.isoformat(), "followers": int(ig_followers)})
     first = pts[0]["followers"]
     start_month = dt.datetime.strptime(g.get("start_month", "2026-07"), "%Y-%m").date()
     months = (today.year - start_month.year) * 12 + today.month - start_month.month
     spoken = {1: "a month", 2: "two months", 3: "three months", 4: "four months",
-              5: "five months", 6: "six months"}.get(months, f"{months} months")
+              5: "five months", 6: "six months", 7: "seven months", 8: "eight months",
+              9: "nine months", 10: "ten months", 11: "eleven months",
+              12: "a year"}.get(months, f"{months} months")
     g.update({
         "start_month": start_month.strftime("%Y-%m"),
         "gained": int(ig_followers - first),
