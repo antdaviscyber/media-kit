@@ -207,6 +207,18 @@ main,footer{position:relative;z-index:1}
 .gc-dot{fill:var(--yellow)}
 @media (max-width:820px){.growth-grid{grid-template-columns:1fr;gap:24px}}
 @media (prefers-reduced-motion:reduce){.gc-line{stroke-dashoffset:0;transition:none}}
+.since{margin-top:52px;border-top:1px solid rgba(255,255,255,.15);padding-top:28px}
+.since-h{margin:0;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#9a9a9a}
+.since-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;margin-top:16px}
+.since-row span{display:block;color:#9a9a9a;font-size:15px}
+.since-row b{display:block;margin-top:4px;font-family:var(--display);color:#fff;font-size:clamp(28px,4vw,44px);line-height:1.05;font-weight:400}
+.since-row em{font-style:normal;color:var(--yellow);margin-left:12px;white-space:nowrap}
+.award{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;margin-top:28px}
+.award .photo{aspect-ratio:4/3;border-radius:18px}
+.award p{margin:0}
+.award .award-name{font-family:var(--display);color:var(--yellow);font-size:clamp(36px,5vw,64px);line-height:.95}
+.award .award-event{margin-top:14px;font-size:18px}
+@media (max-width:820px){.award{grid-template-columns:1fr;gap:20px}}
 @media print{.gc-line{stroke-dashoffset:0;stroke:#000}.gc-area{fill:#f4f4f4}.gc-dot{fill:#000}.gc-val{fill:#000}}
 
 /* generic layouts */
@@ -405,7 +417,14 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
         <p class="lede" style="margin-top:8px;color:#e6e6e6"><span data-key="growth.summary"></span></p>
         <p style="margin-top:18px;color:#e6e6e6;max-width:30ch">The audience is growing fast and the space is still open. Get in early and you grow with it.</p>
       </div>
-      <div id="growthchart" role="img" aria-label="Instagram follower growth from 53K in July to 89K in October 2026"></div>
+      <div id="growthchart" role="img" aria-label="Instagram follower growth since February 2026"></div>
+    </div>
+    <div class="since rv" id="since" hidden>
+      <p class="since-h">Since <span id="since-date"></span></p>
+      <div class="since-row">
+        <div><span>Instagram followers</span><b id="since-ig"></b></div>
+        <div><span>TikTok followers</span><b id="since-tt"></b></div>
+      </div>
     </div>
   </div>
 </section>
@@ -515,7 +534,14 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
     <div class="crail rv" aria-label="Comments from viewers"><div class="ctrack"><div class="ccard"><img src="images/comment-1.png" alt="" onerror="this.parentNode.remove()"></div><div class="ccard"><img src="images/comment-2.png" alt="" onerror="this.parentNode.remove()"></div><div class="ccard"><img src="images/comment-3.png" alt="" onerror="this.parentNode.remove()"></div><div class="ccard"><img src="images/comment-4.png" alt="" onerror="this.parentNode.remove()"></div><div class="ccard"><img src="images/comment-5.png" alt="" onerror="this.parentNode.remove()"></div><div class="ccard"><img src="images/comment-1.png" alt="" onerror="this.parentNode.remove()"></div><div class="ccard"><img src="images/comment-2.png" alt="" onerror="this.parentNode.remove()"></div><div class="ccard"><img src="images/comment-3.png" alt="" onerror="this.parentNode.remove()"></div><div class="ccard"><img src="images/comment-4.png" alt="" onerror="this.parentNode.remove()"></div><div class="ccard"><img src="images/comment-5.png" alt="" onerror="this.parentNode.remove()"></div></div></div>
     
     <h3 class="rv" style="margin-top:64px">Awards and stages</h3>
-    <p class="rv" style="margin-top:14px;font-size:18px">I won Contributor of the Year and Best Back to Basics at the European Cybersecurity Blogger Awards in 2025, and I'm a finalist for CyberVoice at The Real Cyber Awards 2026.</p>
+    <div class="award rv">
+      <div class="photo"><img src="images/award.jpg" alt="Ant Davis holding the Voice of Security trophy at the Security Serious Unsung Heroes Awards 2026" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">images/award.jpg</div></div>
+      <div>
+        <p class="award-name">Voice of Security</p>
+        <p class="award-event">Winner at the Security Serious Unsung Heroes Awards, October 2026.</p>
+      </div>
+    </div>
+    <p class="rv" style="margin-top:28px;font-size:18px">I also won Contributor of the Year and Best Back to Basics at the European Cybersecurity Blogger Awards in 2025, and I'm a finalist for CyberVoice at The Real Cyber Awards 2026.</p>
     <div class="strip rv rv-stagger" id="creds" style="grid-template-columns:repeat(2,1fr);gap:18px">
       <div class="photo"><img src="images/cred-2.jpg" alt="Winning at the European Cybersecurity Blogger Awards" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">cred-2</div></div>
       <div class="photo"><img src="images/cred-1.jpg" alt="Human Risk talk, The Future of Cyber Security London" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph">cred-1</div></div>
@@ -666,19 +692,32 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
       const g=d.growth, gc=document.getElementById('growthchart');
       if(!g||!gc||!g.points||!g.points.length) return;
       const pts=g.points, n=pts.length, W=620, H=300, padL=12, padR=34, padT=42, padB=40;
-      const xs=i=>padL+(W-padL-padR)*(n>1?i/(n-1):0);
+      // space points by date when every point has one, otherwise evenly
+      const ts=pts.map(p=>Date.parse(p.date)), byDate=n>1&&ts.every(t=>!isNaN(t))&&ts[n-1]>ts[0];
+      const xs=i=>padL+(W-padL-padR)*(n>1?(byDate?(ts[i]-ts[0])/(ts[n-1]-ts[0]):i/(n-1)):0);
       const vals=pts.map(p=>p.followers), mn=Math.min(...vals), mx=Math.max(...vals), sp=Math.max(mx-mn,1);
       const lo=mn-sp*0.28, hi=mx+sp*0.18;
       const ys=v=>padT+(H-padT-padB)*(1-(v-lo)/(hi-lo));
       const line=pts.map((p,i)=>(i?'L':'M')+xs(i).toFixed(1)+','+ys(p.followers).toFixed(1)).join(' ');
       const area=line+' L'+xs(n-1).toFixed(1)+','+(H-padB)+' L'+xs(0).toFixed(1)+','+(H-padB)+' Z';
-      const kf=v=>v>=1000?Math.round(v/1000)+'K':String(v);
+      const kf=v=>v>=20000?Math.round(v/1000)+'K':v>=1000?(v/1000).toFixed(1).replace(/\.0$/,'')+'K':String(v);
       let dots='',labs='',mon='';
       pts.forEach((p,i)=>{const x=xs(i),y=ys(p.followers),last=i===n-1;
         dots+='<circle class="gc-dot" cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="'+(last?8:6)+'"/>';
         labs+='<text class="gc-val" x="'+x.toFixed(1)+'" y="'+(y-16).toFixed(1)+'">'+kf(p.followers)+'</text>';
         mon+='<text class="gc-mon" x="'+x.toFixed(1)+'" y="'+(H-12)+'">'+p.label+'</text>';});
       gc.innerHTML='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMid meet"><line x1="0" y1="'+(H-padB)+'" x2="'+W+'" y2="'+(H-padB)+'" stroke="rgba(255,255,255,.15)"/><path class="gc-area" d="'+area+'"/><path class="gc-line" d="'+line+'"/>'+dots+labs+mon+'</svg>';
+      gc.setAttribute('aria-label','Instagram follower growth from '+kf(pts[0].followers)+' in '+pts[0].label+' to '+kf(pts[n-1].followers)+' in '+pts[n-1].label);
+
+      // since the baseline: followers then and now, with the multiple
+      const b=g.baseline, since=document.getElementById('since');
+      if(b&&since&&d.instagram&&d.tiktok&&b.instagram&&b.tiktok){
+        const mult=(now,then)=>(now/then).toFixed(1).replace(/\.0$/,'')+'x';
+        document.getElementById('since-date').textContent=b.label||'';
+        document.getElementById('since-ig').innerHTML=fmt(b.instagram,'k')+' to '+fmt(d.instagram.followers,'k')+'<em>'+mult(d.instagram.followers,b.instagram)+'</em>';
+        document.getElementById('since-tt').innerHTML=fmt(b.tiktok,'k')+' to '+fmt(d.tiktok.followers,'k')+'<em>'+mult(d.tiktok.followers,b.tiktok)+'</em>';
+        since.hidden=false;
+      }
     })();
     const c=document.getElementById('curves'); if(c && d.attention)
     c.innerHTML = d.attention.retention.map(r=>{
