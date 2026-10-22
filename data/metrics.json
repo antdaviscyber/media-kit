@@ -144,29 +144,44 @@
   "updated_pretty": "October 2026",
   "growth": {
     "platform": "Instagram",
-    "gained": 38170,
-    "window": "July to October 2026",
-    "summary": "followers on Instagram in three months. From 53K in July to 91K in October 2026.",
-    "note": "Start and end are exact; the two middle points are read off the monthly curve.",
+    "gained": 80370,
+    "window": "February to October 2026",
+    "summary": "followers on Instagram in eight months. From 10.8K in February to 91.2K in October 2026.",
+    "note": "February is from my profile on 17 February. Every other point is a Metricool follower count.",
     "points": [
       {
+        "label": "Feb",
+        "date": "2026-02-17",
+        "followers": 10800
+      },
+      {
         "label": "Jul",
-        "followers": 53000
+        "date": "2026-07-05",
+        "followers": 53079
       },
       {
         "label": "Aug",
-        "followers": 66000
+        "date": "2026-08-01",
+        "followers": 71167
       },
       {
         "label": "Sep",
-        "followers": 78000
+        "date": "2026-09-01",
+        "followers": 78519
       },
       {
         "label": "Oct",
+        "date": "2026-10-21",
         "followers": 91170
       }
     ],
-    "start_month": "2026-07"
+    "start_month": "2026-02",
+    "baseline": {
+      "date": "2026-02-17",
+      "label": "17 February",
+      "instagram": 10800,
+      "tiktok": 4322
+    }
   },
   "updated_label": "22 October 2026, 12:54 UK time"
 }
