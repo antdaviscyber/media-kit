@@ -15,7 +15,16 @@ def k(v):
 def pc(v): return "n/a" if v is None else f"{v}%"
 def num(v): return "n/a" if v is None else f"{v:,}"
 def countries(lst): return ", ".join(f'{c["name"]} {c["pct"]}%' for c in (lst or [])[:3]) or "n/a"
+base = (d.get("growth") or {}).get("baseline") or {}
+def mult(now, then):
+    if not now or not then: return "n/a"
+    return f"{now/then:.1f}".rstrip("0").rstrip(".") + "x"
 vals = {
+ "base_label": base.get("label", "the start"),
+ "ig_base": k(base.get("instagram")), "tt_base": k(base.get("tiktok")),
+ "ig_mult": mult(ig.get("followers"), base.get("instagram")),
+ "tt_mult": mult(tt.get("followers"), base.get("tiktok")),
+ "ig_now": k(ig.get("followers")), "tt_now": k(tt.get("followers")),
  "period": d.get("period",""),
  "updated": d.get("updated_label") or d.get("updated",""),
  "ig_avg": k(ig.get("avg_views_per_post")), "ig_views": k(ig.get("reel_views")), "ig_posts": ig.get("posts_in_window","n/a"),
