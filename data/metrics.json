@@ -1,131 +1,131 @@
 {
-  "updated": "2026-10-21",
-  "period": "22 August to 20 October 2026",
+  "updated": "2026-10-22",
+  "period": "23 August to 21 October 2026",
   "instagram": {
-    "followers": 90680,
-    "reel_views": 1970971,
-    "shares": 47917,
-    "saves": 25873,
+    "followers": 91170,
+    "reel_views": 2060350,
+    "shares": 49373,
+    "saves": 27035,
     "engagement_rate": 9.8,
     "top_videos": [
       {
         "title": "Revolut just exposed passports, ID scans and full transaction...",
         "desc": "Would this fool your bank?",
-        "views": 624662,
+        "views": 628689,
         "date": "2026-09-14"
       },
       {
         "title": "Office 2016 and 2019 users just got hit with random deactivation...",
         "desc": "If you’re still on old Office, this is what “end of support” actually looks like in practice",
-        "views": 120370,
+        "views": 121233,
         "date": "2026-09-26"
       },
       {
         "title": "The software protecting millions of work laptops just became the way...",
         "desc": "A researcher has released a working CrowdStrike Falcon exploit that hands attackers full SYSTEM control on fully...",
-        "views": 87084,
+        "views": 87252,
         "date": "2026-09-07"
       },
       {
         "title": "ABC News says the OpenAl government breach in Australia wasn’t four...",
         "desc": "What else is on that list we don’t know yet?",
-        "views": 62266,
+        "views": 62329,
         "date": "2026-09-26"
       },
       {
         "title": "Your TV got cheaper while everything else got more expensive",
         "desc": "Turns out that’s not a coincidence",
-        "views": 57869,
+        "views": 57949,
         "date": "2026-09-09"
       }
     ],
     "window": {
-      "start": "2026-08-22",
-      "end": "2026-10-20",
+      "start": "2026-08-23",
+      "end": "2026-10-21",
       "days": 60,
-      "label": "22 August to 20 October 2026"
+      "label": "23 August to 21 October 2026"
     },
-    "posts_in_window": 53,
-    "likes": 68193,
-    "comments": 3285,
-    "avg_views_per_post": 37188,
+    "posts_in_window": 55,
+    "likes": 71474,
+    "comments": 3424,
+    "avg_views_per_post": 37461,
     "engagement_formula": "likes + comments + saves + shares, divided by the reach of each reel",
-    "avg_reach_per_post": 28016
+    "avg_reach_per_post": 28190
   },
   "tiktok": {
-    "views": 2141145,
-    "shares": 23160,
-    "followers": 24810,
+    "views": 2434574,
+    "shares": 25574,
+    "followers": 25374,
     "top_videos": [
       {
         "title": "Note - Impacted customers have been contacted!",
         "desc": "If you haven’t heard, you’re probably okay!",
-        "views": 1020706,
+        "views": 1157878,
         "date": "2026-09-14"
       },
       {
         "title": "Revolut was hit by a major outage this morning and a Google Cloud...",
         "desc": "Monzo built a backup bank for exactly this",
-        "views": 207138,
+        "views": 214467,
         "date": "2026-10-20"
       },
       {
         "title": "Office 2016 and 2019 users just got hit with random deactivation...",
         "desc": "If you're still on old Office, this is what \"end of support\" actually looks like in practice",
-        "views": 125883,
+        "views": 126202,
         "date": "2026-09-26"
       },
       {
         "title": "Google's September update just fixed a Pixel bug already being used...",
         "desc": "If you own a Pixel 6 through 11, the Tablet or the Fold, go update now",
-        "views": 109931,
+        "views": 110389,
         "date": "2026-09-16"
       },
       {
         "title": "The software protecting millions of work laptops just became the way...",
         "desc": "A researcher has released a working CrowdStrike Falcon exploit that hands attackers full SYSTEM control on fully...",
-        "views": 73629,
+        "views": 73897,
         "date": "2026-09-07"
       }
     ],
     "window": {
-      "start": "2026-08-22",
-      "end": "2026-10-20",
+      "start": "2026-08-23",
+      "end": "2026-10-21",
       "days": 60,
-      "label": "22 August to 20 October 2026"
+      "label": "23 August to 21 October 2026"
     },
-    "likes": 76666,
-    "comments": 4007,
-    "engagement_rate": 4.8,
+    "likes": 85501,
+    "comments": 4336,
+    "engagement_rate": 4.7,
     "engagement_formula": "likes + comments + shares, divided by views (TikTok does not report saves)",
-    "posts_in_window": 54,
-    "avg_views_per_post": 39651,
-    "net_new_followers": 4428
+    "posts_in_window": 56,
+    "avg_views_per_post": 43475,
+    "net_new_followers": 4945
   },
   "audience": {
-    "source": "Instagram follower insights via Metricool, 22 August to 20 October 2026",
+    "source": "Instagram follower insights via Metricool, 23 August to 21 October 2026",
     "male_pct": 73.3,
     "female_pct": 26.7,
     "age": {
-      "25-34": 17.4,
-      "35-44": 34.9,
+      "25-34": 17.3,
+      "35-44": 34.8,
       "45-54": 28.2,
       "55-64": 13.4,
-      "65+": 4.4
+      "65+": 4.5
     },
     "age_35_54_pct": 63.0,
     "countries": [
       {
         "name": "United Kingdom",
-        "pct": 26.9
+        "pct": 27.2
       },
       {
         "name": "United States",
-        "pct": 17.4
+        "pct": 17.1
       },
       {
         "name": "Australia",
-        "pct": 8.3
+        "pct": 8.7
       }
     ]
   },
@@ -144,7 +144,7 @@
   "updated_pretty": "October 2026",
   "growth": {
     "platform": "Instagram",
-    "gained": 37680,
+    "gained": 38170,
     "window": "July to October 2026",
     "summary": "followers on Instagram in three months. From 53K in July to 91K in October 2026.",
     "note": "Start and end are exact; the two middle points are read off the monthly curve.",
@@ -163,10 +163,10 @@
       },
       {
         "label": "Oct",
-        "followers": 90680
+        "followers": 91170
       }
     ],
     "start_month": "2026-07"
   },
-  "updated_label": "21 October 2026, 22:44 UK time"
+  "updated_label": "22 October 2026, 05:48 UK time"
 }
