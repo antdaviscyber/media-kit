@@ -30,7 +30,7 @@ html,body{margin:0;background:var(--k);color:var(--w);font-family:Inter,sans-ser
 .grid .hd{padding:1.5mm 0 1.5mm;border-bottom:.3mm solid var(--line)}
 .grid .hd span{display:inline-block;font-family:"Barber Chop",Impact;text-transform:uppercase;font-size:10pt;letter-spacing:.06em;padding:1mm 2.5mm;background:var(--y);color:var(--k)}
 .grid .hd span.tt{background:var(--w)}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:8mm}
+.two{display:grid;grid-template-columns:.75fr 1.4fr;gap:8mm}
 .two p{margin:0;font-size:9.5pt;line-height:1.45;color:var(--w)}
 .aud{font-size:9.5pt;line-height:1.5;color:var(--w)}
 .aud b{color:var(--y);font-weight:700}
@@ -71,9 +71,9 @@ html,body{margin:0;background:var(--k);color:var(--w);font-family:Inter,sans-ser
       <div class="v d">{{ig_saves}}</div>
       <div class="v d dim">n/a<small>Not reported by TikTok</small></div>
 
-      <div class="lab"><b>Followers</b></div>
-      <div class="v d dim">{{ig_fol}}</div>
-      <div class="v d dim">{{tt_fol}}</div>
+      <div class="lab"><b>Followers</b>And how fast they've grown</div>
+      <div class="v d dim">{{ig_fol}}<small>{{ig_mult}} since {{base_label}}, up from {{ig_base}}</small></div>
+      <div class="v d dim">{{tt_fol}}<small>{{tt_mult}} since {{base_label}}, up from {{tt_base}}</small></div>
     </div>
   </div>
 
@@ -84,7 +84,7 @@ html,body{margin:0;background:var(--k);color:var(--w);font-family:Inter,sans-ser
     </div>
     <div class="sec">
       <h2 class="d">Why me</h2>
-      <p>Fifteen years doing security awareness inside big companies before doing it on camera. Media Partner at the SANS Security Awareness and Culture Summit 2026 and at CruiseCon 2026, and Panel Moderator at SANS. Contributor of the Year and Best Back to Basics, European Cybersecurity Blogger Awards 2025. Host of Click Happens: Human Cyber News, relaunched and refreshed for 2027 and out weekly with guests. The feed has put out {{pod_eps}} episodes, found listeners in over {{pod_countries}} countries, and charted in {{pod_charting}} of them. Right Click: Human Cyber Stories launches Q4 2026.</p>
+      <p>Fifteen years doing security awareness inside big companies before doing it on camera. Media Partner at the SANS Security Awareness and Culture Summit 2026 and at CruiseCon 2026, and Panel Moderator at SANS. Winner of Voice of Security at the Security Serious Unsung Heroes Awards 2026. Contributor of the Year and Best Back to Basics, European Cybersecurity Blogger Awards 2025. Host of Click Happens: Human Cyber News, relaunched and refreshed for 2027 and out weekly with guests. The feed has put out {{pod_eps}} episodes, found listeners in over {{pod_countries}} countries, and charted in {{pod_charting}} of them. Right Click: Human Cyber Stories launches Q4 2026.</p>
     </div>
   </div>
 
