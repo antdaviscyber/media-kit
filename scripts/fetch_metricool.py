@@ -271,6 +271,7 @@ def main(path=PATH):
     data["updated"] = today.isoformat()
     data["updated_pretty"] = f"{today:%B %Y}"
     data["updated_label"] = f"{now.day} {now:%B %Y}, {now:%H:%M} UK time"
+    data["updated_iso"] = now.isoformat(timespec="minutes")
     data["period"] = label
 
     # Drop every figure Metricool cannot supply, so nothing stale or hand-typed is left behind.
