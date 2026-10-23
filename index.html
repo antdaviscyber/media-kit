@@ -195,7 +195,16 @@ main,footer{position:relative;z-index:1}
 
 /* growth */
 .growth-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center;margin-top:40px}
-.growth-big b{display:block;font-family:var(--display);color:var(--yellow);font-size:clamp(80px,12vw,140px);line-height:.85}
+.fol{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;margin-top:36px}
+.fol-main b{display:block;font-family:var(--display);color:var(--yellow);font-size:clamp(84px,13vw,160px);line-height:.85}
+.fol-main span{display:block;margin-top:12px;font-size:clamp(18px,2vw,22px);color:#e6e6e6}
+.fol-split{display:grid;grid-template-columns:1fr 1fr;gap:24px;border-left:1px solid rgba(255,255,255,.15);padding-left:32px}
+.fol-split b{display:block;font-family:var(--display);color:#fff;font-size:clamp(32px,4.4vw,56px);line-height:1}
+.fol-split span{display:block;margin-top:6px;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:#9a9a9a}
+.fol-next{margin-top:64px;color:#9a9a9a;font-size:14px;letter-spacing:.1em;text-transform:uppercase;font-family:var(--body);font-weight:700}
+@media (max-width:820px){.fol{grid-template-columns:1fr;gap:24px}.fol-split{border-left:0;padding-left:0}.fol-next{margin-top:44px}}
+@media print{.fol-main b{color:#000}.fol-split b{color:#000}.fol-split span,.fol-main span,.fol-next{color:#000}.fol-split{border-color:#ccc}}
+.growth-big b{display:block;font-family:var(--display);color:var(--yellow);font-size:clamp(56px,8vw,96px);line-height:.85}
 .growth-grid .lede{max-width:26ch}
 #growthchart{width:100%}
 #growthchart svg{width:100%;height:auto;display:block;overflow:visible}
@@ -382,7 +391,7 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
 <nav class="nav" id="nav">
   <div class="wrap">
     <a class="brand" href="#top">Ant Davis</a>
-    <a class="item" href="#growth">Growth</a>
+    <a class="item" href="#growth">Followers</a>
     <a class="item" href="#who">Who</a>
     <a class="item" href="#numbers">Numbers</a>
     <a class="item" href="#audience">Audience</a>
@@ -422,7 +431,15 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
 <!-- Growth -->
 <section id="growth">
   <div class="wrap">
-    <h2 class="rv">Growing fast.</h2>
+    <h2 class="rv">A big audience, growing fast.</h2>
+    <div class="fol rv" id="fol" hidden>
+      <div class="fol-main"><b id="fol-total"></b><span>followers across Instagram and TikTok</span></div>
+      <div class="fol-split">
+        <div><b id="fol-ig"></b><span>Instagram</span></div>
+        <div><b id="fol-tt"></b><span>TikTok</span></div>
+      </div>
+    </div>
+    <h3 class="rv fol-next">And it keeps growing</h3>
     <div class="growth-grid growth rv">
       <div>
         <div class="growth-big"><b data-key="growth.gained" data-fmt="k" data-prefix="+"></b></div>
@@ -709,6 +726,16 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
         s.querySelectorAll('.ago').forEach(a=>a.textContent=txt);
         if(mins>1440) s.classList.add('stale');
       });
+    })();
+
+    // follower totals, opening the section
+    (function(){
+      const ig=d.instagram&&d.instagram.followers, tt=d.tiktok&&d.tiktok.followers, box=document.getElementById('fol');
+      if(!ig||!tt||!box) return;
+      document.getElementById('fol-total').textContent=((ig+tt)/1000).toFixed(1).replace(/\.0$/,'')+'K';
+      document.getElementById('fol-ig').textContent=ig.toLocaleString('en-GB');
+      document.getElementById('fol-tt').textContent=tt.toLocaleString('en-GB');
+      box.hidden=false;
     })();
 
     // growth chart, built from d.growth.points so it extends each month
