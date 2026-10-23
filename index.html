@@ -207,6 +207,17 @@ main,footer{position:relative;z-index:1}
 .gc-dot{fill:var(--yellow)}
 @media (max-width:820px){.growth-grid{grid-template-columns:1fr;gap:24px}}
 @media (prefers-reduced-motion:reduce){.gc-line{stroke-dashoffset:0;transition:none}}
+/* last-updated stamp */
+.stamp{display:inline-flex;align-items:center;gap:16px;margin-top:26px;padding:14px 22px 14px 18px;border:2px solid var(--yellow);border-radius:14px;background:rgba(255,214,0,.08)}
+.stamp .dot{flex:none;width:14px;height:14px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 0 rgba(255,214,0,.6);animation:pulse 2s ease-out infinite}
+.stamp small{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.stamp b{display:block;margin-top:3px;font-family:var(--display);text-transform:uppercase;font-weight:400;color:var(--yellow);font-size:clamp(18px,2.1vw,28px);line-height:1.05}
+.stamp em{display:block;margin-top:5px;font-style:normal;font-size:14px;color:var(--white)}
+.stamp.stale{border-color:#fff}
+.stamp.wide{display:flex;margin:26px 0 8px;max-width:none}
+@keyframes pulse{70%{box-shadow:0 0 0 12px rgba(255,214,0,0)}100%{box-shadow:0 0 0 0 rgba(255,214,0,0)}}
+@media (prefers-reduced-motion:reduce){.stamp .dot{animation:none}}
+@media print{.stamp{border-color:#000;background:none}.stamp .dot{animation:none;background:#000}.stamp b{color:#000}.stamp small,.stamp em{color:#000}}
 .since{margin-top:52px;border-top:1px solid rgba(255,255,255,.15);padding-top:28px}
 .since-h{margin:0;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#9a9a9a}
 .since-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;margin-top:16px}
@@ -391,7 +402,8 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
     <div>
       <h1>Ant <span>Davis</span></h1>
       <div class="strap">Making cyber security make sense</div>
-      <p class="sub">Everything you need to know before we work together.<br>Numbers updated on <span data-key="updated_label"></span>.</p>
+      <p class="sub">Everything you need to know before we work together.</p>
+      <div class="stamp"><span class="dot"></span><div><small>Numbers last updated</small><b data-key="updated_label"></b><em class="ago"></em></div></div>
       <div class="actions">
         <a class="btn solid" href="#talk">Get in touch</a>
         <a class="btn" href="Ant_Davis_Media_Kit.pdf" download>Download PDF</a>
@@ -460,7 +472,8 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
 <section id="numbers">
   <div class="wrap">
     <h2 class="rv">The numbers, without the spin.</h2>
-    <p class="lede rv" style="margin-top:22px;max-width:64ch">All of this comes from the last 60 days, <span data-key="period"></span>. It updates itself, so what you see is what you get. Every figure counts the reels and videos I published in that window. Numbers updated on <span data-key="updated_label"></span>.</p>
+    <p class="lede rv" style="margin-top:22px;max-width:64ch">All of this comes from the last 60 days, <span data-key="period"></span>. It updates itself, so what you see is what you get. Every figure counts the reels and videos I published in that window.</p>
+    <div class="stamp wide rv"><span class="dot"></span><div><small>Numbers last updated</small><b data-key="updated_label"></b><em class="ago"></em><em>Pulled straight from Instagram and TikTok through Metricool, refreshed automatically every few hours. Nothing here is typed in by hand.</em></div></div>
 
     <div class="pgrid rv">
       <div class="ph-row head"><div></div><div class="plat ig">Instagram</div><div class="plat tt">TikTok</div></div>
@@ -686,6 +699,17 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
       ...d.tiktok.top_videos.map(x=>({t:x.title,v:x.views,p:'TikTok'}))
     ].sort((a,b)=>b.v-a.v).map(x=>`<span>${x.t}<b>${fmt(x.v,'k')} views on ${x.p}</b></span>`);
     document.getElementById('ticker').innerHTML = [...tick,...tick].join('');
+
+    // how long ago the numbers were refreshed, worked out in the visitor's browser
+    (function(){
+      const t=Date.parse(d.updated_iso||''); if(isNaN(t)) return;
+      const mins=Math.max(0,Math.round((Date.now()-t)/60000));
+      const txt=mins<2?'Refreshed just now':mins<60?'Refreshed '+mins+' minutes ago':mins<1440?'Refreshed '+Math.round(mins/60)+(Math.round(mins/60)===1?' hour':' hours')+' ago':'Refreshed '+Math.round(mins/1440)+(Math.round(mins/1440)===1?' day':' days')+' ago';
+      document.querySelectorAll('.stamp').forEach(s=>{
+        s.querySelectorAll('.ago').forEach(a=>a.textContent=txt);
+        if(mins>1440) s.classList.add('stale');
+      });
+    })();
 
     // growth chart, built from d.growth.points so it extends each month
     (function(){
