@@ -16,6 +16,10 @@ html,body{margin:0;background:var(--k);color:var(--w);font-family:Inter,sans-ser
 .head h1 span{color:var(--w);display:block}
 .head .strap{font-size:15pt;color:var(--y);margin-top:3mm}
 .head .sub{font-size:9.5pt;color:var(--g);margin-top:2mm;line-height:1.4}
+.stamp{display:inline-flex;align-items:center;gap:3.5mm;margin-top:3.5mm;padding:2mm 4.5mm 2mm 3.5mm;border:.5mm solid var(--y);border-radius:2.5mm;background:rgba(255,214,0,.1)}
+.stamp i{width:3mm;height:3mm;border-radius:50%;background:var(--y);flex:none}
+.stamp small{display:block;font-size:6.5pt;letter-spacing:.14em;text-transform:uppercase;color:var(--g);font-weight:700}
+.stamp b{display:block;margin-top:.8mm;font-size:13pt;color:var(--y);font-weight:400;line-height:1}
 .photo{width:40mm;height:40mm;border-radius:50%;overflow:hidden;border:2.5mm solid var(--y)}
 .photo img{width:100%;height:100%;object-fit:cover;display:block}
 .rule{height:.6mm;background:var(--y);width:26mm}
@@ -45,7 +49,8 @@ html,body{margin:0;background:var(--k);color:var(--w);font-family:Inter,sans-ser
     <div>
       <h1 class="d">Ant <span>Davis</span></h1>
       <div class="strap d">Making cyber security make sense</div>
-      <div class="sub">Sponsorship and partnership media kit. Numbers cover {{period}}. Numbers updated on {{updated}}. Live version at mediakit.antdavis.com.</div>
+      <div class="sub">Sponsorship and partnership media kit. Numbers cover {{period}}. Live version at mediakit.antdavis.com.</div>
+      <div class="stamp"><i></i><div><small>Numbers last updated</small><b class="d">{{updated}}</b></div></div>
     </div>
     <div class="photo"><img src="../images/cover.jpg" alt=""></div>
   </div>
