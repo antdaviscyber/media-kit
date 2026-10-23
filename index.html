@@ -310,6 +310,13 @@ main,footer{position:relative;z-index:1}
 .contact .links a:hover{color:var(--yellow);padding-left:10px}
 .contact .links a:hover::after{opacity:1}
 .contact .small{font-size:16px;color:#d9d9d9;margin-top:30px}
+.clients{margin-top:64px}
+.clients .chips{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0;padding:0;list-style:none}
+.clients .chips li{border:2px solid var(--yellow);color:var(--white);font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;font-size:clamp(16px,1.7vw,20px);padding:9px 16px;line-height:1}
+.clients .where{margin-top:26px;font-size:18px;max-width:64ch}
+.clients .where b{color:var(--yellow);font-weight:700}
+.clients .book{margin-top:22px;font-size:18px}
+
 
 footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgba(255,255,255,.06)}
 .handle{font-family:var(--display);text-transform:uppercase;color:var(--yellow);font-size:18px}
@@ -560,6 +567,13 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
       <div class="photo" style="aspect-ratio:auto;background:transparent;border:0"><img src="images/cruisecon-card.jpg" alt="CruiseCon 2026, Ant Davis as Media Partner" onload="this.parentNode.classList.add('ok')" onerror="this.remove()"><div class="ph" style="aspect-ratio:1">cruisecon-card<br>CruiseCon media partner card</div></div>
     </div>
 
+    <div class="clients rv" id="clients">
+      <h3>Companies I have worked with include</h3>
+      <ul class="chips" id="client-list"></ul>
+      <p class="where">I have presented to audiences in <b id="client-countries"></b>.</p>
+      <p class="book">Want me at your event? <a href="#talk">Get in touch to book me to speak.</a></p>
+    </div>
+
     <h3 class="rv" style="margin-top:64px">What people say in the comments</h3>
     <div class="crail rv" aria-label="Comments from viewers"><div class="ctrack"><div class="ccard"><img src="images/comment-1.png" alt="" onerror="this.parentNode.remove()"></div><div class="ccard"><img src="images/comment-2.png" alt="" onerror="this.parentNode.remove()"></div><div class="ccard"><img src="images/comment-3.png" alt="" onerror="this.parentNode.remove()"></div><div class="ccard"><img src="images/comment-4.png" alt="" onerror="this.parentNode.remove()"></div><div class="ccard"><img src="images/comment-5.png" alt="" onerror="this.parentNode.remove()"></div><div class="ccard"><img src="images/comment-1.png" alt="" onerror="this.parentNode.remove()"></div><div class="ccard"><img src="images/comment-2.png" alt="" onerror="this.parentNode.remove()"></div><div class="ccard"><img src="images/comment-3.png" alt="" onerror="this.parentNode.remove()"></div><div class="ccard"><img src="images/comment-4.png" alt="" onerror="this.parentNode.remove()"></div><div class="ccard"><img src="images/comment-5.png" alt="" onerror="this.parentNode.remove()"></div></div></div>
     
@@ -710,6 +724,12 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
     {hd:'Audience'},['Followers',tk.followers.toLocaleString()],['Net new followers, 60 days','+'+fmt(tk.net_new_followers,'k')]
   ]);
 
+    if(d.clients){
+      fill('client-list', d.clients.companies||[], x=>`<li>${x}</li>`);
+      const cs=d.clients.countries||[], el=document.getElementById('client-countries');
+      if(el) el.textContent = cs.length>1 ? cs.slice(0,-1).join(', ')+' and '+cs[cs.length-1] : cs.join('');
+      if(!cs.length||!(d.clients.companies||[]).length){ const c=document.getElementById('clients'); if(c) c.remove(); }
+    }
     fill('countries', d.audience.countries, x=>`<li><span>${x.name}</span><i style="--w:${(x.pct/d.audience.countries[0].pct*100).toFixed(1)}%"></i><span>${x.pct}%</span></li>`);
     const tick = [
       ...d.instagram.top_videos.map(x=>({t:x.title,v:x.views,p:'Instagram'})),
