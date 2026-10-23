@@ -40,6 +40,12 @@ vals = {
  "pod_countries": d.get("podcast", {}).get("countries_featured", "n/a"),
  "pod_charting": d.get("podcast", {}).get("countries_charting", "n/a"),
 }
+def jn(lst):
+    lst = list(lst or [])
+    return "n/a" if not lst else (lst[0] if len(lst)==1 else ", ".join(lst[:-1]) + " and " + lst[-1])
+cl = d.get("clients", {})
+vals["client_list"] = jn(cl.get("companies"))
+vals["client_countries"] = jn(cl.get("countries"))
 fonts = root / "print/fonts"
 if not fonts.exists() or not any(fonts.iterdir()):
     print("warning: print/fonts is missing, falling back to system fonts", file=sys.stderr)
