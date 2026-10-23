@@ -60,6 +60,10 @@ html,body{margin:0;background:var(--k);color:var(--w);font-family:Inter,sans-ser
     <div class="grid">
       <div class="hd"></div><div class="hd"><span>Instagram</span></div><div class="hd"><span class="tt">TikTok</span></div>
 
+      <div class="lab"><b>Followers</b>And how fast they've grown</div>
+      <div class="v d">{{ig_fol}}<small>{{ig_mult}} since {{base_label}}, up from {{ig_base}}</small></div>
+      <div class="v d">{{tt_fol}}<small>{{tt_mult}} since {{base_label}}, up from {{tt_base}}</small></div>
+
       <div class="lab"><b>Average views per post</b>What a typical video does</div>
       <div class="v d">{{ig_avg}}<small>{{ig_views}} views across {{ig_posts}} reels</small></div>
       <div class="v d">{{tt_avg}}<small>{{tt_views}} views across {{tt_posts}} posts</small></div>
@@ -75,10 +79,6 @@ html,body{margin:0;background:var(--k);color:var(--w);font-family:Inter,sans-ser
       <div class="lab"><b>Saves</b>Kept to come back to</div>
       <div class="v d">{{ig_saves}}</div>
       <div class="v d dim">n/a<small>Not reported by TikTok</small></div>
-
-      <div class="lab"><b>Followers</b>And how fast they've grown</div>
-      <div class="v d dim">{{ig_fol}}<small>{{ig_mult}} since {{base_label}}, up from {{ig_base}}</small></div>
-      <div class="v d dim">{{tt_fol}}<small>{{tt_mult}} since {{base_label}}, up from {{tt_base}}</small></div>
     </div>
   </div>
 
