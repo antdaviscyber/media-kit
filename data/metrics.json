@@ -184,5 +184,35 @@
     }
   },
   "updated_label": "23 October 2026, 12:40 UK time",
-  "updated_iso": "2026-10-23T12:40+01:00"
+  "updated_iso": "2026-10-23T12:40+01:00",
+  "clients": {
+    "companies": [
+      "General Mills",
+      "Volvo Cars",
+      "McKesson",
+      "Jungheinrich",
+      "Hapag-Lloyd",
+      "VTG",
+      "Scottish Power",
+      "NN Group",
+      "Neste",
+      "Prudential",
+      "LyondellBasell",
+      "Staples",
+      "Acadia Healthcare",
+      "SLB",
+      "Givaudan",
+      "Tesco",
+      "Ocado"
+    ],
+    "countries": [
+      "Finland",
+      "Sweden",
+      "Germany",
+      "France",
+      "India",
+      "the UK",
+      "the USA"
+    ]
+  }
 }
