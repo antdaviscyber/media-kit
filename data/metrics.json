@@ -1,61 +1,61 @@
 {
-  "updated": "2026-10-23",
-  "period": "24 August to 22 October 2026",
+  "updated": "2026-10-24",
+  "period": "25 August to 23 October 2026",
   "instagram": {
-    "followers": 92123,
-    "reel_views": 2203357,
-    "shares": 51297,
-    "saves": 28645,
-    "engagement_rate": 9.6,
+    "followers": 92436,
+    "reel_views": 2264736,
+    "shares": 52131,
+    "saves": 29484,
+    "engagement_rate": 9.5,
     "top_videos": [
       {
         "title": "Revolut just exposed passports, ID scans and full transaction...",
         "desc": "Would this fool your bank?",
-        "views": 637207,
+        "views": 651259,
         "date": "2026-09-14"
       },
       {
         "title": "Websites across Europe went offline on purpose on 21 October 2026...",
         "desc": "Finland’s government web services, French government sites, Dutch public bodies, hospitals and schools all took...",
-        "views": 123073,
+        "views": 129375,
         "date": "2026-10-21"
       },
       {
         "title": "Office 2016 and 2019 users just got hit with random deactivation...",
         "desc": "If you’re still on old Office, this is what “end of support” actually looks like in practice",
-        "views": 121704,
+        "views": 121929,
         "date": "2026-09-26"
       },
       {
         "title": "The software protecting millions of work laptops just became the way...",
         "desc": "A researcher has released a working CrowdStrike Falcon exploit that hands attackers full SYSTEM control on fully...",
-        "views": 87424,
+        "views": 87551,
         "date": "2026-09-07"
       },
       {
         "title": "ABC News says the OpenAl government breach in Australia wasn’t four...",
         "desc": "What else is on that list we don’t know yet?",
-        "views": 62503,
+        "views": 62594,
         "date": "2026-09-26"
       }
     ],
     "window": {
-      "start": "2026-08-24",
-      "end": "2026-10-22",
+      "start": "2026-08-25",
+      "end": "2026-10-23",
       "days": 60,
-      "label": "24 August to 22 October 2026"
+      "label": "25 August to 23 October 2026"
     },
-    "posts_in_window": 57,
-    "likes": 75126,
-    "comments": 3514,
-    "avg_views_per_post": 38655,
+    "posts_in_window": 60,
+    "likes": 77035,
+    "comments": 3560,
+    "avg_views_per_post": 37746,
     "engagement_formula": "likes + comments + saves + shares, divided by the reach of each reel",
-    "avg_reach_per_post": 29120
+    "avg_reach_per_post": 28393
   },
   "tiktok": {
-    "views": 2546016,
-    "shares": 26151,
-    "followers": 25736,
+    "views": 2542707,
+    "shares": 26142,
+    "followers": 26068,
     "top_videos": [
       {
         "title": "Note - Impacted customers have been contacted!",
@@ -89,26 +89,26 @@
       }
     ],
     "window": {
-      "start": "2026-08-24",
-      "end": "2026-10-22",
+      "start": "2026-08-25",
+      "end": "2026-10-23",
       "days": 60,
-      "label": "24 August to 22 October 2026"
+      "label": "25 August to 23 October 2026"
     },
-    "likes": 88907,
-    "comments": 4486,
+    "likes": 88756,
+    "comments": 4464,
     "engagement_rate": 4.7,
     "engagement_formula": "likes + comments + shares, divided by views (TikTok does not report saves)",
-    "posts_in_window": 58,
-    "avg_views_per_post": 43897,
-    "net_new_followers": 5277
+    "posts_in_window": 57,
+    "avg_views_per_post": 44609,
+    "net_new_followers": 5601
   },
   "audience": {
-    "source": "Instagram follower insights via Metricool, 24 August to 22 October 2026",
+    "source": "Instagram follower insights via Metricool, 25 August to 23 October 2026",
     "male_pct": 73.3,
     "female_pct": 26.7,
     "age": {
       "25-34": 17.3,
-      "35-44": 34.8,
+      "35-44": 34.9,
       "45-54": 28.2,
       "55-64": 13.4,
       "65+": 4.5
@@ -144,9 +144,9 @@
   "updated_pretty": "October 2026",
   "growth": {
     "platform": "Instagram",
-    "gained": 81323,
+    "gained": 81636,
     "window": "February to October 2026",
-    "summary": "followers on Instagram in eight months. From 10.8K in February to 92.1K in October 2026.",
+    "summary": "followers on Instagram in eight months. From 10.8K in February to 92.4K in October 2026.",
     "note": "February is from my profile on 17 February. Every other point is a Metricool follower count.",
     "points": [
       {
@@ -171,8 +171,8 @@
       },
       {
         "label": "Oct",
-        "date": "2026-10-23",
-        "followers": 92123
+        "date": "2026-10-24",
+        "followers": 92436
       }
     ],
     "start_month": "2026-02",
@@ -183,8 +183,8 @@
       "tiktok": 4322
     }
   },
-  "updated_label": "23 October 2026, 22:25 UK time",
-  "updated_iso": "2026-10-23T22:25+01:00",
+  "updated_label": "24 October 2026, 05:38 UK time",
+  "updated_iso": "2026-10-24T05:38+01:00",
   "clients": {
     "companies": [
       "General Mills",
