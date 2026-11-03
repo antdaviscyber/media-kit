@@ -1,11 +1,11 @@
 {
-  "updated": "2026-11-02",
-  "period": "3 September to 1 November 2026",
+  "updated": "2026-11-03",
+  "period": "4 September to 2 November 2026",
   "instagram": {
     "followers": 93411,
-    "reel_views": 2358423,
-    "shares": 53473,
-    "saves": 30180,
+    "reel_views": 2347622,
+    "shares": 53369,
+    "saves": 30080,
     "engagement_rate": 9.4,
     "top_videos": [
       {
@@ -40,21 +40,21 @@
       }
     ],
     "window": {
-      "start": "2026-09-03",
-      "end": "2026-11-01",
+      "start": "2026-09-04",
+      "end": "2026-11-02",
       "days": 60,
-      "label": "3 September to 1 November 2026"
+      "label": "4 September to 2 November 2026"
     },
     "posts_in_window": 66,
-    "likes": 79403,
-    "comments": 3687,
-    "avg_views_per_post": 35734,
+    "likes": 78923,
+    "comments": 3671,
+    "avg_views_per_post": 35570,
     "engagement_formula": "likes + comments + saves + shares, divided by the reach of each reel",
-    "avg_reach_per_post": 27019
+    "avg_reach_per_post": 26888
   },
   "tiktok": {
-    "views": 2704240,
-    "shares": 27001,
+    "views": 2694257,
+    "shares": 26938,
     "followers": 26672,
     "top_videos": [
       {
@@ -89,21 +89,21 @@
       }
     ],
     "window": {
-      "start": "2026-09-03",
-      "end": "2026-11-01",
+      "start": "2026-09-04",
+      "end": "2026-11-02",
       "days": 60,
-      "label": "3 September to 1 November 2026"
+      "label": "4 September to 2 November 2026"
     },
-    "likes": 95031,
-    "comments": 4790,
+    "likes": 94731,
+    "comments": 4764,
     "engagement_rate": 4.7,
     "engagement_formula": "likes + comments + shares, divided by views (TikTok does not report saves)",
     "posts_in_window": 67,
-    "avg_views_per_post": 40362,
-    "net_new_followers": 5920
+    "avg_views_per_post": 40213,
+    "net_new_followers": 5900
   },
   "audience": {
-    "source": "Instagram follower insights via Metricool, 3 September to 1 November 2026",
+    "source": "Instagram follower insights via Metricool, 4 September to 2 November 2026",
     "male_pct": 73.5,
     "female_pct": 26.5,
     "age": {
@@ -176,7 +176,7 @@
       },
       {
         "label": "Nov",
-        "date": "2026-11-02",
+        "date": "2026-11-03",
         "followers": 93411
       }
     ],
@@ -188,8 +188,8 @@
       "tiktok": 4322
     }
   },
-  "updated_label": "2 November 2026, 15:55 UK time",
-  "updated_iso": "2026-11-02T15:55+00:00",
+  "updated_label": "3 November 2026, 00:58 UK time",
+  "updated_iso": "2026-11-03T00:58+00:00",
   "clients": {
     "companies": [
       "General Mills",
