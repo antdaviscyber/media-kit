@@ -1,111 +1,111 @@
 {
-  "updated": "2026-11-05",
-  "period": "6 September to 4 November 2026",
+  "updated": "2026-11-06",
+  "period": "7 September to 5 November 2026",
   "instagram": {
-    "followers": 94174,
-    "reel_views": 2507223,
-    "shares": 55651,
-    "saves": 31562,
+    "followers": 94282,
+    "reel_views": 2536711,
+    "shares": 56087,
+    "saves": 31839,
     "engagement_rate": 9.2,
     "top_videos": [
       {
         "title": "Revolut just exposed passports, ID scans and full transaction...",
         "desc": "Would this fool your bank?",
-        "views": 690176,
+        "views": 693546,
         "date": "2026-09-14"
       },
       {
         "title": "Websites across Europe went offline on purpose on 21 October 2026...",
         "desc": "Finland’s government web services, French government sites, Dutch public bodies, hospitals and schools all took...",
-        "views": 132639,
+        "views": 132674,
         "date": "2026-10-21"
       },
       {
         "title": "Office 2016 and 2019 users just got hit with random deactivation...",
         "desc": "If you’re still on old Office, this is what “end of support” actually looks like in practice",
-        "views": 123200,
+        "views": 123291,
         "date": "2026-09-26"
       },
       {
         "title": "The software protecting millions of work laptops just became the way...",
         "desc": "A researcher has released a working CrowdStrike Falcon exploit that hands attackers full SYSTEM control on fully...",
-        "views": 88294,
+        "views": 88344,
         "date": "2026-09-07"
       },
       {
-        "title": "ABC News says the OpenAl government breach in Australia wasn’t four...",
-        "desc": "What else is on that list we don’t know yet?",
-        "views": 63058,
-        "date": "2026-09-26"
+        "title": "The PHP2Shell bug everyone has been talking about has now been used...",
+        "desc": "Hackers chained it with a Linux flaw to take over 25 servers in under 15 minutes, including firewalls tied to a US...",
+        "views": 64767,
+        "date": "2026-11-03"
       }
     ],
     "window": {
-      "start": "2026-09-06",
-      "end": "2026-11-04",
+      "start": "2026-09-07",
+      "end": "2026-11-05",
       "days": 60,
-      "label": "6 September to 4 November 2026"
+      "label": "7 September to 5 November 2026"
     },
-    "posts_in_window": 73,
-    "likes": 83600,
-    "comments": 3961,
-    "avg_views_per_post": 34346,
+    "posts_in_window": 74,
+    "likes": 84473,
+    "comments": 4008,
+    "avg_views_per_post": 34280,
     "engagement_formula": "likes + comments + saves + shares, divided by the reach of each reel",
-    "avg_reach_per_post": 26003
+    "avg_reach_per_post": 25941
   },
   "tiktok": {
-    "views": 2795217,
-    "shares": 27748,
-    "followers": 26978,
+    "views": 2819738,
+    "shares": 28200,
+    "followers": 27012,
     "top_videos": [
       {
         "title": "Note - Impacted customers have been contacted!",
         "desc": "If you haven’t heard, you’re probably okay!",
-        "views": 1194984,
+        "views": 1195270,
         "date": "2026-09-14"
       },
       {
         "title": "Revolut was hit by a major outage this morning and a Google Cloud...",
         "desc": "Monzo built a backup bank for exactly this",
-        "views": 217397,
+        "views": 217424,
         "date": "2026-10-20"
       },
       {
         "title": "Websites across Europe went dark on purpose today after two critical...",
         "desc": "Only 1.3% of flaws found with AI tools have been seen in real attacks, but this one affects a huge share of the web",
-        "views": 137092,
+        "views": 137113,
         "date": "2026-10-21"
       },
       {
         "title": "Office 2016 and 2019 users just got hit with random deactivation...",
         "desc": "If you're still on old Office, this is what \"end of support\" actually looks like in practice",
-        "views": 129268,
+        "views": 129364,
         "date": "2026-09-26"
       },
       {
         "title": "Google's September update just fixed a Pixel bug already being used...",
         "desc": "If you own a Pixel 6 through 11, the Tablet or the Fold, go update now",
-        "views": 115004,
+        "views": 115163,
         "date": "2026-09-16"
       }
     ],
     "window": {
-      "start": "2026-09-06",
-      "end": "2026-11-04",
+      "start": "2026-09-07",
+      "end": "2026-11-05",
       "days": 60,
-      "label": "6 September to 4 November 2026"
+      "label": "7 September to 5 November 2026"
     },
-    "likes": 98603,
-    "comments": 5100,
+    "likes": 99602,
+    "comments": 5131,
     "engagement_rate": 4.7,
     "engagement_formula": "likes + comments + shares, divided by views (TikTok does not report saves)",
-    "posts_in_window": 74,
-    "avg_views_per_post": 37773,
-    "net_new_followers": 6177
+    "posts_in_window": 75,
+    "avg_views_per_post": 37597,
+    "net_new_followers": 5856
   },
   "audience": {
-    "source": "Instagram follower insights via Metricool, 6 September to 4 November 2026",
-    "male_pct": 73.4,
-    "female_pct": 26.6,
+    "source": "Instagram follower insights via Metricool, 7 September to 5 November 2026",
+    "male_pct": 73.3,
+    "female_pct": 26.7,
     "age": {
       "25-34": 17.4,
       "35-44": 34.8,
@@ -117,7 +117,7 @@
     "countries": [
       {
         "name": "United Kingdom",
-        "pct": 27.5
+        "pct": 27.6
       },
       {
         "name": "United States",
@@ -144,9 +144,9 @@
   "updated_pretty": "November 2026",
   "growth": {
     "platform": "Instagram",
-    "gained": 83374,
+    "gained": 83482,
     "window": "February to November 2026",
-    "summary": "followers on Instagram in nine months. From 10.8K in February to 94.2K in November 2026.",
+    "summary": "followers on Instagram in nine months. From 10.8K in February to 94.3K in November 2026.",
     "note": "February is from my profile on 17 February. Every other point is a Metricool follower count.",
     "points": [
       {
@@ -176,8 +176,8 @@
       },
       {
         "label": "Nov",
-        "date": "2026-11-05",
-        "followers": 94174
+        "date": "2026-11-06",
+        "followers": 94282
       }
     ],
     "start_month": "2026-02",
@@ -188,8 +188,8 @@
       "tiktok": 4322
     }
   },
-  "updated_label": "5 November 2026, 19:58 UK time",
-  "updated_iso": "2026-11-05T19:58+00:00",
+  "updated_label": "6 November 2026, 06:48 UK time",
+  "updated_iso": "2026-11-06T06:48+00:00",
   "clients": {
     "companies": [
       "General Mills",
