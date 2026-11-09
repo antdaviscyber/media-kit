@@ -1,113 +1,113 @@
 {
-  "updated": "2026-11-08",
-  "period": "9 September to 7 November 2026",
+  "updated": "2026-11-09",
+  "period": "10 September to 8 November 2026",
   "instagram": {
-    "followers": 94444,
-    "reel_views": 2449539,
-    "shares": 53667,
-    "saves": 31141,
+    "followers": 94550,
+    "reel_views": 2410222,
+    "shares": 53297,
+    "saves": 30494,
     "engagement_rate": 9.2,
     "top_videos": [
       {
         "title": "Revolut just exposed passports, ID scans and full transaction...",
         "desc": "Would this fool your bank?",
-        "views": 698300,
+        "views": 699799,
         "date": "2026-09-14"
       },
       {
         "title": "Websites across Europe went offline on purpose on 21 October 2026...",
         "desc": "Finland’s government web services, French government sites, Dutch public bodies, hospitals and schools all took...",
-        "views": 132726,
+        "views": 132749,
         "date": "2026-10-21"
       },
       {
         "title": "Office 2016 and 2019 users just got hit with random deactivation...",
         "desc": "If you’re still on old Office, this is what “end of support” actually looks like in practice",
-        "views": 123513,
+        "views": 123593,
         "date": "2026-09-26"
       },
       {
         "title": "The PHP2Shell bug everyone has been talking about has now been used...",
         "desc": "Hackers chained it with a Linux flaw to take over 25 servers in under 15 minutes, including firewalls tied to a US...",
-        "views": 69116,
+        "views": 70824,
         "date": "2026-11-03"
       },
       {
         "title": "79 organisations hacked without a password, according to research",
         "desc": "The MFA prompt did not stop them",
-        "views": 63836,
+        "views": 64443,
         "date": "2026-10-23"
       }
     ],
     "window": {
-      "start": "2026-09-09",
-      "end": "2026-11-07",
+      "start": "2026-09-10",
+      "end": "2026-11-08",
       "days": 60,
-      "label": "9 September to 7 November 2026"
+      "label": "10 September to 8 November 2026"
     },
     "posts_in_window": 74,
-    "likes": 81296,
-    "comments": 3932,
-    "avg_views_per_post": 33102,
+    "likes": 80028,
+    "comments": 3914,
+    "avg_views_per_post": 32571,
     "engagement_formula": "likes + comments + saves + shares, divided by the reach of each reel",
-    "avg_reach_per_post": 25019
+    "avg_reach_per_post": 24661
   },
   "tiktok": {
-    "views": 2766312,
-    "shares": 27882,
-    "followers": 27049,
+    "views": 2734123,
+    "shares": 27746,
+    "followers": 27075,
     "top_videos": [
       {
         "title": "Note - Impacted customers have been contacted!",
         "desc": "If you haven’t heard, you’re probably okay!",
-        "views": 1196448,
+        "views": 1197799,
         "date": "2026-09-14"
       },
       {
         "title": "Revolut was hit by a major outage this morning and a Google Cloud...",
         "desc": "Monzo built a backup bank for exactly this",
-        "views": 217508,
+        "views": 217588,
         "date": "2026-10-20"
       },
       {
         "title": "Websites across Europe went dark on purpose today after two critical...",
         "desc": "Only 1.3% of flaws found with AI tools have been seen in real attacks, but this one affects a huge share of the web",
-        "views": 137165,
+        "views": 137188,
         "date": "2026-10-21"
       },
       {
         "title": "Office 2016 and 2019 users just got hit with random deactivation...",
         "desc": "If you're still on old Office, this is what \"end of support\" actually looks like in practice",
-        "views": 129586,
+        "views": 129782,
         "date": "2026-09-26"
       },
       {
         "title": "Google's September update just fixed a Pixel bug already being used...",
         "desc": "If you own a Pixel 6 through 11, the Tablet or the Fold, go update now",
-        "views": 115540,
+        "views": 115730,
         "date": "2026-09-16"
       }
     ],
     "window": {
-      "start": "2026-09-09",
-      "end": "2026-11-07",
+      "start": "2026-09-10",
+      "end": "2026-11-08",
       "days": 60,
-      "label": "9 September to 7 November 2026"
+      "label": "10 September to 8 November 2026"
     },
-    "likes": 98099,
-    "comments": 5073,
+    "likes": 97101,
+    "comments": 4985,
     "engagement_rate": 4.7,
     "engagement_formula": "likes + comments + shares, divided by views (TikTok does not report saves)",
     "posts_in_window": 75,
-    "avg_views_per_post": 36884,
-    "net_new_followers": 5687
+    "avg_views_per_post": 36455,
+    "net_new_followers": 5677
   },
   "audience": {
-    "source": "Instagram follower insights via Metricool, 9 September to 7 November 2026",
+    "source": "Instagram follower insights via Metricool, 10 September to 8 November 2026",
     "male_pct": 73.3,
     "female_pct": 26.7,
     "age": {
-      "25-34": 17.4,
+      "25-34": 17.3,
       "35-44": 34.8,
       "45-54": 28.1,
       "55-64": 13.4,
@@ -144,9 +144,9 @@
   "updated_pretty": "November 2026",
   "growth": {
     "platform": "Instagram",
-    "gained": 83644,
+    "gained": 83750,
     "window": "February to November 2026",
-    "summary": "followers on Instagram in nine months. From 10.8K in February to 94.4K in November 2026.",
+    "summary": "followers on Instagram in nine months. From 10.8K in February to 94.5K in November 2026.",
     "note": "February is from my profile on 17 February. Every other point is a Metricool follower count.",
     "points": [
       {
@@ -176,8 +176,8 @@
       },
       {
         "label": "Nov",
-        "date": "2026-11-08",
-        "followers": 94444
+        "date": "2026-11-09",
+        "followers": 94550
       }
     ],
     "start_month": "2026-02",
@@ -188,8 +188,8 @@
       "tiktok": 4322
     }
   },
-  "updated_label": "8 November 2026, 22:06 UK time",
-  "updated_iso": "2026-11-08T22:06+00:00",
+  "updated_label": "9 November 2026, 06:31 UK time",
+  "updated_iso": "2026-11-09T06:31+00:00",
   "clients": {
     "companies": [
       "General Mills",
