@@ -1,131 +1,131 @@
 {
-  "updated": "2026-11-11",
-  "period": "12 September to 10 November 2026",
+  "updated": "2026-11-12",
+  "period": "13 September to 11 November 2026",
   "instagram": {
-    "followers": 96546,
-    "reel_views": 2653252,
-    "shares": 57214,
-    "saves": 33993,
+    "followers": 96957,
+    "reel_views": 2706752,
+    "shares": 58090,
+    "saves": 34790,
     "engagement_rate": 9.1,
     "top_videos": [
       {
         "title": "Revolut just exposed passports, ID scans and full transaction...",
         "desc": "Would this fool your bank?",
-        "views": 703098,
+        "views": 704012,
         "date": "2026-09-14"
       },
       {
         "title": "Shops have been selling out of wind-up radios, but your car probably...",
         "desc": "A BBC story has people worried about a long power cut, and the official advice is three days of basics, an FM radio and...",
-        "views": 195868,
+        "views": 224162,
         "date": "2026-11-09"
       },
       {
         "title": "Websites across Europe went offline on purpose on 21 October 2026...",
         "desc": "Finland’s government web services, French government sites, Dutch public bodies, hospitals and schools all took...",
-        "views": 132795,
+        "views": 132815,
         "date": "2026-10-21"
       },
       {
         "title": "Office 2016 and 2019 users just got hit with random deactivation...",
         "desc": "If you’re still on old Office, this is what “end of support” actually looks like in practice",
-        "views": 123758,
+        "views": 123865,
         "date": "2026-09-26"
       },
       {
         "title": "The PHP2Shell bug everyone has been talking about has now been used...",
         "desc": "Hackers chained it with a Linux flaw to take over 25 servers in under 15 minutes, including firewalls tied to a US...",
-        "views": 74165,
+        "views": 75243,
         "date": "2026-11-03"
       }
     ],
     "window": {
-      "start": "2026-09-12",
-      "end": "2026-11-10",
+      "start": "2026-09-13",
+      "end": "2026-11-11",
       "days": 60,
-      "label": "12 September to 10 November 2026"
+      "label": "13 September to 11 November 2026"
     },
-    "posts_in_window": 74,
-    "likes": 86575,
-    "comments": 4201,
-    "avg_views_per_post": 35855,
+    "posts_in_window": 75,
+    "likes": 88145,
+    "comments": 4269,
+    "avg_views_per_post": 36090,
     "engagement_formula": "likes + comments + saves + shares, divided by the reach of each reel",
-    "avg_reach_per_post": 27144
+    "avg_reach_per_post": 27272
   },
   "tiktok": {
-    "views": 2800751,
-    "shares": 28008,
-    "followers": 27225,
+    "views": 2856730,
+    "shares": 28134,
+    "followers": 27351,
     "top_videos": [
       {
         "title": "Note - Impacted customers have been contacted!",
         "desc": "If you haven’t heard, you’re probably okay!",
-        "views": 1199169,
+        "views": 1199467,
         "date": "2026-09-14"
       },
       {
         "title": "Revolut was hit by a major outage this morning and a Google Cloud...",
         "desc": "Monzo built a backup bank for exactly this",
-        "views": 217704,
+        "views": 217759,
         "date": "2026-10-20"
       },
       {
         "title": "Websites across Europe went dark on purpose today after two critical...",
         "desc": "Only 1.3% of flaws found with AI tools have been seen in real attacks, but this one affects a huge share of the web",
-        "views": 137239,
+        "views": 137277,
         "date": "2026-10-21"
       },
       {
         "title": "Office 2016 and 2019 users just got hit with random deactivation...",
         "desc": "If you're still on old Office, this is what \"end of support\" actually looks like in practice",
-        "views": 130024,
+        "views": 130185,
         "date": "2026-09-26"
       },
       {
         "title": "Google's September update just fixed a Pixel bug already being used...",
         "desc": "If you own a Pixel 6 through 11, the Tablet or the Fold, go update now",
-        "views": 116048,
+        "views": 116313,
         "date": "2026-09-16"
       }
     ],
     "window": {
-      "start": "2026-09-12",
-      "end": "2026-11-10",
+      "start": "2026-09-13",
+      "end": "2026-11-11",
       "days": 60,
-      "label": "12 September to 10 November 2026"
+      "label": "13 September to 11 November 2026"
     },
-    "likes": 99107,
-    "comments": 5127,
+    "likes": 100206,
+    "comments": 5218,
     "engagement_rate": 4.7,
     "engagement_formula": "likes + comments + shares, divided by views (TikTok does not report saves)",
-    "posts_in_window": 75,
-    "avg_views_per_post": 37343,
-    "net_new_followers": 5789
+    "posts_in_window": 76,
+    "avg_views_per_post": 37589,
+    "net_new_followers": 5855
   },
   "audience": {
-    "source": "Instagram follower insights via Metricool, 12 September to 10 November 2026",
-    "male_pct": 73.0,
-    "female_pct": 27.0,
+    "source": "Instagram follower insights via Metricool, 13 September to 11 November 2026",
+    "male_pct": 72.5,
+    "female_pct": 27.5,
     "age": {
-      "25-34": 17.2,
+      "25-34": 17.1,
       "35-44": 34.7,
-      "45-54": 28.2,
-      "55-64": 13.5,
+      "45-54": 28.3,
+      "55-64": 13.6,
       "65+": 4.5
     },
     "age_35_54_pct": 62.9,
     "countries": [
       {
         "name": "United Kingdom",
-        "pct": 28.1
+        "pct": 28.9
       },
       {
         "name": "United States",
-        "pct": 16.6
+        "pct": 16.4
       },
       {
         "name": "Australia",
-        "pct": 8.5
+        "pct": 8.4
       }
     ]
   },
@@ -144,9 +144,9 @@
   "updated_pretty": "November 2026",
   "growth": {
     "platform": "Instagram",
-    "gained": 85746,
+    "gained": 86157,
     "window": "February to November 2026",
-    "summary": "followers on Instagram in nine months. From 10.8K in February to 96.5K in November 2026.",
+    "summary": "followers on Instagram in nine months. From 10.8K in February to 97K in November 2026.",
     "note": "February is from my profile on 17 February. Every other point is a Metricool follower count.",
     "points": [
       {
@@ -176,8 +176,8 @@
       },
       {
         "label": "Nov",
-        "date": "2026-11-11",
-        "followers": 96546
+        "date": "2026-11-12",
+        "followers": 96957
       }
     ],
     "start_month": "2026-02",
@@ -188,8 +188,8 @@
       "tiktok": 4322
     }
   },
-  "updated_label": "11 November 2026, 19:37 UK time",
-  "updated_iso": "2026-11-11T19:37+00:00",
+  "updated_label": "12 November 2026, 07:12 UK time",
+  "updated_iso": "2026-11-12T07:12+00:00",
   "clients": {
     "companies": [
       "General Mills",
