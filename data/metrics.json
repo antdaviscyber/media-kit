@@ -2,40 +2,40 @@
   "updated": "2026-11-16",
   "period": "17 September to 15 November 2026",
   "instagram": {
-    "followers": 101661,
-    "reel_views": 2952321,
-    "shares": 46461,
-    "saves": 31800,
+    "followers": 101830,
+    "reel_views": 2975526,
+    "shares": 46785,
+    "saves": 32084,
     "engagement_rate": 8.1,
     "top_videos": [
       {
         "title": "Outlook is down for a huge number of people today, and no, it isn’t...",
         "desc": "Microsoft has confirmed the problem and hasn’t said when it will be fixed",
-        "views": 323459,
+        "views": 323668,
         "date": "2026-11-12"
       },
       {
         "title": "Shops have been selling out of wind-up radios, but your car probably...",
         "desc": "A BBC story has people worried about a long power cut, and the official advice is three days of basics, an FM radio and...",
-        "views": 284317,
+        "views": 295616,
         "date": "2026-11-09"
       },
       {
         "title": "Three days after the FAA put an AI tool in every air traffic control...",
         "desc": "Nobody has shown the two are linked, and nobody has ruled it out either",
-        "views": 234079,
+        "views": 235378,
         "date": "2026-11-14"
       },
       {
         "title": "What’s going on?",
         "desc": "Is the internet broken?",
-        "views": 146865,
+        "views": 147312,
         "date": "2026-11-13"
       },
       {
         "title": "Websites across Europe went offline on purpose on 21 October 2026...",
         "desc": "Finland’s government web services, French government sites, Dutch public bodies, hospitals and schools all took...",
-        "views": 134798,
+        "views": 134839,
         "date": "2026-10-21"
       }
     ],
@@ -46,11 +46,11 @@
       "label": "17 September to 15 November 2026"
     },
     "posts_in_window": 79,
-    "likes": 94062,
-    "comments": 4729,
-    "avg_views_per_post": 37371,
+    "likes": 94716,
+    "comments": 4765,
+    "avg_views_per_post": 37665,
     "engagement_formula": "likes + comments + saves + shares, divided by the reach of each reel",
-    "avg_reach_per_post": 27768
+    "avg_reach_per_post": 27981
   },
   "tiktok": {
     "views": 2704106,
@@ -144,7 +144,7 @@
   "updated_pretty": "November 2026",
   "growth": {
     "platform": "Instagram",
-    "gained": 90861,
+    "gained": 91030,
     "window": "February to November 2026",
     "summary": "followers on Instagram in nine months. From 10.8K in February to 102K in November 2026.",
     "note": "February is from my profile on 17 February. Every other point is a Metricool follower count.",
@@ -177,7 +177,7 @@
       {
         "label": "Nov",
         "date": "2026-11-16",
-        "followers": 101661
+        "followers": 101830
       }
     ],
     "start_month": "2026-02",
@@ -188,8 +188,8 @@
       "tiktok": 4322
     }
   },
-  "updated_label": "16 November 2026, 06:31 UK time",
-  "updated_iso": "2026-11-16T06:31+00:00",
+  "updated_label": "16 November 2026, 22:03 UK time",
+  "updated_iso": "2026-11-16T22:03+00:00",
   "clients": {
     "companies": [
       "General Mills",
