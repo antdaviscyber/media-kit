@@ -1,109 +1,109 @@
 {
-  "updated": "2026-11-24",
-  "period": "25 September to 23 November 2026",
+  "updated": "2026-11-25",
+  "period": "26 September to 24 November 2026",
   "instagram": {
-    "followers": 103457,
-    "reel_views": 3242862,
-    "shares": 49723,
-    "saves": 34493,
+    "followers": 103510,
+    "reel_views": 3275789,
+    "shares": 49844,
+    "saves": 34758,
     "engagement_rate": 8.0,
     "top_videos": [
       {
         "title": "Outlook is down for a huge number of people today, and no, it isn’t...",
         "desc": "Microsoft has confirmed the problem and hasn’t said when it will be fixed",
-        "views": 324410,
+        "views": 324479,
         "date": "2026-11-12"
       },
       {
         "title": "Shops have been selling out of wind-up radios, but your car probably...",
         "desc": "A BBC story has people worried about a long power cut, and the official advice is three days of basics, an FM radio and...",
-        "views": 318327,
+        "views": 319225,
         "date": "2026-11-09"
       },
       {
         "title": "Three days after the FAA put an AI tool in every air traffic control...",
         "desc": "Nobody has shown the two are linked, and nobody has ruled it out either",
-        "views": 237109,
+        "views": 237179,
         "date": "2026-11-14"
       },
       {
         "title": "What’s going on?",
         "desc": "Is the internet broken?",
-        "views": 148463,
+        "views": 148500,
         "date": "2026-11-13"
       },
       {
         "title": "Websites across Europe went offline on purpose on 21 October 2026...",
         "desc": "Finland’s government web services, French government sites, Dutch public bodies, hospitals and schools all took...",
-        "views": 134990,
+        "views": 134992,
         "date": "2026-10-21"
       }
     ],
     "window": {
-      "start": "2026-09-25",
-      "end": "2026-11-23",
+      "start": "2026-09-26",
+      "end": "2026-11-24",
       "days": 60,
-      "label": "25 September to 23 November 2026"
+      "label": "26 September to 24 November 2026"
     },
-    "posts_in_window": 87,
-    "likes": 103367,
-    "comments": 4849,
-    "avg_views_per_post": 37274,
+    "posts_in_window": 89,
+    "likes": 104229,
+    "comments": 4882,
+    "avg_views_per_post": 36807,
     "engagement_formula": "likes + comments + saves + shares, divided by the reach of each reel",
-    "avg_reach_per_post": 27666
+    "avg_reach_per_post": 27306
   },
   "tiktok": {
-    "views": 2936504,
-    "shares": 21528,
-    "followers": 30568,
+    "views": 2954860,
+    "shares": 21590,
+    "followers": 30608,
     "top_videos": [
       {
         "title": "Outlook is down for a huge number of people today, and no, it isn't...",
         "desc": "Microsoft has confirmed the problem and hasn't said when it will be fixed",
-        "views": 579539,
+        "views": 579586,
         "date": "2026-11-12"
       },
       {
         "title": "Every US flight grounded, three days after an AI tool went live in...",
         "desc": "Coincidence or connected?",
-        "views": 233493,
+        "views": 233601,
         "date": "2026-11-14"
       },
       {
         "title": "Revolut was hit by a major outage this morning and a Google Cloud...",
         "desc": "Monzo built a backup bank for exactly this",
-        "views": 218418,
+        "views": 218433,
         "date": "2026-10-20"
       },
       {
         "title": "79 organisations hacked without a password, according to Huntress...",
         "desc": "The MFA prompt did not stop them",
-        "views": 157322,
+        "views": 157520,
         "date": "2026-10-23"
       },
       {
         "title": "Websites across Europe went dark on purpose today after two critical...",
         "desc": "Only 1.3% of flaws found with AI tools have been seen in real attacks, but this one affects a huge share of the web",
-        "views": 137781,
+        "views": 137788,
         "date": "2026-10-21"
       }
     ],
     "window": {
-      "start": "2026-09-25",
-      "end": "2026-11-23",
+      "start": "2026-09-26",
+      "end": "2026-11-24",
       "days": 60,
-      "label": "25 September to 23 November 2026"
+      "label": "26 September to 24 November 2026"
     },
-    "likes": 93967,
-    "comments": 6237,
+    "likes": 94677,
+    "comments": 6278,
     "engagement_rate": 4.1,
     "engagement_formula": "likes + comments + shares, divided by views (TikTok does not report saves)",
-    "posts_in_window": 89,
-    "avg_views_per_post": 32994,
-    "net_new_followers": 7398
+    "posts_in_window": 91,
+    "avg_views_per_post": 32471,
+    "net_new_followers": 7247
   },
   "audience": {
-    "source": "Instagram follower insights via Metricool, 25 September to 23 November 2026",
+    "source": "Instagram follower insights via Metricool, 26 September to 24 November 2026",
     "male_pct": 71.4,
     "female_pct": 28.6,
     "age": {
@@ -125,7 +125,7 @@
       },
       {
         "name": "Australia",
-        "pct": 8.2
+        "pct": 8.1
       }
     ]
   },
@@ -144,9 +144,9 @@
   "updated_pretty": "November 2026",
   "growth": {
     "platform": "Instagram",
-    "gained": 92657,
+    "gained": 92710,
     "window": "February to November 2026",
-    "summary": "followers on Instagram in nine months. From 10.8K in February to 103K in November 2026.",
+    "summary": "followers on Instagram in nine months. From 10.8K in February to 104K in November 2026.",
     "note": "February is from my profile on 17 February. Every other point is a Metricool follower count.",
     "points": [
       {
@@ -176,8 +176,8 @@
       },
       {
         "label": "Nov",
-        "date": "2026-11-24",
-        "followers": 103457
+        "date": "2026-11-25",
+        "followers": 103510
       }
     ],
     "start_month": "2026-02",
@@ -188,8 +188,8 @@
       "tiktok": 4322
     }
   },
-  "updated_label": "24 November 2026, 22:27 UK time",
-  "updated_iso": "2026-11-24T22:27+00:00",
+  "updated_label": "25 November 2026, 08:36 UK time",
+  "updated_iso": "2026-11-25T08:36+00:00",
   "clients": {
     "companies": [
       "General Mills",
