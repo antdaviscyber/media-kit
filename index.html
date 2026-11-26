@@ -788,7 +788,7 @@ footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid rgb
       const pts=g.points, n=pts.length, W=620, H=300, padL=12, padR=34, padT=42, padB=40;
       // space points by date when every point has one, otherwise evenly
       const ts=pts.map(p=>Date.parse(p.date)), byDate=n>1&&ts.every(t=>!isNaN(t))&&ts[n-1]>ts[0];
-      const xs=i=>padL+(W-padL-padR)*(n>1?(byDate?(ts[i]-ts[0])/(ts[n-1]-ts[0]):i/(n-1)):0);
+      const xs=i=>padL+(W-padL-padR)*(n>1?i/(n-1):0);
       const vals=pts.map(p=>p.followers), mn=Math.min(...vals), mx=Math.max(...vals), sp=Math.max(mx-mn,1);
       const lo=mn-sp*0.28, hi=mx+sp*0.18;
       const ys=v=>padT+(H-padT-padB)*(1-(v-lo)/(hi-lo));
